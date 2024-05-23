@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!--Application colors...-->
+    <color name="primary">#00F260</color>
+    <color name="primaryDark">#0066cc</color>
+    <color name="accent">#0575E6</color>
+
+    <!--System colors...-->
+    <color name="statusBar">#ffffff</color>
+    <color name="window">#ffffff</color>
+    <color name="dialog">#ffffff</color>
+    <color name="navigationBar">#ffffff</color>
+
+    <!--BottomNavigationView colors...-->
+    <color name="navigationView">#ffffff</color>
+    <color name="navItemSelected">#00F260</color>
+    <color name="navItemNormal">#7785a2</color>
+
+    <!--Foregrounds...-->
+    <color name="textHigh">#000000</color>
+    <color name="textMedium">#646464</color>
+    <color name="textLow">#969696</color>
+    <color name="textHint">#aeaeae</color>
+
+    <!--Mixes...-->
+    <color name="card">#f5f5f5</color>
+    <color name="separator">#A6A6A6</color>
+    <color name="link">#0870ff</color>
 </resources>

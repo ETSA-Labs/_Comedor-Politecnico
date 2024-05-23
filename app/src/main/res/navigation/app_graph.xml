@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.espoch.comedor.views.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/item_home"/>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.espoch.comedor.views.SettingsFragment"
+        tools:layout="@layout/fragment_settings"
+        android:label="@string/item_settings"/>
+
+</navigation>
