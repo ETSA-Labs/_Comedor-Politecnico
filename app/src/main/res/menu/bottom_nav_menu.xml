@@ -6,8 +6,19 @@
         android:icon="@drawable/ic_home_24dp"
         android:title="@string/item_home" />
     <item
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_settings_24dp"
-        android:title="@string/item_settings" />
-
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_heart_24dp"
+        android:title="@string/item_favorite" />
+    <item
+        android:id="@+id/navigation_Shop"
+        android:icon="@drawable/ic_shop_24dp"
+        android:title="@string/item_shop" />
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/ic_user_24dp"
+        android:title="@string/item_user" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_more_24dp"
+        android:title="@string/item_setting" />
 </menu>
