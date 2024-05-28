@@ -22,6 +22,7 @@
         app:itemTextColor="@drawable/se_nav_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:labelVisibilityMode="unlabeled"
         app:elevation="0dp"
         app:menu="@menu/bottom_nav_menu"/>
 </LinearLayout>

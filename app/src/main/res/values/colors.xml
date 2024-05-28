@@ -12,8 +12,8 @@
     <color name="navigationBar">#ffffff</color>
 
     <!--BottomNavigationView colors...-->
-    <color name="navigationView">#ffffff</color>
-    <color name="navItemSelected">#00F260</color>
+    <color name="navigationView">#D9D9D9</color> <!-- color nav   -->
+    <color name="navItemSelected">#8AB269</color> <!-- color nav   -->
     <color name="navItemNormal">#7785a2</color>
 
     <!--Foregrounds...-->
