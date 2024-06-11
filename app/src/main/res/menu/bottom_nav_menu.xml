@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_24dp"
-        android:title="@string/item_home" />
+        android:title="@string/item.home" />
     <item
         android:id="@+id/navigation_favorite"
         android:icon="@drawable/ic_heart_24dp"
-        android:title="@string/item_favorite" />
+        android:title="@string/item.favorite" />
     <item
         android:id="@+id/navigation_Shop"
         android:icon="@drawable/ic_shop_24dp"
-        android:title="@string/item_shop" />
+        android:title="@string/item.shop" />
     <item
         android:id="@+id/navigation_user"
         android:icon="@drawable/ic_user_24dp"
-        android:title="@string/item_user" />
+        android:title="@string/item.user" />
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_more_24dp"
-        android:title="@string/item_setting" />
+        android:title="@string/item.setting" />
 </menu>

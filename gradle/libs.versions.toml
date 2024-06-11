@@ -1,12 +1,15 @@
 [versions]
+auth0 = "2.11.0"
 #agp = "8.3.2"
 
 [libraries]
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.7.0" }
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version = "2.7.7" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version = "2.7.7" }
+androidx-biometric = { module = "androidx.biometric:biometric", version = "1.1.0" }
+auth0 = { module = "com.auth0.android:auth0", version.ref = "auth0" }
 
 [plugins]
-android-application = { id = "com.android.application", version = "8.4.1" }
+android-application = { id = "com.android.application", version = "8.4.2" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.23" }

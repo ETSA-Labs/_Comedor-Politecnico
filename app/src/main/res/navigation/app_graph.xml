@@ -10,11 +10,11 @@
         android:id="@+id/navigation_home"
         android:name="com.espoch.comedor.views.HomeFragment"
         tools:layout="@layout/fragment_home"
-        android:label="@string/item_home"/>
+        android:label="@string/item.home"/>
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.espoch.comedor.views.SettingsFragment"
         tools:layout="@layout/fragment_settings"
-        android:label="@string/item_setting"/>
+        android:label="@string/item.setting"/>
 
 </navigation>
