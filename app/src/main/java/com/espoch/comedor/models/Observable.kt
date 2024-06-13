@@ -1,4 +1,4 @@
-package com.espoch.comedor.models.primitives
+package com.espoch.comedor.models
 
 import kotlin.properties.Delegates
 import kotlin.properties.ReadWriteProperty

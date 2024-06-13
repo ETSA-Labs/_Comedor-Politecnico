@@ -7,5 +7,5 @@ import retrofit2.http.Header
 
 interface GraphService {
     @GET("/v1.0/me")
-    fun getUserInfo(@Header("Authorization") accessToken: String): Call<UserDisplayName>
+    fun getDisplayName(@Header("Authorization") accessToken: String): Call<UserDisplayName>
 }

@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.espoch.comedor.R
 import com.espoch.comedor.data.UserDisplayName
+import com.espoch.comedor.models.AppUser
 import com.microsoft.identity.client.AcquireTokenSilentParameters
 import com.microsoft.identity.client.AuthenticationCallback
 import com.microsoft.identity.client.IAuthenticationResult
@@ -15,6 +16,7 @@ import com.microsoft.identity.client.exception.MsalException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,6 +33,8 @@ class AuthService {
         private var singleApp: ISingleAccountPublicClientApplication? = null
         @SuppressLint("StaticFieldLeak")
         private var context: FragmentActivity? = null
+
+        var isSignedIn: Boolean = false
 
         /**
          * Initializes the authentication service.
@@ -52,22 +56,26 @@ class AuthService {
                         singleApp = application
 
                         CoroutineScope(Dispatchers.IO).launch {
+                            // ...
                             val account = singleApp?.currentAccount?.currentAccount
+                            isSignedIn = account != null
 
                             if (account != null) {
-                                val params = AcquireTokenSilentParameters.Builder()
-                                    .fromAuthority(singleApp?.configuration?.defaultAuthority?.authorityURL.toString())
-                                    .withScopes(listOf("User.Read"))
-                                    .forAccount(account)
-                                    .build()
+                                val token = getToken()
 
-                                val token = singleApp?.acquireTokenSilent(params)?.accessToken
+                                /* ... */
+                                AppUser.default.let {
+                                    it.uid = account.id
+                                    it.email = account.username
+                                }
 
-                                if (!token.isNullOrEmpty())
-                                    getInfo(token)
+                                if (!token.isNullOrEmpty()) {
+                                    AppUser.default.token = token
+                                    getFullName(token)
+                                }
                             }
+                            listeners.forEach { it.onCreate() }
                         }
-                        listeners.forEach { it.onCreate() }
                     }
 
                     /**
@@ -98,7 +106,28 @@ class AuthService {
                      * @param authenticationResult The result of the authentication.
                      */
                     override fun onSuccess(authenticationResult: IAuthenticationResult?) {
-                        listeners.forEach { it.onSuccess(authenticationResult) }
+                        CoroutineScope(Dispatchers.IO).launch {
+                            val account = authenticationResult?.account
+
+                            if (account != null) {
+                                val token = getToken()
+
+                                /* ... */
+                                AppUser.default.let {
+                                    it.uid = account.id
+                                    it.email = account.username
+                                }
+
+                                if (!token.isNullOrEmpty()) {
+                                    AppUser.default.token = token
+                                    getFullName(token)
+                                }
+                            } else {
+                                withContext(Dispatchers.Main) {
+                                    listeners.forEach { it.onError("account is null") }
+                                }
+                            }
+                        }
                     }
 
                     /**
@@ -164,29 +193,24 @@ class AuthService {
             listeners.remove(l)
         }
 
+        private fun getToken(): String? {
+            val account = singleApp?.currentAccount?.currentAccount ?: return null
+
+            val params = AcquireTokenSilentParameters.Builder()
+                .fromAuthority(singleApp?.configuration?.defaultAuthority?.authorityURL.toString())
+                .withScopes(listOf("User.Read"))
+                .forAccount(account)
+                .build()
+
+            return singleApp?.acquireTokenSilent(params)?.accessToken
+        }
+
         /**
          * Makes a network call to the Microsoft Graph API to retrieve the groups the authenticated user is a member of.
          *
          * @param accessToken The OAuth 2.0 access token used for authorization in the format "Bearer {token}".
          */
-        fun getInfo(accessToken: String) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val account = singleApp?.currentAccount?.currentAccount
-
-                if (account != null) {
-                    val params = AcquireTokenSilentParameters.Builder()
-                        .fromAuthority(singleApp?.configuration?.defaultAuthority?.authorityURL.toString())
-                        .withScopes(listOf("User.Read"))
-                        .forAccount(account)
-                        .build()
-
-                    val token = singleApp?.acquireTokenSilent(params)?.accessToken
-
-                    if (!token.isNullOrEmpty())
-                        return@launch
-                }
-            }
-
+        private fun getFullName(accessToken: String) {
             // Initialize the Retrofit instance
             val retrofit = Retrofit.Builder()
                 .baseUrl("https://graph.microsoft.com")
@@ -197,7 +221,7 @@ class AuthService {
             val api: GraphService = retrofit.create(GraphService::class.java)
 
             // Make the network request to the API
-            api.getUserInfo("Bearer $accessToken").enqueue(
+            api.getDisplayName("Bearer $accessToken").enqueue(
                 object: Callback<UserDisplayName> {
                     /**
                      * Called when a response is received from the server.
@@ -212,7 +236,11 @@ class AuthService {
                         if (response.isSuccessful) {
                             // Successfully received a response, extract and log the user info
                             val info = response.body()?.value
-                            Log.d("MSAL", info.toString())
+
+                            /* ... */
+                            AppUser.default.fullName = info.toString()
+
+                            listeners.forEach { it.onSignIn() }
                         } else {
                             // The server returned an error response
                             listeners.forEach { it.onError("${response.errorBody().toString()} - line: 218") }
@@ -235,35 +263,33 @@ class AuthService {
     }
 
     /**
-     * An interface that defines the callback methods for handling the authentication process.
+     * An class that defines the callback methods for handling the authentication process.
      */
-    interface ResultListener {
+    open class ResultListener {
 
         /**
          * Called when the authentication process is initiated.
          * This method should contain logic that needs to be executed at the start of the authentication process.
          */
-        fun onCreate()
+        open fun onCreate() {}
 
         /**
          * Called when the authentication process completes successfully.
          * This method should contain logic that needs to be executed when authentication is successful.
-         *
-         * @param result The result of the authentication.
          */
-        fun onSuccess(result: IAuthenticationResult?)
+        open fun onSignIn() {}
 
         /**
          * Called when the sign-out process completes successfully.
          * This method should contain logic that needs to be executed when sign-out is successful.
          */
-        fun onSignOut()
+        open fun onSignOut() {}
 
         /**
          * Called when the authentication process is cancelled by the user.
          * This method should contain logic that needs to be executed when authentication is cancelled.
          */
-        fun onCancel()
+        open fun onCancel() {}
 
         /**
          * Called when an error occurs during the authentication process.
@@ -271,6 +297,8 @@ class AuthService {
          *
          * @param msg The exception thrown during the authentication process.
          */
-        fun onError(msg: String?)
+        open fun onError(msg: String?) {
+            Log.d("MSAL", msg.toString())
+        }
     }
 }

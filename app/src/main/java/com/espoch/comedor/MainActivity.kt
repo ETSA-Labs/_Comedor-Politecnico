@@ -1,7 +1,8 @@
 package com.espoch.comedor
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -9,10 +10,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
 import com.espoch.comedor.services.AuthService
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.microsoft.identity.client.IAuthenticationResult
-import com.microsoft.identity.client.exception.MsalException
 
-class MainActivity : AppCompatActivity(), AuthService.ResultListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navView: BottomNavigationView
@@ -31,26 +30,25 @@ class MainActivity : AppCompatActivity(), AuthService.ResultListener {
         navView.setupWithNavController(navCtrl)
 
         AuthService.initialize(this)
-        AuthService.addResultListener(this)
+        AuthService.addResultListener(AuthResultCallback())
+
+        onBackPressedDispatcher.addCallback(this, OnBackInvokedCallback())
     }
 
-    override fun onCreate() {
-        //AuthService.signIn()
+    private inner class AuthResultCallback : AuthService.ResultListener() {
+        override fun onCreate() {
+            super.onCreate()
+
+            if (!AuthService.isSignedIn) {
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
-    override fun onSuccess(result: IAuthenticationResult?) {
-
-    }
-
-    override fun onSignOut() {
-
-    }
-
-    override fun onCancel() {
-
-    }
-
-    override fun onError(msg: String?) {
-        Log.d("MSAL", msg.toString())
+    private inner class OnBackInvokedCallback : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            finishAffinity()
+        }
     }
 }

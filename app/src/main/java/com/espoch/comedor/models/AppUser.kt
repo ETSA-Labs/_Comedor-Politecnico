@@ -1,7 +1,5 @@
 package com.espoch.comedor.models
 
-import com.espoch.comedor.models.primitives.Observable
-
 class AppUser private constructor() : Observable() {
     companion object {
         private var _default: AppUser? = null
@@ -57,6 +55,6 @@ class AppUser private constructor() : Observable() {
      * Enum representing the user roles.
      */
     enum class UserRole {
-        CUSTOMER, ADMIN, GOD
+        CUSTOMER, ADMIN
     }
 }
