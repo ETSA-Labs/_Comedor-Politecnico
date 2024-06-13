@@ -1,5 +1,6 @@
 [versions]
-auth0 = "2.11.0"
+kotlinxCoroutinesAndroid = "1.8.0"
+kotlinxCoroutinesCore = "1.6.2"
 #agp = "8.3.2"
 
 [libraries]
@@ -8,7 +9,9 @@ androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version = "2.7.7" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version = "2.7.7" }
 androidx-biometric = { module = "androidx.biometric:biometric", version = "1.1.0" }
-auth0 = { module = "com.auth0.android:auth0", version.ref = "auth0" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+msal = { module = "com.microsoft.identity.client:msal", version = "5.3.1" }
 
 [plugins]
 android-application = { id = "com.android.application", version = "8.4.2" }

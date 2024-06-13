@@ -1,6 +1,21 @@
 package com.espoch.comedor.models
 
-class AppUser : Observable() {
+class AppUser private constructor() : Observable() {
+    companion object {
+        private var _default: AppUser? = null
+
+        /**
+         * Gets the singleton object class.
+         */
+        val default: AppUser
+            get() {
+                if (_default == null)
+                    _default = AppUser()
+
+                return _default!!
+            }
+    }
+
     /**
      * Unique identifier for the user.
      */

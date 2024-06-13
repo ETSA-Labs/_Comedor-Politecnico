@@ -10,7 +10,6 @@ import androidx.navigation.NavController
  */
 class NavigationService {
     companion object {
-
         private val controllers = mutableMapOf<String, NavController>()
 
         /**

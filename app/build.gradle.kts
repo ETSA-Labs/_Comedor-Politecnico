@@ -4,6 +4,15 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storeFile =
+                file("C:\\Users\\Ricardo\\Documents\\Android Studio\\Projects\\Comedor-Politecnico\\app\\src\\main\\assets\\app.keystore")
+            storePassword = "@@proyectolmm@@"
+            keyPassword = "@@proyectolmm@@"
+            keyAlias = "comedor"
+        }
+    }
     namespace = "com.espoch.comedor"
     compileSdk = 34
 
@@ -15,7 +24,7 @@ android {
         versionName = "1.0"
 
         manifestPlaceholders["auth0Domain"] = "@string/domain.auth0"
-        manifestPlaceholders["auth0Scheme"] = "https"
+        manifestPlaceholders["auth0Scheme"] = "demo"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -24,7 +33,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("boolean", "DEBUG", "true")
+        }
         release {
+            buildConfigField("boolean", "DEBUG", "false")
             isMinifyEnabled = false
         }
     }
@@ -39,6 +52,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
 
@@ -56,5 +70,8 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     implementation(libs.androidx.biometric)
-    implementation(libs.auth0)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.msal)
 }

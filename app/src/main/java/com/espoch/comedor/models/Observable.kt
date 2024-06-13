@@ -9,14 +9,14 @@ import kotlin.reflect.KProperty
  */
 abstract class Observable {
     // List of listeners that will be notified when properties change
-    private val listeners = mutableListOf<PropertyChangeListener>()
+    private val listeners = mutableListOf<PropertyChangedListener>()
 
     /**
      * Adds a listener to the list of listeners.
      *
      * @param listener The listener to be added.
      */
-    fun addPropertyChangeListener(listener: PropertyChangeListener) {
+    fun addPropertyChangedListener(listener: PropertyChangedListener) {
         listeners.add(listener)
     }
 
@@ -25,7 +25,7 @@ abstract class Observable {
      *
      * @param listener The listener to be removed.
      */
-    fun removePropertyChangeListener(listener: PropertyChangeListener) {
+    fun removePropertyChangedListener(listener: PropertyChangedListener) {
         listeners.remove(listener)
     }
 
@@ -67,7 +67,7 @@ abstract class Observable {
     /**
      * Interface for listeners that respond to property change events.
      */
-    interface PropertyChangeListener {
+    interface PropertyChangedListener {
         /**
          * Called before a property changes.
          *

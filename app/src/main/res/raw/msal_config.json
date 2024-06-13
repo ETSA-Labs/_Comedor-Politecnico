@@ -1,0 +1,16 @@
+{
+  "client_id" : "22fff7fe-82de-499b-bb8c-beda61f098d3",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://com.espoch.comedor/tLwIARBXxMgkYozD4XpgxiYQF8A%3D",
+  "account_mode": "SINGLE",
+  "broker_redirect_uri_registered": true,
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADMyOrg",
+        "tenant_id": "d7f86710-01e1-461d-8599-758de4542e2b"
+      }
+    }
+  ]
+}
