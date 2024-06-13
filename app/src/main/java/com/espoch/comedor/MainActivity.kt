@@ -1,11 +1,14 @@
 package com.espoch.comedor
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
+import com.espoch.comedor.views.BreakfastFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -25,5 +28,14 @@ class MainActivity : AppCompatActivity() {
         navCtrl = navHost.navController
 
         navView.setupWithNavController(navCtrl)
+
+        setContentView(R.layout.activity_main)
+
+        button_desayunos.setOnClickListener {
+            supportFragmentManager.commit {
+                replace(R.id.fragment_container, BreakfastFragment())
+            }
+        }
     }
+
 }

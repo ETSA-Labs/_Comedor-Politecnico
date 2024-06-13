@@ -13,7 +13,7 @@
 
     <!--BottomNavigationView colors...-->
     <color name="navigationView">#D9D9D9</color> <!-- color nav   -->
-    <color name="navItemSelected">#8AB269</color> <!-- color nav   -->
+    <color name="navItemSelected">#FA3333</color> <!-- color nav   -->
     <color name="navItemNormal">#7785a2</color>
 
     <!--Foregrounds...-->

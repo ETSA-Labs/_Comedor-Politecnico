@@ -5,18 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.espoch.comedor.databinding.FragmentHomeBinding
+import androidx.fragment.app.FragmentContainer
+import com.espoch.comedor.databinding.FragmentBookingBinding
+import java.util.zip.Inflater
 
-class HomeFragment : Fragment() {
-
-    private lateinit var binding: FragmentHomeBinding
+class BookingFragment : Fragment() {
+    private lateinit var binding:FragmentBookingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater)
+        binding = FragmentBookingBinding.inflate(inflater)
         return binding.root
     }
 
@@ -24,4 +25,6 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
+
 }

@@ -8,12 +8,35 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/app_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:defaultNavHost="true"
         app:navGraph="@navigation/app_graph"/>
+
+    <Button
+        android:id="@+id/button_desayunos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desayunos" />
+
+    <Button
+        android:id="@+id/button_almuerzos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Almuerzos" />
+
+    <Button
+        android:id="@+id/button_meriendas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meriendas" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"

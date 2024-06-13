@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/im_backarriba" />
+        android:src="@drawable/im_arribaback"/>
 
     <!-- SearchView en la parte superior -->
     <SearchView
@@ -20,7 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_margin="16dp"
-        android:queryHint="Search..." />
+        android:queryHint="Search..."
+
+        />
 
     <!-- Layout para los botones -->
     <LinearLayout
@@ -34,39 +36,29 @@
         android:weightSum="4">
 
         <Button
-            android:id="@+id/btn_almuerzos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Almuerzos" />
-
-        <Button
             android:id="@+id/btn_desayunos"
-            android:layout_width="0dp"
+            android:layout_width="99dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:text="Desayunos" />
 
         <Button
-            android:id="@+id/btn_bebidas"
-            android:layout_width="0dp"
+            android:id="@+id/btn_almuerzos"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Bebidas" />
+            android:text="Almuerzos" />
 
         <Button
-            android:id="@+id/btn_postres"
-            android:layout_width="0dp"
+            android:id="@+id/btn_meriendas"
+            android:layout_width="94dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:text="Postres" />
+            android:text="meriendas" />
     </LinearLayout>
-
-    <!-- ListView para mostrar los resultados de búsqueda -->
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/button_layout"
-        android:padding="16dp" />
 </RelativeLayout>
