@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.espoch.comedor.databinding.FragmentHomeBinding
-import com.espoch.comedor.services.AuthService
 
 class HomeFragment : Fragment() {
 
