@@ -2,8 +2,11 @@ package com.espoch.comedor
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.graphics.Color
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -19,6 +22,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val controller = WindowCompat.getInsetsController(window, window.decorView)
+
+        controller.isAppearanceLightStatusBars = false
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

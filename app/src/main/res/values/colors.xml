@@ -30,9 +30,9 @@
     <color name="tint.none">@null</color>
 
     <!--BottomNavigationView colors...-->
-    <color name="navigationView">#D9D9D9</color> <!-- color nav   -->
-    <color name="navItemSelected">#8AB269</color> <!-- color nav   -->
-    <color name="navItemNormal">#7785a2</color>
+    <color name="navigationView">#ffffff</color> <!-- color nav   -->
+    <color name="navItemSelected">#ffff2c2c</color> <!-- color nav   -->
+    <color name="navItemNormal">#ffc1c1c1</color>
 
     <!--Mixes...-->
     <color name="card">#f5f5f5</color>

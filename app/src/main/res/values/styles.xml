@@ -2,7 +2,9 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:statusBarColor">@color/statusBar</item>
         <item name="android:windowBackground">@color/window</item>
         <item name="android:navigationBarColor">@color/navigationBar</item>
@@ -12,6 +14,7 @@
 
         <item name="android:textViewStyle">@style/TextView</item>
         <item name="materialButtonStyle">@style/MaterialButton</item>
+        <item name="radioButtonStyle">@style/RadioButton</item>
     </style>
 
     <!--TextView styles-->
@@ -72,16 +75,6 @@
         <item name="strokeWidth">0dp</item>
     </style>
 
-    <style name="CardOptionButton" parent="@style/MaterialButton">
-        <item name="android:paddingHorizontal">32dp</item>
-        <item name="android:textFontWeight">500</item>
-        <item name="iconSize">24dp</item>
-        <item name="iconTint">@null</item>
-        <item name="iconPadding">12dp</item>
-        <item name="cornerRadius">0dp</item>
-        <item name="strokeWidth">0dp</item>
-    </style>
-
     <style name="SettingOptionButton" parent="@style/MaterialButton">
         <item name="android:paddingHorizontal">24dp</item>
         <item name="android:textFontWeight">500</item>
@@ -122,5 +115,28 @@
         <item name="iconPadding">16dp</item>
         <item name="cornerRadius">28dp</item>
         <item name="strokeColor">@color/stroke.button</item>
+    </style>
+
+    <!--RadioButton styles...-->
+    <style name="RadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:backgroundTint">@color/back.button</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/fore.high</item>
+    </style>
+
+    <style name="CategoryRadioButton" parent="@style/RadioButton">
+        <item name="android:backgroundTint">@null</item>
+        <item name="android:background">@drawable/radio_button_stroke</item>
+        <item name="android:paddingHorizontal">0dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:button">@drawable/radio_button_template</item>
+        <item name="android:textColor">@drawable/radio_button_foreground</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textSize">15sp</item>
     </style>
 </resources>

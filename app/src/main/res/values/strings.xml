@@ -8,6 +8,10 @@
     <string name="item.shop">Shop</string>
     <string name="item.user">User</string>
     <string name="item.setting">Settings</string>
+    <string name="item.breakfast">Breakfast</string>
+    <string name="item.lunches">Lunches</string>
+    <string name="item.drinks">Drinks</string>
+    <string name="item.desserts">Desserts</string>
 
     <!--Titles...-->
     <string name="title.welcome">Welcome</string>
