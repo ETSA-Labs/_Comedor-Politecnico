@@ -12,6 +12,9 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorAccent">@color/accent</item>
 
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+
         <item name="android:textViewStyle">@style/TextView</item>
         <item name="materialButtonStyle">@style/MaterialButton</item>
         <item name="radioButtonStyle">@style/RadioButton</item>
@@ -19,7 +22,7 @@
 
     <!--TextView styles-->
     <style name="TextView" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/nunito</item>
         <item name="android:textColor">@color/fore.high</item>
     </style>
 
@@ -55,7 +58,7 @@
     <!--Button styles...-->
     <style name="MaterialButton" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:backgroundTint">@color/back.button</item>
-        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/nunito</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:textAlignment">textStart</item>
@@ -120,7 +123,7 @@
     <!--RadioButton styles...-->
     <style name="RadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
         <item name="android:backgroundTint">@color/back.button</item>
-        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:fontFamily">@font/nunito</item>
         <item name="android:paddingHorizontal">20dp</item>
         <item name="android:paddingVertical">16dp</item>
         <item name="android:textAlignment">textStart</item>
@@ -136,7 +139,7 @@
         <item name="android:paddingVertical">12dp</item>
         <item name="android:button">@drawable/radio_button_template</item>
         <item name="android:textColor">@drawable/radio_button_foreground</item>
-        <item name="android:textFontWeight">600</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>
