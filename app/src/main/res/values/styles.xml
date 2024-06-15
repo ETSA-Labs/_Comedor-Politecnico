@@ -4,10 +4,10 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:navigationBarColor">@color/navigationBar</item>
         <item name="android:statusBarColor">@color/statusBar</item>
         <item name="android:windowBackground">@color/window</item>
-        <item name="android:navigationBarColor">@color/navigationBar</item>
+
 
         <item name="colorPrimary">@color/primary</item>
         <item name="colorAccent">@color/accent</item>

@@ -29,7 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
-                android:queryHint="Search..." />
+                android:iconifiedByDefault="false"
+                android:queryHint="@string/search"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -37,40 +38,46 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
 
         <RadioGroup
+            android:id="@+id/radio_group_categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="12dp"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="24dp"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/radio_button_breakfast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="24dp"
                 android:text="@string/item.breakfast"
                 style="@style/CategoryRadioButton"/>
 
             <RadioButton
+                android:id="@+id/radio_button_lunches"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="24dp"
                 android:text="@string/item.lunches"
                 style="@style/CategoryRadioButton"/>
 
             <RadioButton
+                android:id="@+id/radio_button_drinks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="24dp"
                 android:text="@string/item.drinks"
                 style="@style/CategoryRadioButton"/>
 
             <RadioButton
+                android:id="@+id/radio_button_desserts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:text="@string/item.desserts"
                 style="@style/CategoryRadioButton"/>
 

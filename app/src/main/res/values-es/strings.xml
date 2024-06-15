@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Comedor Politecnico</string>
-    <string name="app.brand">ESPOCH</string>
+    <string name="app_brand">ESPOCH</string>
 
     <!--Nav destines headers...-->
     <string name="item.home">Inicio</string>
     <string name="item.favorite">Favoritos</string>
-    <string name="item.shop">Tienda</string>
-    <string name="item.user">Perfil</string>
+    <string name="item.shop">Carrito</string>
+    <string name="item.location">Ubicación</string>
     <string name="item.setting">Configuración</string>
     <string name="item.breakfast">Desayunos</string>
     <string name="item.lunches">Almuerzos</string>
@@ -20,10 +20,6 @@
     <string name="title.error">Oops…</string>
     <string name="title.logout">Are you sure?</string>
     <string name="title.action_needed">Action required</string>
-    <string name="title.school">School</string>
-    <string name="title.birth_date">Birth date</string>
-    <string name="title.faculty">Faculty</string>
-    <string name="title.id_no">ID No</string>
 
     <!--Bodies-->
     <string name="body.welcome">Usa tus credenciales institucionales</string>
@@ -40,7 +36,7 @@
     <!--Miscellaneous...-->
     <string name="empty"> </string>
     <string name="separator">•</string>
-    <string name="unknown">---</string>
+    <string name="search">Buscar…</string>
 
     <string name="id.auth0">EhXZJ1uU5uHvY0XUuN3old1iWE2Wd5Yj</string>
 

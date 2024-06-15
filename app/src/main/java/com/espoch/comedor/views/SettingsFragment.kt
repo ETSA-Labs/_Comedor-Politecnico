@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.espoch.comedor.MainActivity
 import com.espoch.comedor.databinding.FragmentHomeBinding
 import com.espoch.comedor.databinding.FragmentSettingsBinding
 
@@ -23,5 +24,8 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val activity = requireActivity() as MainActivity
+        activity.isLightStatusBar = true
     }
 }

@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/im_background"
         android:scaleType="centerCrop"
-        android:alpha="0.05"/>
+        android:alpha="0.04"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,11 +29,12 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_view"
             android:background="@color/navigationView"
-            app:itemIconTint="@drawable/nav_item_selector"
-            app:itemTextColor="@drawable/nav_item_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="@drawable/nav_item_selector"
+            app:itemTextColor="@drawable/nav_item_selector"
+            app:itemIconSize="28dp"
             app:elevation="0dp"
             app:menu="@menu/bottom_nav_menu"/>
 
