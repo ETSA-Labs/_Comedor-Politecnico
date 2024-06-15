@@ -5,9 +5,9 @@
     <!--Nav destines headers...-->
     <string name="item.home">Home</string>
     <string name="item.favorite">Favorites</string>
-    <string name="item.shop">Cart</string>
     <string name="item.location">Location</string>
-    <string name="item.setting">Settings</string>
+    <string name="item.cart">Cart</string>
+    <string name="item.more">More</string>
     <string name="item.breakfast">Breakfast</string>
     <string name="item.lunches">Lunches</string>
     <string name="item.drinks">Drinks</string>

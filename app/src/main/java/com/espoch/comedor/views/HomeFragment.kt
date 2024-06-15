@@ -13,7 +13,6 @@ import com.espoch.comedor.R
 import com.espoch.comedor.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(

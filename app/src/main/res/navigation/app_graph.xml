@@ -12,9 +12,24 @@
         tools:layout="@layout/fragment_home"
         android:label="@string/item.home"/>
     <fragment
-        android:id="@+id/navigation_settings"
-        android:name="com.espoch.comedor.views.SettingsFragment"
-        tools:layout="@layout/fragment_settings"
-        android:label="@string/item.setting"/>
+        android:id="@+id/navigation_favourites"
+        android:name="com.espoch.comedor.views.FavouritesFragment"
+        tools:layout="@layout/fragment_favourites"
+        android:label="@string/item.favorite"/>
+    <fragment
+        android:id="@+id/navigation_location"
+        android:name="com.espoch.comedor.views.LocationFragment"
+        tools:layout="@layout/fragment_location"
+        android:label="@string/item.location"/>
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.espoch.comedor.views.CartFragment"
+        tools:layout="@layout/fragment_cart"
+        android:label="@string/item.cart"/>
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.espoch.comedor.views.MoreFragment"
+        tools:layout="@layout/fragment_more"
+        android:label="@string/item.more"/>
 
 </navigation>
