@@ -6,17 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
-import com.espoch.comedor.databinding.FragmentCartBinding
+import com.espoch.comedor.databinding.FragmentBookingBinding
 
 class BookingFragment : Fragment() {
-    private lateinit var binding: FragmentCartBinding
+    private lateinit var binding: FragmentBookingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCartBinding.inflate(inflater)
+        binding = FragmentBookingBinding.inflate(inflater)
         return binding.root
     }
 
