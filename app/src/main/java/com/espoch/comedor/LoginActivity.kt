@@ -44,6 +44,7 @@ class LoginActivity : AppCompatActivity() {
             super.onSignIn()
 
             Toast.makeText(this@LoginActivity, AppUser.default.fullName, Toast.LENGTH_SHORT).show()
+            // para este punto, ya tenemos toda la info del usuario.
             finish()
         }
     }

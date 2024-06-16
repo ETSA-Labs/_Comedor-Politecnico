@@ -1,5 +1,8 @@
 package com.espoch.comedor.models
 
+/**
+ * Represents an user within the app
+ */
 class AppUser private constructor() : Observable() {
     companion object {
         private var _default: AppUser? = null
