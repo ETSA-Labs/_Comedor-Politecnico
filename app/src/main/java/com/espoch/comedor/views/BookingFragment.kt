@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
 import com.espoch.comedor.databinding.FragmentCartBinding
 
-class CartFragment : Fragment() {
+class BookingFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
 
     override fun onCreateView(

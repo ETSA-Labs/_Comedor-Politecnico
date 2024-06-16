@@ -6,7 +6,7 @@
     <string name="item.home">Inicio</string>
     <string name="item.favorite">Favoritos</string>
     <string name="item.location">Ubicación</string>
-    <string name="item.cart">Carrito</string>
+    <string name="item.booking">Reservas</string>
     <string name="item.more">Más</string>
     <string name="item.breakfast">Desayunos</string>
     <string name="item.lunches">Almuerzos</string>

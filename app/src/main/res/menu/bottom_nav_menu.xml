@@ -13,9 +13,9 @@
         android:icon="@drawable/ic_location_24dp"
         android:title="@string/item.location" />
     <item
-        android:id="@+id/navigation_cart"
-        android:icon="@drawable/ic_cart_24dp"
-        android:title="@string/item.cart" />
+        android:id="@+id/navigation_booking"
+        android:icon="@drawable/ic_schedule_24dp"
+        android:title="@string/item.booking" />
     <item
         android:id="@+id/navigation_more"
         android:icon="@drawable/ic_widgets_24dp"

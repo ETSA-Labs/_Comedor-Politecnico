@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
 import com.espoch.comedor.databinding.FragmentFavouritesBinding
+import com.espoch.comedor.services.QrService
 
 class FavouritesFragment : Fragment() {
     private lateinit var binding: FragmentFavouritesBinding
@@ -25,5 +26,8 @@ class FavouritesFragment : Fragment() {
 
         val activity = requireActivity() as MainActivity
         activity.isLightStatusBar = true
+
+        val drawable = QrService.generate(requireActivity(), "hola_todos")
+        binding.imageQR.setImageDrawable(drawable)
     }
 }

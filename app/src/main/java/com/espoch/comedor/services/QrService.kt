@@ -21,7 +21,6 @@ import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorShapes
  */
 class QrService {
     companion object {
-
         // Options for QR code generation
         private var options: QrVectorOptions? = null
 
@@ -49,7 +48,7 @@ class QrService {
                     .setColors(
                         QrVectorColors(
                             dark = QrVectorColor.Solid(
-                                getColor(activity, R.color.fore_medium) // Set dark color
+                                getColor(activity, R.color.fore_high) // Set dark color
                             )
                         )
                     )

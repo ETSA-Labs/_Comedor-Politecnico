@@ -22,10 +22,10 @@
         tools:layout="@layout/fragment_location"
         android:label="@string/item.location"/>
     <fragment
-        android:id="@+id/navigation_cart"
-        android:name="com.espoch.comedor.views.CartFragment"
-        tools:layout="@layout/fragment_cart"
-        android:label="@string/item.cart"/>
+        android:id="@+id/navigation_booking"
+        android:name="com.espoch.comedor.views.BookingFragment"
+        tools:layout="@layout/fragment_booking"
+        android:label="@string/item.booking"/>
     <fragment
         android:id="@+id/navigation_more"
         android:name="com.espoch.comedor.views.MoreFragment"
