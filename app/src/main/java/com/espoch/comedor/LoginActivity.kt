@@ -44,13 +44,13 @@ class LoginActivity : AppCompatActivity() {
             super.onSignIn()
 
             Toast.makeText(this@LoginActivity, AppUser.default.fullName, Toast.LENGTH_SHORT).show()
-            finish()
+            this@LoginActivity.finish()
         }
     }
 
     private inner class OnBackInvokedCallback : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            finishAffinity()
+            this@LoginActivity.finishAffinity()
         }
     }
 }

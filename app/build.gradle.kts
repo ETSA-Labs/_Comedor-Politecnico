@@ -23,21 +23,15 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        manifestPlaceholders["auth0Domain"] = "@string/domain.auth0"
-        manifestPlaceholders["auth0Scheme"] = "demo"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
     }
 
     buildTypes {
-        debug {
-            buildConfigField("boolean", "DEBUG", "true")
-        }
         release {
-            buildConfigField("boolean", "DEBUG", "false")
             isMinifyEnabled = false
         }
     }
@@ -65,16 +59,27 @@ android {
 
 dependencies {
 
+    /* basic */
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+    /* biometric */
     implementation(libs.androidx.biometric)
+    /* async */
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+    /* firebase */
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
+    /* MSAL */
     implementation(libs.com.squareup.retrofit2.retrofit2)
     implementation(libs.logging.interceptor)
     implementation(libs.converter.gson)
     implementation(libs.msal)
+    /* QR generator */
+    implementation(libs.alex.qr.generator)
 }

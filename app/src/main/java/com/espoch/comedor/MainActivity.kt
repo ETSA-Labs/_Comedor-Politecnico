@@ -14,6 +14,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
 import com.espoch.comedor.services.AuthService
+import com.espoch.comedor.services.BiometricService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
-
+        window.navigationBarColor = getColor(R.color.navigationBar)
         winCtrl = WindowInsetsControllerCompat(window, window.decorView)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
