@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        button_desayunos.setOnClickListener {
+        binding.buttonDesayunos.setOnClickListener {
             supportFragmentManager.commit {
                 replace(R.id.fragment_container, BreakfastFragment())
             }
