@@ -70,15 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:text="@string/item.drinks"
-                style="@style/CategoryRadioButton"/>
-
-            <RadioButton
-                android:id="@+id/radio_button_desserts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:text="@string/item.desserts"
+                android:text="@string/item.dinner"
                 style="@style/CategoryRadioButton"/>
 
         </RadioGroup>

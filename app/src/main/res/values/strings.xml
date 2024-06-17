@@ -10,8 +10,7 @@
     <string name="item.more">More</string>
     <string name="item.breakfast">Breakfast</string>
     <string name="item.lunches">Lunches</string>
-    <string name="item.drinks">Drinks</string>
-    <string name="item.desserts">Desserts</string>
+    <string name="item.dinner">Dinner</string>
 
     <!--Titles...-->
     <string name="title.welcome">Welcome</string>

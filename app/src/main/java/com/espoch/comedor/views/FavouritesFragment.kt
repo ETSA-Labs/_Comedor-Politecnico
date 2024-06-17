@@ -28,7 +28,21 @@ class FavouritesFragment : Fragment() {
         val activity = requireActivity() as MainActivity
         activity.isLightStatusBar = true
 
-        val drawable = QrService.generate(requireActivity(), "hola_todos")
+        updateQR()
+
+        binding.submitButton.setOnClickListener(::onSubmitButtonClick)
+    }
+
+    private fun onSubmitButtonClick(v: View) {
+        if (binding.editTextQR.text.isNullOrEmpty())
+            return
+
+        updateQR()
+    }
+
+    private fun updateQR() {
+        val text = binding.editTextQR.text.toString()
+        val drawable = QrService.generate(requireActivity(), text)
         binding.imageQR.setImageDrawable(drawable)
     }
 }

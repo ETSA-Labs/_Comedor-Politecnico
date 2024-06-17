@@ -10,8 +10,7 @@
     <string name="item.more">Más</string>
     <string name="item.breakfast">Desayunos</string>
     <string name="item.lunches">Almuerzos</string>
-    <string name="item.drinks">Bebidas</string>
-    <string name="item.desserts">Postres</string>
+    <string name="item.dinner">Meriendas</string>
 
     <!--Titles...-->
     <string name="title.welcome">Bienvenido</string>
