@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
 import com.espoch.comedor.databinding.FragmentMoreBinding
+import com.espoch.comedor.extensions.isLightStatusBar
 
 class MoreFragment : Fragment() {
     private lateinit var binding: FragmentMoreBinding
@@ -15,7 +16,7 @@ class MoreFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMoreBinding.inflate(inflater)
         return binding.root
     }

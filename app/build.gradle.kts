@@ -7,7 +7,7 @@ android {
     signingConfigs {
         getByName("debug") {
             storeFile =
-                file("C:\\Users\\Ricardo\\Documents\\Android Studio\\Projects\\Comedor-Politecnico\\app\\src\\main\\assets\\app.keystore")
+                file("src\\main\\assets\\app.keystore")
             storePassword = "@@proyectolmm@@"
             keyPassword = "@@proyectolmm@@"
             keyAlias = "comedor"
@@ -31,6 +31,10 @@ android {
     }
 
     buildTypes {
+        debug {
+
+        }
+
         release {
             isMinifyEnabled = false
         }
@@ -82,4 +86,5 @@ dependencies {
     implementation(libs.msal)
     /* QR generator */
     implementation(libs.alex.qr.generator)
+    /* QR scanner */
 }

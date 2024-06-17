@@ -3,32 +3,27 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.WindowInsetsController
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
+import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
-import com.espoch.comedor.services.BiometricService
+import com.espoch.comedor.services.FirebaseService
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.FirebaseApp
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.initialize
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navView: BottomNavigationView
     private lateinit var navCtrl: NavController
-    private lateinit var winCtrl: WindowInsetsControllerCompat
-
-    var isLightStatusBar: Boolean
-        get() = winCtrl.isAppearanceLightStatusBars
-        set(value) {
-            winCtrl.isAppearanceLightStatusBars = value
-        }
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         enableEdgeToEdge()
         window.navigationBarColor = getColor(R.color.navigationBar)
-        winCtrl = WindowInsetsControllerCompat(window, window.decorView)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navCtrl)
 
+        //FirebaseApp.initializeApp(this)
         AuthService.initialize(this)
         AuthService.addResultListener(AuthResultCallback())
 
@@ -61,6 +56,13 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, LoginActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        override fun onSignIn() {
+            super.onSignIn()
+
+            // now sign in in Firebase
+            //FirebaseService.signIn(this@MainActivity, AppUser.default.token)
         }
     }
 

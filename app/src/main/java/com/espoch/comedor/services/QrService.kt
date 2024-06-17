@@ -48,7 +48,7 @@ class QrService {
                     .setColors(
                         QrVectorColors(
                             dark = QrVectorColor.Solid(
-                                getColor(activity, R.color.fore_high) // Set dark color
+                                getColor(activity, R.color.fore_medium) // Set dark color
                             )
                         )
                     )
