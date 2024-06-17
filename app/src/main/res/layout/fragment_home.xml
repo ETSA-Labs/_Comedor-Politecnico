@@ -1,64 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <!-- Imagen de fondo en la parte superior -->
-    <ImageView
-        android:id="@+id/background"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/im_arribaback"/>
+        android:layout_height="232dp">
 
-    <!-- SearchView en la parte superior -->
-    <SearchView
-        android:id="@+id/search"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/im_hero"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="40dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="24dp">
+
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:iconifiedByDefault="false"
+                android:queryHint="@string/search"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_margin="16dp"
-        android:queryHint="Search..."
+        android:scrollbars="none">
 
-        />
+        <RadioGroup
+            android:id="@+id/radio_group_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:paddingHorizontal="24dp"
+            android:orientation="horizontal">
 
-    <!-- Layout para los botones -->
-    <LinearLayout
-        android:id="@+id/button_layout"
+            <RadioButton
+                android:id="@+id/radio_button_breakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="@string/item.breakfast"
+                style="@style/CategoryRadioButton"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_lunches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/item.lunches"
+                style="@style/CategoryRadioButton"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_drinks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/item.drinks"
+                style="@style/CategoryRadioButton"/>
+
+            <RadioButton
+                android:id="@+id/radio_button_desserts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/item.desserts"
+                style="@style/CategoryRadioButton"/>
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/background"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="4">
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-        <Button
-            android:id="@+id/btn_desayunos"
-            android:layout_width="99dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_weight="1"
-            android:text="Desayunos" />
-
-        <Button
-            android:id="@+id/btn_almuerzos"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_weight="1"
-            android:text="Almuerzos" />
-
-        <Button
-            android:id="@+id/btn_meriendas"
-            android:layout_width="94dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="meriendas" />
-    </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

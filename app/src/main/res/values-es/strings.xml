@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Comedor Politecnico</string>
+    <string name="app_brand">ESPOCH</string>
+
+    <!--Nav destines headers...-->
+    <string name="item.home">Inicio</string>
+    <string name="item.favorite">Favoritos</string>
+    <string name="item.location">Ubicación</string>
+    <string name="item.booking">Reservas</string>
+    <string name="item.more">Más</string>
+    <string name="item.breakfast">Desayunos</string>
+    <string name="item.lunches">Almuerzos</string>
+    <string name="item.drinks">Bebidas</string>
+    <string name="item.desserts">Postres</string>
+
+    <!--Titles...-->
+    <string name="title.welcome">Bienvenido</string>
+    <string name="title.unlock">Unlock app</string>
+    <string name="title.success">Success</string>
+    <string name="title.error">Oops…</string>
+    <string name="title.logout">Are you sure?</string>
+    <string name="title.action_needed">Action required</string>
+
+    <!--Bodies-->
+    <string name="body.welcome">Usa tus credenciales institucionales</string>
+    <string name="body.unlock">Please authenticate to proceed</string>
+    <string name="body.success">Operation successfully completed</string>
+    <string name="body.error">Something went wrong!</string>
+    <string name="body.logout">You are about to leave, all your data will be deleted from the app</string>
+    <string name="body.action_needed">You will be taken to the settings to enable the necessary functions</string>
+
+    <!--Buttons...-->
+    <string name="button.microsoft">Entrar con Microsoft</string>
+    <string name="button.logout">Logout</string>
+
+    <!--Miscellaneous...-->
+    <string name="empty"> </string>
+    <string name="separator">•</string>
+    <string name="search">Buscar…</string>
+
+    <string name="id.auth0">EhXZJ1uU5uHvY0XUuN3old1iWE2Wd5Yj</string>
+
+    <string name="domain.espoch">&#64;espoch.edu.ec</string>
+    <string name="domain.auth0">dev-64fbqx2xpo43kv1g.us.auth0.com</string>
+</resources>

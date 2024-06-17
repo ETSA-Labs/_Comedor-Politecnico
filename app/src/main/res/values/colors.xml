@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Application colors...-->
-    <color name="primary">#00F260</color>
-    <color name="primaryDark">#0066cc</color>
-    <color name="accent">#0575E6</color>
-
     <!--System colors...-->
     <color name="statusBar">#ffffff</color>
     <color name="window">#ffffff</color>
     <color name="dialog">#ffffff</color>
     <color name="navigationBar">#ffffff</color>
 
-    <!--BottomNavigationView colors...-->
-    <color name="navigationView">#D9D9D9</color> <!-- color nav   -->
-    <color name="navItemSelected">#FA3333</color> <!-- color nav   -->
-    <color name="navItemNormal">#7785a2</color>
+    <!--Application colors...-->
+    <color name="primary">#ff000000</color>
+    <color name="accent">#ffff2c2c</color>
+
+    <!--Backgrounds...-->
+    <color name="back.button">#ffffffff</color>
+    <color name="back.card_1">#ffffffff</color>
+    <color name="back.card_2">#f2ffffff</color>
+
+    <!--Strokes...-->
+    <color name="stroke.button">#ffd9d9d9</color>
+    <color name="stroke.separator">#ffeaedf1</color>
 
     <!--Foregrounds...-->
-    <color name="textHigh">#000000</color>
-    <color name="textMedium">#646464</color>
-    <color name="textLow">#969696</color>
-    <color name="textHint">#aeaeae</color>
+    <color name="fore.high">#ff000000</color>
+    <color name="fore.medium">#ff646464</color>
+    <color name="fore.low">#ff959595</color>
+    <color name="fore.hint">#ffc1c1c1</color>
+
+    <!--Image tints...-->
+    <color name="tint.black">#ff000000</color>
+    <color name="tint.none">@null</color>
+
+    <!--BottomNavigationView colors...-->
+    <color name="navigationView">#ffffff</color> <!-- color nav   -->
+    <color name="navItemSelected">#ffff2c2c</color> <!-- color nav   -->
+    <color name="navItemNormal">#ffc1c1c1</color>
 
     <!--Mixes...-->
     <color name="card">#f5f5f5</color>
