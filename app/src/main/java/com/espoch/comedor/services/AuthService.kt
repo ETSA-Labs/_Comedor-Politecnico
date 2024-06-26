@@ -31,6 +31,7 @@ class AuthService {
     companion object {
         private val listeners = mutableListOf<ResultListener>()
         private var singleApp: ISingleAccountPublicClientApplication? = null
+        private var publicApp: IPublicClientApplication? = null
         @SuppressLint("StaticFieldLeak")
         private var context: FragmentActivity? = null
 
@@ -61,17 +62,18 @@ class AuthService {
                             isSignedIn = account != null
 
                             if (account != null) {
-                                val token = getToken()
+                                val accessToken = getToken()
 
                                 /* ... */
                                 AppUser.default.let {
                                     it.uid = account.id
                                     it.email = account.username
+                                    it.idToken = account.idToken.toString()
                                 }
 
-                                if (!token.isNullOrEmpty()) {
-                                    AppUser.default.token = token
-                                    getFullName(token)
+                                if (!accessToken.isNullOrEmpty()) {
+                                    AppUser.default.accessToken = accessToken
+                                    getFullName(accessToken)
                                 }
                             }
                             listeners.forEach { it.onCreate() }
@@ -116,10 +118,11 @@ class AuthService {
                                 AppUser.default.let {
                                     it.uid = account.id
                                     it.email = account.username
+                                    it.idToken = account.idToken.toString()
                                 }
 
                                 if (!token.isNullOrEmpty()) {
-                                    AppUser.default.token = token
+                                    AppUser.default.accessToken = token
                                     getFullName(token)
                                 }
                             } else {

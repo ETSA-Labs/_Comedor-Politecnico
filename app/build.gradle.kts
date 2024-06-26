@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -76,9 +77,11 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     /* firebase */
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.auth)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.analytics.ktx)
     /* MSAL */
     implementation(libs.com.squareup.retrofit2.retrofit2)
     implementation(libs.logging.interceptor)

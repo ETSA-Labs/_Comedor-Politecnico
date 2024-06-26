@@ -47,7 +47,12 @@ class AppUser private constructor() : Observable() {
     /**
      * Auth token of the user.
      */
-    var token: String by property("")
+    var accessToken: String by property("")
+
+    /**
+     *
+     */
+    var idToken: String by property("")
 
     /**
      * Role of the user, either CUSTOMER or ADMIN.

@@ -3,6 +3,7 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -16,8 +17,9 @@ import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.ktx.initialize
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navCtrl)
 
-        //FirebaseApp.initializeApp(this)
+        FirebaseApp.initializeApp(this)
         AuthService.initialize(this)
         AuthService.addResultListener(AuthResultCallback())
 
@@ -62,7 +64,10 @@ class MainActivity : AppCompatActivity() {
             super.onSignIn()
 
             // now sign in in Firebase
-            //FirebaseService.signIn(this@MainActivity, AppUser.default.token)
+            CoroutineScope(Dispatchers.Main).launch {
+                Log.d("Auth", AppUser.default.accessToken)
+                FirebaseService.signIn(this@MainActivity, AppUser.default.accessToken, AppUser.default.idToken)
+            }
         }
     }
 
