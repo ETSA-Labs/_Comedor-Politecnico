@@ -2,11 +2,25 @@
 #agp = "8.3.2"
 
 [libraries]
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
+androidx-activity = { module = "androidx.activity:activity", version = "1.9.0" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.7.0" }
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version = "2.7.7" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version = "2.7.7" }
+androidx-biometric = { module = "androidx.biometric:biometric", version = "1.1.0" }
+com-squareup-retrofit2-retrofit2 = { module = "com.squareup.retrofit2:retrofit", version = "2.11.0" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version = "2.11.0" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.8.1" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.1" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version = "4.12.0" }
+alex-qr-generator = { module = "com.github.alexzhirkevich:custom-qr-generator", version = "1.6.2" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.1.0" }
+firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version = "21.0.0" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.0.1" }
+msal = { module = "com.microsoft.identity.client:msal", version = "5.4.0" }
 
 [plugins]
-android-application = { id = "com.android.application", version = "8.4.1" }
+android-application = { id = "com.android.application", version = "8.4.2" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.23" }

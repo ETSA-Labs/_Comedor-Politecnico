@@ -1,32 +1,43 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storeFile =
+                file("src\\main\\assets\\app.keystore")
+            storePassword = "@@proyectolmm@@"
+            keyPassword = "@@proyectolmm@@"
+            keyAlias = "comedor"
+        }
+    }
     namespace = "com.espoch.comedor"
     compileSdk = 34
 
     defaultConfig {
         applicationId = "com.espoch.comedor"
-        minSdk = 27
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
     }
 
     buildTypes {
+        debug {
+
+        }
+
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
         }
     }
 
@@ -40,6 +51,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
 
@@ -52,8 +64,30 @@ android {
 
 dependencies {
 
+    /* basic */
     implementation(libs.androidx.core)
+    implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+    /* biometric */
+    implementation(libs.androidx.biometric)
+    /* async */
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    /* firebase */
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.analytics.ktx)
+    /* MSAL */
+    implementation(libs.com.squareup.retrofit2.retrofit2)
+    implementation(libs.logging.interceptor)
+    implementation(libs.converter.gson)
+    implementation(libs.msal)
+    /* QR generator */
+    implementation(libs.alex.qr.generator)
+    /* QR scanner */
 }
