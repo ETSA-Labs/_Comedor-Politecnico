@@ -41,4 +41,5 @@
 
     <string name="domain.espoch">&#64;espoch.edu.ec</string>
     <string name="domain.auth0">dev-64fbqx2xpo43kv1g.us.auth0.com</string>
+    <string name="comedor">comedor</string>
 </resources>
