@@ -87,4 +87,9 @@ dependencies {
     /* QR generator */
     implementation(libs.alex.qr.generator)
     /* QR scanner */
+
+    /* ... other dependencies for Reservations...
+     implementation "com.google.code.gson:gson:2.8.9"
+     */
+
 }
