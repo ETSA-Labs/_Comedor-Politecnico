@@ -1,12 +1,11 @@
 package com.espoch.comedor.services
 
 import android.util.Log
-import android.widget.Toast
-import androidx.fragment.app.FragmentActivity
 import com.espoch.comedor.models.AppUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.lang.Exception
 
 class FirebaseService {
     companion object {
@@ -84,79 +83,50 @@ class FirebaseService {
         }
     }
 
+    open class FirestoreResult<T> {
+        open fun onComplete(value: T?) {}
+
+        open fun onFailure(exception: Exception) {}
+    }
+
     /**
      *
      */
     class Users {
         companion object {
-            /**
-             *
-             */
-            fun exists(uid: String): Boolean {
-                var found = false
-
-                Firebase.firestore
-                    .collection("users")
-                    .get()
-                    .addOnCompleteListener {
-                        val result = it.result
-
-                        for (document in result) {
-                            val user = document.toObject(AppUser::class.java)
-
-                            if (user.uid == uid)
-                                found = true
-                        }
-                    }
-
-                return found
-            }
 
             /**
              *
              */
-            fun getAll(): List<AppUser> {
-                val users = mutableListOf<AppUser>()
-
-                Firebase.firestore
-                    .collection("users")
-                    .get()
-                    .addOnSuccessListener { result ->
-                        for (document in result) {
-                            val user = document.toObject(AppUser::class.java)
-                            users.add(user)
-                        }
-                    }
-                    .addOnFailureListener { exception ->
-                        Log.d("Firebase", exception.message.toString())
-                    }
-
-                return users
-            }
-
-            fun get(uid: String): AppUser? {
-                var user: AppUser? = null
+            fun get(uid: String, callback: FirestoreResult<AppUser>?) {
                 Firebase.firestore
                     .collection("users")
                     .document(uid)
                     .get()
                     .addOnSuccessListener { result ->
-                        user = result.toObject(AppUser::class.java)
-                    }
+                        val user = result.toObject(AppUser::class.java)
 
-                return user
+                        callback?.onComplete(user)
+                    }
+                    .addOnFailureListener {
+                        callback?.onFailure(it)
+                    }
             }
 
             /**
              *
              */
-            fun add(user: AppUser) {
+            fun add(user: AppUser, callback: FirestoreResult<Boolean>?) {
                 Firebase.firestore
                     .collection("users")
                     .document(user.uid)
                     .set(user)
-                    .addOnFailureListener { exception ->
-                        Log.d("Firebase", exception.message.toString())
+                    .addOnSuccessListener {
+                        callback?.onComplete(true)
+                    }
+                    .addOnFailureListener {
+                        callback?.onComplete(false)
+                        callback?.onFailure(it)
                     }
             }
         }

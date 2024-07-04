@@ -79,12 +79,20 @@ class MainActivity : AppCompatActivity() {
         override fun onSuccess() {
             super.onSuccess()
 
-            if (!FirebaseService.Users.exists(AppUser.default.uid))
-                FirebaseService.Users.add(AppUser.default)
-            else
-                AppUser.default.role = FirebaseService.Users.get(AppUser.default.uid)!!.role
+            FirebaseService.Users.get(AppUser.default.uid,
+                object: FirebaseService.FirestoreResult<AppUser>()
+                {
+                    override fun onComplete(value: AppUser?) {
+                        super.onComplete(value)
 
-            Log.d("Firebase", AppUser.default.role.toString())
+                        Log.d("Firestore", value?.role.toString())
+
+                        if (value is AppUser)
+                            AppUser.default.role = value.role
+                        else
+                            FirebaseService.Users.add(AppUser.default, null)
+                    }
+                })
         }
     }
 
