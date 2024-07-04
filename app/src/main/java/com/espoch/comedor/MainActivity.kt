@@ -12,9 +12,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
-import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
+import com.espoch.comedor.services.NavigationService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
 import kotlinx.coroutines.CoroutineScope
@@ -44,6 +44,9 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navCtrl)
 
         FirebaseApp.initializeApp(this)
+
+        NavigationService.register("App", navCtrl)
+
         AuthService.initialize(this)
         AuthService.addResultListener(AuthResultCallback())
 
@@ -65,8 +68,13 @@ class MainActivity : AppCompatActivity() {
 
             // now sign in in Firebase
             CoroutineScope(Dispatchers.Main).launch {
-                Log.d("Auth", AppUser.default.accessToken)
-                FirebaseService.signIn(this@MainActivity, AppUser.default.accessToken, AppUser.default.idToken)
+                // SignIn in Firebase, as Guest, but its better than nothing.
+                FirebaseService.signIn(this@MainActivity)
+
+                //val result = FirebaseService.getAdmins()
+                FirebaseService.insertAdmin()
+
+                //Log.d("Admins", result.toString())
             }
         }
     }

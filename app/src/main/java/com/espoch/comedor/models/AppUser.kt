@@ -3,7 +3,7 @@ package com.espoch.comedor.models
 /**
  * Represents an user within the app
  */
-class AppUser private constructor() : Observable() {
+class AppUser() : Observable() {
     companion object {
         private var _default: AppUser? = null
 
@@ -27,36 +27,48 @@ class AppUser private constructor() : Observable() {
     /**
      * Short name of the user.
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var shortName: String by property("")
 
     /**
      * Full name of the user.
      */
-    var fullName: String by property("")
+    var displayName: String by property("")
 
     /**
      * Nickname of the user.
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var nickName: String by property("")
 
     /**
      * Email address of the user.
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var email: String by property("")
 
     /**
      * Auth token of the user.
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var accessToken: String by property("")
 
     /**
      *
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var idToken: String by property("")
 
     /**
      * Role of the user, either CUSTOMER or ADMIN.
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var role: UserRole by property(UserRole.CUSTOMER)
 
     /**

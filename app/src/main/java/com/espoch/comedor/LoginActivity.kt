@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         override fun onSignIn() {
             super.onSignIn()
 
-            Toast.makeText(this@LoginActivity, AppUser.default.fullName, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@LoginActivity, AppUser.default.displayName, Toast.LENGTH_SHORT).show()
             this@LoginActivity.finish()
         }
     }
