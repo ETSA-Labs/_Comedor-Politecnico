@@ -67,7 +67,8 @@ class FirebaseService {
         fun insertAdmin() {
             Firebase.firestore
                 .collection("admins")
-                .add(AppUser)
+                .document(AppUser.default.uid)
+                .set(AppUser)
                 .addOnFailureListener { exception ->
                     Log.d("Firebase", exception.message.toString())
                 }

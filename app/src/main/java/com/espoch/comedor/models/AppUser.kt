@@ -22,6 +22,8 @@ class AppUser() : Observable() {
     /**
      * Unique identifier for the user.
      */
+    @get:com.google.firebase.firestore.Exclude
+    @get:com.google.firebase.database.Exclude
     var uid: String by property("")
 
     /**
@@ -67,8 +69,6 @@ class AppUser() : Observable() {
     /**
      * Role of the user, either CUSTOMER or ADMIN.
      */
-    @get:com.google.firebase.firestore.Exclude
-    @get:com.google.firebase.database.Exclude
     var role: UserRole by property(UserRole.CUSTOMER)
 
     /**
