@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -12,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
+import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
 import com.espoch.comedor.services.NavigationService
@@ -50,6 +52,8 @@ class MainActivity : AppCompatActivity() {
         AuthService.initialize(this)
         AuthService.addResultListener(AuthResultCallback())
 
+        FirebaseService.addResultListener(FirebaseResultCallback())
+
         onBackPressedDispatcher.addCallback(this, OnBackInvokedCallback())
     }
 
@@ -66,16 +70,21 @@ class MainActivity : AppCompatActivity() {
         override fun onSignIn() {
             super.onSignIn()
 
-            // now sign in in Firebase
-            CoroutineScope(Dispatchers.Main).launch {
-                // SignIn in Firebase, as Guest, but its better than nothing.
-                FirebaseService.signIn(this@MainActivity)
+            // SignIn in Firebase, as Guest, but its better than nothing.
+            FirebaseService.signIn()
+        }
+    }
 
-                //val result = FirebaseService.getAdmins()
-                FirebaseService.insertAdmin()
+    private inner class FirebaseResultCallback : FirebaseService.ResultListener() {
+        override fun onSuccess() {
+            super.onSuccess()
 
-                //Log.d("Admins", result.toString())
-            }
+            if (!FirebaseService.Users.exists(AppUser.default.uid))
+                FirebaseService.Users.add(AppUser.default)
+            else
+                AppUser.default.role = FirebaseService.Users.get(AppUser.default.uid)!!.role
+
+            Log.d("Firebase", AppUser.default.role.toString())
         }
     }
 

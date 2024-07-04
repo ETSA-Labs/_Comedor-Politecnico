@@ -10,6 +10,7 @@ import com.google.firebase.ktx.Firebase
 
 class FirebaseService {
     companion object {
+        private val listeners = mutableListOf<ResultListener>()
 
         /*
         Check this!! IDK why it doesn't work.
@@ -33,45 +34,131 @@ class FirebaseService {
          */
 
         /**
+         * Adds a ResultListener to the list of listeners to be notified of authentication results.
+         *
+         * @param l The ResultListener to be added.
+         */
+        fun addResultListener(l: ResultListener) {
+            listeners.add(l)
+        }
+
+        /**
+         * Removes a ResultListener from the list of listeners.
+         *
+         * @param l The ResultListener to be removed.
+         */
+        fun removeResultListener(l: ResultListener) {
+            listeners.remove(l)
+        }
+
+        /**
          * Sign in as Guest in Firebase.
          */
-        fun signIn(activity: FragmentActivity) {
+        fun signIn() {
             FirebaseAuth.getInstance().signInAnonymously()
                 .addOnCompleteListener {
-                    Toast.makeText(activity, "Welcome to Firebase!", Toast.LENGTH_SHORT).show()
+                    listeners.forEach { it.onSuccess() }
                 }
                 .addOnFailureListener {
-                    Toast.makeText(activity, "Something went wrong :(", Toast.LENGTH_SHORT).show()
+                    listeners.forEach { it.onError("") }
                 }
         }
+    }
 
-        fun getAdmins(): List<AppUser> {
-            val users = mutableListOf<AppUser>()
+    open class ResultListener {
 
-            Firebase.firestore
-                .collection("admins")
-                .get()
-                .addOnSuccessListener { result ->
-                    for (document in result) {
-                        val user = document.toObject(AppUser::class.java)
-                        users.add(user)
+        /**
+         * Called when the authentication process completes successfully.
+         * This method should contain logic that needs to be executed when authentication is successful.
+         */
+        open fun onSuccess() {}
+
+        /**
+         * Called when an error occurs during the authentication process.
+         * This method should contain logic that needs to be executed in the event of an authentication error.
+         *
+         * @param msg The exception thrown during the authentication process.
+         */
+        open fun onError(msg: String?) {
+            Log.d("MSAL", msg.toString())
+        }
+    }
+
+    /**
+     *
+     */
+    class Users {
+        companion object {
+            /**
+             *
+             */
+            fun exists(uid: String): Boolean {
+                var found = false
+
+                Firebase.firestore
+                    .collection("users")
+                    .get()
+                    .addOnCompleteListener {
+                        val result = it.result
+
+                        for (document in result) {
+                            val user = document.toObject(AppUser::class.java)
+
+                            if (user.uid == uid)
+                                found = true
+                        }
                     }
-                }
-                .addOnFailureListener { exception ->
-                    Log.d("Firebase", exception.message.toString())
-                }
 
-            return users
-        }
+                return found
+            }
 
-        fun insertAdmin() {
-            Firebase.firestore
-                .collection("admins")
-                .document(AppUser.default.uid)
-                .set(AppUser)
-                .addOnFailureListener { exception ->
-                    Log.d("Firebase", exception.message.toString())
-                }
+            /**
+             *
+             */
+            fun getAll(): List<AppUser> {
+                val users = mutableListOf<AppUser>()
+
+                Firebase.firestore
+                    .collection("users")
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            val user = document.toObject(AppUser::class.java)
+                            users.add(user)
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Log.d("Firebase", exception.message.toString())
+                    }
+
+                return users
+            }
+
+            fun get(uid: String): AppUser? {
+                var user: AppUser? = null
+                Firebase.firestore
+                    .collection("users")
+                    .document(uid)
+                    .get()
+                    .addOnSuccessListener { result ->
+                        user = result.toObject(AppUser::class.java)
+                    }
+
+                return user
+            }
+
+            /**
+             *
+             */
+            fun add(user: AppUser) {
+                Firebase.firestore
+                    .collection("users")
+                    .document(user.uid)
+                    .set(user)
+                    .addOnFailureListener { exception ->
+                        Log.d("Firebase", exception.message.toString())
+                    }
+            }
         }
     }
 }

@@ -48,8 +48,6 @@ class AppUser() : Observable() {
     /**
      * Email address of the user.
      */
-    @get:com.google.firebase.firestore.Exclude
-    @get:com.google.firebase.database.Exclude
     var email: String by property("")
 
     /**
