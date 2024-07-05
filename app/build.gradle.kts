@@ -86,5 +86,9 @@ dependencies {
     implementation(libs.msal)
     /* QR generator */
     implementation(libs.alex.qr.generator)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     /* QR scanner */
 }

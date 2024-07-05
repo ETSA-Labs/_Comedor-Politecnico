@@ -4,6 +4,10 @@ comSquareupRetrofit2Retrofit = "2.9.0"
 kotlinxCoroutinesAndroid = "1.8.0"
 kotlinxCoroutinesCore = "1.6.2"
 loggingInterceptor = "4.12.0"
+material = "1.4.0"
+constraintlayout = "2.1.4"
+lifecycleLivedataKtx = "2.8.2"
+lifecycleViewmodelKtx = "2.8.2"
 #agp = "8.3.2"
 
 [libraries]
@@ -24,6 +28,10 @@ firebase-database = { module = "com.google.firebase:firebase-database-ktx", vers
 firebase-auth = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
 msal = { module = "com.microsoft.identity.client:msal", version = "5.3.1" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version = "8.4.2" }
