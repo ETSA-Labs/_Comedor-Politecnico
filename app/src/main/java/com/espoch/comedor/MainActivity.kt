@@ -3,6 +3,8 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -14,12 +16,12 @@ import com.espoch.comedor.databinding.ActivityMainBinding
 import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
-import com.espoch.comedor.views.ReservationDetailsActivity
-import com.espoch.comedor.views.ReservationFragment
+import com.espoch.comedor.services.NavigationService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.ktx.initialize
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,26 +45,16 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navCtrl)
 
-        //FirebaseApp.initializeApp(this)
+        FirebaseApp.initializeApp(this)
+
+        NavigationService.register("App", navCtrl)
+
         AuthService.initialize(this)
         AuthService.addResultListener(AuthResultCallback())
 
-        onBackPressedDispatcher.addCallback(this, OnBackInvokedCallback())
+        FirebaseService.addResultListener(FirebaseResultCallback())
 
-        //LLAMADA A RESERVATIONSITEM
-        navView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_booking -> {
-                    // Abrir la actividad de reservas al seleccionar el ícono de reservas
-                    val intent = Intent(this@MainActivity, ReservationConfirmationActivity::class.java)
-                    startActivity(intent)
-                    true
-                    //navCtrl.navigate(R.id.action_reservas)
-                }
-                // Agregar otros casos si tienes más íconos en la barra de navegación
-                else -> false
-            }
-        }
+        onBackPressedDispatcher.addCallback(this, OnBackInvokedCallback())
     }
 
     private inner class AuthResultCallback : AuthService.ResultListener() {
@@ -78,8 +70,29 @@ class MainActivity : AppCompatActivity() {
         override fun onSignIn() {
             super.onSignIn()
 
-            // now sign in in Firebase
-            //FirebaseService.signIn(this@MainActivity, AppUser.default.token)
+            // SignIn in Firebase, as Guest, but its better than nothing.
+            FirebaseService.signIn()
+        }
+    }
+
+    private inner class FirebaseResultCallback : FirebaseService.ResultListener() {
+        override fun onSuccess() {
+            super.onSuccess()
+
+            FirebaseService.Users.get(AppUser.default.uid,
+                object: FirebaseService.FirestoreResult<AppUser>()
+                {
+                    override fun onComplete(value: AppUser?) {
+                        super.onComplete(value)
+
+                        Log.d("Firestore", value?.role.toString())
+
+                        if (value is AppUser)
+                            AppUser.default.role = value.role
+                        else
+                            FirebaseService.Users.add(AppUser.default, null)
+                    }
+                })
         }
     }
 
