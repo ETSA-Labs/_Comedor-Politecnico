@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/navigation_booking"
         android:name="com.espoch.comedor.views.BookingFragment"
-        tools:layout="@layout/fragment_booking"
+        tools:layout="@layout/fragment_item_reservation"
         android:label="@string/item.booking"/>
     <fragment
         android:id="@+id/navigation_more"

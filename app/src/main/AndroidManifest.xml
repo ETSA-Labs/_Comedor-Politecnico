@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -13,40 +14,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
-        <activity
-            android:name=".views.PagoTarjeta"
-            android:exported="false" />
-        <activity
-            android:name=".services.PushNotificacionService"
-            android:exported="false" />
-        <activity
-            android:name=".views.PRUEBA2"
-            android:exported="false"
-            android:label="@string/title_activity_prueba2"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.microsoft.identity.client.BrowserTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data
+                    android:scheme="msauth"
                     android:host="com.espoch.comedor"
-                    android:path="/tLwIARBXxMgkYozD4XpgxiYQF8A="
-                    android:scheme="msauth" />
+                    android:path="/tLwIARBXxMgkYozD4XpgxiYQF8A=" />
             </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="false"
-            android:launchMode="singleInstance" />
+            android:launchMode="singleInstance"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
             android:launchMode="singleInstance"
+            android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
