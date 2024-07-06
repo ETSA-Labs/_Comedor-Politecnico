@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
 import com.espoch.comedor.databinding.FragmentMoreBinding
 import com.espoch.comedor.extensions.isLightStatusBar
+import com.espoch.comedor.models.AppUser
 
 class MoreFragment : Fragment() {
     private lateinit var binding: FragmentMoreBinding
@@ -26,5 +27,10 @@ class MoreFragment : Fragment() {
 
         val activity = requireActivity() as MainActivity
         activity.isLightStatusBar = true
+
+        binding.btnAdminPanel.visibility =
+            if (AppUser.default.role == AppUser.UserRole.ADMIN)
+                View.VISIBLE
+            else View.GONE
     }
 }

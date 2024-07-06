@@ -139,6 +139,14 @@
             android:textSize="14sp"
             android:textAllCaps="false"
             />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_admin_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cornerRadius="12dp"
+            android:text="Admin panel"/>
     </LinearLayout>
 
 </RelativeLayout>
