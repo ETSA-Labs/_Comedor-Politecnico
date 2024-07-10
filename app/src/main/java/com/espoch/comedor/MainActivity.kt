@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Iniciar PushNotificacionService al iniciar la aplicación
+        val intent = Intent(this, com.espoch.comedor.services.PushNotificacionService::class.java)
+        startActivity(intent)
+
+
         val navHost = supportFragmentManager.findFragmentById(R.id.app_host_fragment) as NavHostFragment
         navView = binding.bottomNavView
         navCtrl = navHost.navController
@@ -48,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         AuthService.addResultListener(AuthResultCallback())
 
         onBackPressedDispatcher.addCallback(this, OnBackInvokedCallback())
+
 
         //LLAMADA A RESERVATIONSITEM
         navView.setOnItemSelectedListener { item ->

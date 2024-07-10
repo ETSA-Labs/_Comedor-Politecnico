@@ -27,7 +27,7 @@ private var _binding: FragmentHomeBinding? = null
     _binding = FragmentHomeBinding.inflate(inflater, container, false)
     val root: View = binding.root
 
-    val textView: TextView = binding.textHome
+    val textView: TextView = binding.radioButtonDrinks
     homeViewModel.text.observe(viewLifecycleOwner) {
       textView.text = it
     }

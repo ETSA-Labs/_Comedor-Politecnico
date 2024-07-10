@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+
     signingConfigs {
         getByName("debug") {
             storeFile =
@@ -52,6 +53,7 @@ android {
     buildFeatures {
         buildConfig = true
         viewBinding = true
+        dataBinding = true
     }
 
     packaging {
@@ -66,7 +68,8 @@ dependencies {
     /* basic */
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity)
-    implementation(libs.androidx.appcompat)
+    implementation (libs.androidx.appcompat)
+    implementation (libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     /* biometric */
@@ -97,5 +100,13 @@ dependencies {
 
     // Dependencias necesarias para manejar ActivityResultLauncher
      */
+
+    //Dependencias OneSignal Notificaciones
+    implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
+
+    //Integracion middleware AWS
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")  // Para convertir JSON a objetos Java/Kotlin
+
 
 }
