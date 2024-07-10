@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.espoch.comedor.views.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/item.home"/>
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.espoch.comedor.views.FavouritesFragment"
+        tools:layout="@layout/fragment_favourites"
+        android:label="@string/item.favorite"/>
+    <fragment
+        android:id="@+id/navigation_location"
+        android:name="com.espoch.comedor.views.LocationFragment"
+        tools:layout="@layout/fragment_location"
+        android:label="@string/item.location"/>
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="com.espoch.comedor.views.BookingFragment"
+        tools:layout="@layout/fragment_booking"
+        android:label="@string/item.booking"/>
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.espoch.comedor.views.MoreFragment"
+        tools:layout="@layout/fragment_more"
+        android:label="@string/item.more"/>
+
+</navigation>

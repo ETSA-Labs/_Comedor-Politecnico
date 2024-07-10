@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel_3_xl" />
+        <device id="pixel_2_xl" />
+        <locale>es</locale>
+      </config>
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/font/nunito.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_favourites.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_more.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/bottom_nav_menu.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/navigation/app_graph.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b6b7850-db3f-4817-8946-ccb964d8853e" name="Changes" comment="Simple ADMIN role sample">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Ricardo\.android\avd\google_Pixel_3.avd)]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Comedor Politecnico" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Comedor Politecnico" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Comedor Politecnico" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Comedor Politecnico" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="navigationResourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="resourceFile" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ricardo" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2gnutEGYIhbzx6cj2YNDAOnvRJh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "ScreenshotViewer.SavePath": "C:/Users/Ricardo/Pictures",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "idk",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Ricardo/Documents/Android Studio/Projects/Comedor-Politecnico/app",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app" />
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app\src\main\res\drawable" />
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app\src\main\res\font" />
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app\src\main\assets" />
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app\src\main\java\com\espoch\comedor\extensions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app" />
+      <recent name="C:\Users\Ricardo\Documents\Android Studio\Projects\Comedor-Politecnico\app\src\main\res\raw" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.espoch.comedor.models" />
+      <recent name="com.espoch.comedor.models.primitives" />
+      <recent name="com.espoch.comedor.responses" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.espoch.comedor.services" />
+      <recent name="com.espoch.comedor.models" />
+      <recent name="com.espoch.comedor.views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="Comedor_Politecnico.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b6b7850-db3f-4817-8946-ccb964d8853e" name="Changes" comment="" />
+      <created>1716345875672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716345875672</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Remove unnecessary test">
+      <option name="closed" value="true" />
+      <created>1716346045144</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716346045144</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Delete compose">
+      <option name="closed" value="true" />
+      <created>1716347053610</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716347053611</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update project structure">
+      <option name="closed" value="true" />
+      <created>1716347822659</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716347822659</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add `Settings` fragment">
+      <option name="closed" value="true" />
+      <created>1716483860777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716483860777</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add app fragments navigation">
+      <option name="closed" value="true" />
+      <created>1716485497304</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716485497304</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Remove navigation item label">
+      <option name="closed" value="true" />
+      <created>1716923437846</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716923437846</updated>
+    </task>
+    <task id="LOCAL-00007" summary="temp: ni idea">
+      <option name="closed" value="true" />
+      <created>1718139713877</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718139713877</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Auth prototype with MSAL">
+      <option name="closed" value="true" />
+      <created>1718242119326</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718242119326</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Auth prototype with MSAL v2">
+      <option name="closed" value="true" />
+      <created>1718249978270</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718249978270</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/ricardo' into ricardo&#10;&#10;# Conflicts:&#10;#&#9;app/build.gradle.kts&#10;#&#9;app/src/main/java/com/espoch/comedor/MainActivity.kt&#10;#&#9;app/src/main/java/com/espoch/comedor/models/AppUser.kt&#10;#&#9;app/src/main/java/com/espoch/comedor/services/AuthService.kt&#10;#&#9;gradle/libs.versions.toml">
+      <option name="closed" value="true" />
+      <created>1718250095428</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718250095428</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Auth with MSAL v3">
+      <option name="closed" value="true" />
+      <created>1718322019336</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718322019336</updated>
+    </task>
+    <task id="LOCAL-00012" summary="New look prototype">
+      <option name="closed" value="true" />
+      <created>1718340542545</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718340542545</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add 'es' translation">
+      <option name="closed" value="true" />
+      <created>1718414329593</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718414329593</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Change app font to 'nunito'">
+      <option name="closed" value="true" />
+      <created>1718415568204</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718415568204</updated>
+    </task>
+    <task id="LOCAL-00015" summary="new ui">
+      <option name="closed" value="true" />
+      <created>1718421363487</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718421363487</updated>
+    </task>
+    <task id="LOCAL-00016" summary="new ui">
+      <option name="closed" value="true" />
+      <created>1718432375127</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718432375127</updated>
+    </task>
+    <task id="LOCAL-00017" summary="enable all nav items">
+      <option name="closed" value="true" />
+      <created>1718433301124</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718433301124</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add qr generator dependency">
+      <option name="closed" value="true" />
+      <created>1718507388202</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718507388202</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add qr generator dependency">
+      <option name="closed" value="true" />
+      <created>1718508100358</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718508100358</updated>
+    </task>
+    <task id="LOCAL-00020" summary="change 'cart' to 'booking'">
+      <option name="closed" value="true" />
+      <created>1718571890248</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718571890248</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix 'FragmentBookingBinding' importation">
+      <option name="closed" value="true" />
+      <created>1718571946063</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718571946063</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Intagración de Firebase al proyecto, necesita revisarse.">
+      <option name="closed" value="true" />
+      <created>1719433326174</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1719433326174</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Firebase">
+      <option name="closed" value="true" />
+      <created>1720067757403</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1720067757403</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Firebase">
+      <option name="closed" value="true" />
+      <created>1720068054277</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1720068054277</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Firebase">
+      <option name="closed" value="true" />
+      <created>1720072561899</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1720072561899</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Firestore: I did it!!!!!!">
+      <option name="closed" value="true" />
+      <created>1720127745160</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1720127745160</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Simple ADMIN role sample">
+      <option name="closed" value="true" />
+      <created>1720223903124</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1720223903124</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Remove unnecessary test" />
+    <MESSAGE value="Delete compose" />
+    <MESSAGE value="Update project structure" />
+    <MESSAGE value="Add `Settings` fragment" />
+    <MESSAGE value="Add app fragments navigation" />
+    <MESSAGE value="Remove navigation item label" />
+    <MESSAGE value="temp: ni idea" />
+    <MESSAGE value="Auth prototype with MSAL" />
+    <MESSAGE value="Auth prototype with MSAL v2" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/ricardo' into ricardo&#10;&#10;# Conflicts:&#10;#&#9;app/build.gradle.kts&#10;#&#9;app/src/main/java/com/espoch/comedor/MainActivity.kt&#10;#&#9;app/src/main/java/com/espoch/comedor/models/AppUser.kt&#10;#&#9;app/src/main/java/com/espoch/comedor/services/AuthService.kt&#10;#&#9;gradle/libs.versions.toml" />
+    <MESSAGE value="Auth with MSAL v3" />
+    <MESSAGE value="New look prototype" />
+    <MESSAGE value="Add 'es' translation" />
+    <MESSAGE value="Change app font to 'nunito'" />
+    <MESSAGE value="new ui" />
+    <MESSAGE value="enable all nav items" />
+    <MESSAGE value="add qr generator dependency" />
+    <MESSAGE value="change 'cart' to 'booking'" />
+    <MESSAGE value="fix 'FragmentBookingBinding' importation" />
+    <MESSAGE value="Intagración de Firebase al proyecto, necesita revisarse." />
+    <MESSAGE value="Firebase" />
+    <MESSAGE value="Firestore: I did it!!!!!!" />
+    <MESSAGE value="Simple ADMIN role sample" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple ADMIN role sample" />
+  </component>
+</project>

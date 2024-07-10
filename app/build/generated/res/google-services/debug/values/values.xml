@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">1042952756868</string>
+    <string name="google_api_key" translatable="false">AIzaSyBqobFAh3zEGkBwKULiWgCDZATDD8ogf5E</string>
+    <string name="google_app_id" translatable="false">1:1042952756868:android:712ff21c1ef0fd25daacd1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBqobFAh3zEGkBwKULiWgCDZATDD8ogf5E</string>
+    <string name="google_storage_bucket" translatable="false">espoch-comedor.appspot.com</string>
+    <string name="project_id" translatable="false">espoch-comedor</string>
+</resources>

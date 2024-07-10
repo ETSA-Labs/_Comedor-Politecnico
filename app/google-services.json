@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1042952756868",
+    "project_id": "espoch-comedor",
+    "storage_bucket": "espoch-comedor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042952756868:android:712ff21c1ef0fd25daacd1",
+        "android_client_info": {
+          "package_name": "com.espoch.comedor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqobFAh3zEGkBwKULiWgCDZATDD8ogf5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

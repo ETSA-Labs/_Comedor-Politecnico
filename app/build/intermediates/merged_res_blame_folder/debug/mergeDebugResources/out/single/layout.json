@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.espoch.comedor.app-mergeDebugResources-63:/layout/fragment_more.xml",
+        "source": "com.espoch.comedor.app-main-66:/layout/fragment_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_dinner.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_dinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_booking.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_booking.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_favourites.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_favourites.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_lunch.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_lunch.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_breakfast.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_breakfast.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_more.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_location.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-mergeDebugResources-63:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_home.xml"
+    }
+]

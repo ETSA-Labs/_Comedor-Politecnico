@@ -1,0 +1,294 @@
+[
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_suppor_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_suppor_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_extralight.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_extralight.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_booking.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_booking.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_heart_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_heart_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_breakfast.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_breakfast.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_radio_button_stroke.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\radio_button_stroke.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_polidish_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_polidish_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_dinner.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_dinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\raw_msal_config.json.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\raw\\msal_config.json"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xxhdpi_ic_launcher_background.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xxhdpi\\ic_launcher_background.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_location_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_location_24dp.xml"
+    },
+    {
+        "merged": "com.espoch.comedor.app-debug-64:/layout_fragment_more.xml.flat",
+        "source": "com.espoch.comedor.app-main-66:/layout/fragment_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_medium.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_black.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_black.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_user_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_user_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_background.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_cart_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_cart_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_reservas_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_reservas_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_radio_button_unchecked.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\radio_button_unchecked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_lunch.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_lunch.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_extrabold.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_extrabold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_hero.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_hero.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_more.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_more.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_backcomedor.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_backcomedor.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_radio_button_template.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\radio_button_template.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_comedor.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_comedor.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_espoch.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_espoch.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_map_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_map_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_light.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_light.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_widgets_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_widgets_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_sms_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_sms_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-hdpi_ic_launcher_background.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-hdpi\\ic_launcher_background.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-mdpi_ic_launcher_background.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-mdpi\\ic_launcher_background.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_booking.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_booking.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xxxhdpi_ic_launcher_background.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xxxhdpi\\ic_launcher_background.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_semibold.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_semibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_schedule_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_schedule_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_bold.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_radio_button_foreground.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\radio_button_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\navigation_app_graph.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\navigation\\app_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_notifications_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_notifications_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\font_nunito_regular.ttf.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\font\\nunito_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_search_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_search_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_arribaback.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_arribaback.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_im_microsoft.png.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\im_microsoft.png"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_button_background.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_nav_item_selector.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\nav_item_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_location.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xhdpi_ic_launcher_background.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xhdpi\\ic_launcher_background.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_booking_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_booking_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_radio_button_checked.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\radio_button_checked.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_about_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_about_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\drawable_ic_home_24dp.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\drawable\\ic_home_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-debug-64:\\layout_fragment_favourites.xml.flat",
+        "source": "C:\\Users\\Ricardo\\.gradle\\daemon\\8.6\\com.espoch.comedor.app-main-66:\\layout\\fragment_favourites.xml"
+    }
+]
