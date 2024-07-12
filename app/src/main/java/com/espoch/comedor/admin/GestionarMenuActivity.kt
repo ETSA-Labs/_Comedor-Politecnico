@@ -1,6 +1,6 @@
 package com.espoch.comedor.admin
 
-import android.R
+import com.espoch.comedor.R
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -11,6 +11,8 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.espoch.comedor.databinding.ActivityMenuManagementBinding
+import com.espoch.comedor.models.Dish
 
 class GestionarMenuActivity : AppCompatActivity() {
     private lateinit var spinnerCategoria: Spinner
@@ -22,11 +24,15 @@ class GestionarMenuActivity : AppCompatActivity() {
     private lateinit var btnActualizar: Button
     private lateinit var btnEliminar: Button
 
+    private lateinit var binding: ActivityMenuManagementBinding
+
     private var selectedImageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gestionar_menu)
+
+        binding = ActivityMenuManagementBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initializeViews()
         setupSpinner()
@@ -37,7 +43,12 @@ class GestionarMenuActivity : AppCompatActivity() {
     private fun loadExistingDishes() {
         // Aquí cargarías los platos desde tu base de datos o API
         // Por ahora, simularemos con datos ficticios
-        val dish = Dish("Seco de Pollo", "Platos principales", "Delicioso plato tradicional", 15.99)
+        val dish = Dish()
+        dish.let {
+            it.name = "Arroz con pollo"
+            it.price = 2.25f
+        }
+
         etNombrePlato.setText(dish.name)
         etDescripcion.setText(dish.description)
         etPrecio.setText(dish.price.toString())
@@ -45,8 +56,8 @@ class GestionarMenuActivity : AppCompatActivity() {
     }
 
     private fun initializeViews() {
-        spinnerCategoria = findViewById(R.id.spinnerCategoria)
-        etNombrePlato = findViewById(R.id.etNombrePlato)
+        spinnerCategoria = binding.spinnerCategoria
+        etNombrePlato = binding.etNombrePlato
         btnSeleccionarImagen = findViewById(R.id.btnSeleccionarImagen)
         etDescripcion = findViewById(R.id.etDescripcion)
         etPrecio = findViewById(R.id.etPrecio)
@@ -56,11 +67,11 @@ class GestionarMenuActivity : AppCompatActivity() {
     }
 
     private fun setupSpinner() {
-        val categories = arrayOf("Desayunos", "Almuerzos", "Meriendas")
+
+    }/*val categories = arrayOf("Desayunos", "Almuerzos", "Meriendas")
         val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, categories)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerCategoria.adapter = adapter
-    }
+        spinnerCategoria.adapter = adapter*/
 
     private fun setupButtonListeners() {
         btnSeleccionarImagen.setOnClickListener {

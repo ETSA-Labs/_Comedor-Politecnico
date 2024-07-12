@@ -90,6 +90,8 @@ dependencies {
     /* QR generator */
     implementation(libs.alex.qr.generator)
     /* QR scanner */
+    implementation(libs.zxing)
+    implementation(libs.zxing.android.embedded)
 
     /* ... other dependencies for Reservations...
      implementation "com.google.code.gson:gson:2.8.9"

@@ -1,3 +1,4 @@
+/*
 package com.espoch.comedor.admin
 
 import android.content.Intent
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.espoch.comedor.R
+import me.dm7.barcodescanner.zxing.ZXingScannerView
 import javax.xml.transform.Result
 
 class EscanearQRActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
@@ -56,9 +58,11 @@ class EscanearQRActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
 
             }
         }
-        /*else {
+        */
+/*else {
             initializeQRScanner()
-        }*/
+        }*//*
+
     }
 
     private fun initializeQRScanner() {
@@ -82,7 +86,7 @@ class EscanearQRActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
     }
 
     override fun handleResult(result: Result) {
-        val scannedData = result.text
+        val scannedData = result
         // Procesar el código QR escaneado
         when {
             scannedData.startsWith("MENU:") -> {
@@ -126,4 +130,4 @@ class EscanearQRActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
     companion object{
         private const val CAMERA_PERMISSION_REQUEST = 101
     }
-}
+}*/

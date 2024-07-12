@@ -27,7 +27,7 @@ class AdminActivity : AppCompatActivity() {
 
         btnEscaneoQR.setOnClickListener {
             // Implement QR code scanning functionality
-            startActivity(Intent(this, EscanearQRActivity::class.java))
+            //startActivity(Intent(this, EscanearQRActivity::class.java))
 
             Toast.makeText(this, "Escaneo de Códigos QR clicked", Toast.LENGTH_SHORT).show()
         }
