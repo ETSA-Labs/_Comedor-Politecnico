@@ -73,6 +73,15 @@ class MainActivity : AppCompatActivity() {
             // SignIn in Firebase, as Guest, but its better than nothing.
             FirebaseService.signIn()
         }
+
+        override fun onSignOut() {
+            super.onSignOut()
+
+            if (!AuthService.isSignedIn) {
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
     private inner class FirebaseResultCallback : FirebaseService.ResultListener() {

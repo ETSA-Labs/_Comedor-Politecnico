@@ -90,4 +90,7 @@ dependencies {
     /* QR generator */
     implementation(libs.alex.qr.generator)
     /* QR scanner */
+
+    implementation(project(":admin"))
+    implementation(project(":customer"))
 }

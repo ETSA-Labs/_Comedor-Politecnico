@@ -163,6 +163,7 @@ class AuthService {
                      * Called when the sign-out process completes successfully.
                      */
                     override fun onSignOut() {
+                        isSignedIn = false
                         listeners.forEach { it.onSignOut() }
                     }
 
@@ -208,7 +209,15 @@ class AuthService {
                 .forAccount(account)
                 .build()
 
-            return singleApp?.acquireTokenSilent(params)?.accessToken
+            return try {
+                singleApp?.acquireTokenSilent(params)?.accessToken
+            } catch (ex: Exception) {
+                Log.d("MSAL", ex.message.toString())
+
+                // The token maybe has expired, idk!
+                signOut()
+                ""
+            }
         }
 
         /**
