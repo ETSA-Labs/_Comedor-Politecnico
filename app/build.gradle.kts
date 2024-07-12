@@ -106,7 +106,11 @@ dependencies {
 
     //Integracion middleware AWS
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")  // Para convertir JSON a objetos Java/Kotlin
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.02")  // Para convertir JSON a objetos Java/Kotlin
+
+
 
 
 }
