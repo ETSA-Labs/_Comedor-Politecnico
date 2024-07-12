@@ -44,7 +44,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -87,6 +87,11 @@ dependencies {
     /* QR generator */
     implementation(libs.alex.qr.generator)
     /* QR scanner */
+    /* MAP */
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
+    implementation(libs.maps.utils)
+    implementation(libs.okhttp)
 
     /* ... other dependencies for Reservations...
      implementation "com.google.code.gson:gson:2.8.9"

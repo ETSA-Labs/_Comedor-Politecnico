@@ -11,6 +11,7 @@
     <string name="item.breakfast">Desayunos</string>
     <string name="item.lunches">Almuerzos</string>
     <string name="item.dinner">Meriendas</string>
+    <string name="item.profile_">Perfil</string>
 
     <!--Titles...-->
     <string name="title.welcome">Bienvenido</string>
