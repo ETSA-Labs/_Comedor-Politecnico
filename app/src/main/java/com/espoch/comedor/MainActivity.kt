@@ -3,72 +3,72 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
-import com.espoch.comedor.models.AppUser
-import com.espoch.comedor.services.AuthService
-import com.espoch.comedor.services.FirebaseService
-import com.espoch.comedor.services.NavigationService
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.FirebaseApp
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.espoch.comedor.shared.models.AppUser
+import com.espoch.comedor.shared.services.AuthService
+import com.espoch.comedor.shared.services.FirebaseService
+import com.espoch.comedor.shared.services.NavigationService
+import com.espoch.comedor.R as R1
+import com.espoch.comedor.shared.R as R2
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var navView: BottomNavigationView
-    private lateinit var navCtrl: NavController
-
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
-        window.navigationBarColor = getColor(R.color.navigationBar)
+        window.navigationBarColor = getColor(R2.color.navigationBar)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHost = supportFragmentManager.findFragmentById(R.id.app_host_fragment) as NavHostFragment
-        navView = binding.bottomNavView
-        navCtrl = navHost.navController
+        val navHost = supportFragmentManager.findFragmentById(R1.id.app_host_fragment) as NavHostFragment
+        val navView = binding.bottomNavView
+        val navCtrl = navHost.navController
 
         navView.setupWithNavController(navCtrl)
-
-        FirebaseApp.initializeApp(this)
 
         NavigationService.register("App", navCtrl)
 
         AuthService.initialize(this)
         AuthService.addResultListener(AuthResultCallback())
 
+        FirebaseService.initialize(this)
         FirebaseService.addResultListener(FirebaseResultCallback())
 
         onBackPressedDispatcher.addCallback(this, OnBackInvokedCallback())
+    }
+
+    private fun requestSignIn() {
+        val intent = Intent(this@MainActivity, LoginActivity::class.java)
+        startActivity(intent)
     }
 
     private inner class AuthResultCallback : AuthService.ResultListener() {
         override fun onCreate() {
             super.onCreate()
 
-            if (!AuthService.isSignedIn) {
-                val intent = Intent(this@MainActivity, LoginActivity::class.java)
-                startActivity(intent)
-            }
+            if (!AuthService.isSignedIn)
+                this@MainActivity.requestSignIn()
         }
 
         override fun onSignIn() {
             super.onSignIn()
+
+            Toast.makeText(
+                this@MainActivity,
+                "Welcome back, ${AppUser.current.shortName}",
+                Toast.LENGTH_SHORT
+            ).show()
 
             // SignIn in Firebase, as Guest, but its better than nothing.
             FirebaseService.signIn()
@@ -77,10 +77,7 @@ class MainActivity : AppCompatActivity() {
         override fun onSignOut() {
             super.onSignOut()
 
-            if (!AuthService.isSignedIn) {
-                val intent = Intent(this@MainActivity, LoginActivity::class.java)
-                startActivity(intent)
-            }
+            requestSignIn()
         }
     }
 
@@ -88,18 +85,16 @@ class MainActivity : AppCompatActivity() {
         override fun onSuccess() {
             super.onSuccess()
 
-            FirebaseService.Users.get(AppUser.default.uid,
+            FirebaseService.Users.get(AppUser.current.uid,
                 object: FirebaseService.FirestoreResult<AppUser>()
                 {
                     override fun onComplete(value: AppUser?) {
                         super.onComplete(value)
 
-                        Log.d("Firestore", value?.role.toString())
-
                         if (value is AppUser)
-                            AppUser.default.role = value.role
+                            AppUser.current.role = value.role
                         else
-                            FirebaseService.Users.add(AppUser.default, null)
+                            FirebaseService.Users.add(AppUser.current)
                     }
                 })
         }

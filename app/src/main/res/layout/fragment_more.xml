@@ -104,7 +104,7 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <com.google.android.material.button.MaterialButton
+       <!-- <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/white"
@@ -121,7 +121,7 @@
             android:textSize="14sp"
             android:textAllCaps="false"
             />
-
+-->
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

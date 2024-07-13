@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/navigation_booking"
         android:name="com.espoch.comedor.views.BookingFragment"
-        tools:layout="@layout/fragment_booking"
+        tools:layout="@layout/fragment_item_reservation"
         android:label="@string/item.booking"/>
     <fragment
         android:id="@+id/navigation_more"
@@ -33,8 +33,8 @@
         android:label="@string/item.more"/>
     <fragment
         android:id="@+id/navigation_menu_management"
-        android:name="com.espoch.comedor.admin.views.MenuManagementFragment"
-        tools:layout="@layout/fragment_menu_management"
+        android:name="com.espoch.comedor.admin.views.ManageMenuFragment"
+        tools:layout="@layout/fragment_manage_menu"
         android:label=""/>
 
 </navigation>

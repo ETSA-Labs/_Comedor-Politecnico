@@ -5,15 +5,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        getByName("debug") {
-            storeFile =
-                file("src\\main\\assets\\app.keystore")
-            storePassword = "@@proyectolmm@@"
-            keyPassword = "@@proyectolmm@@"
-            keyAlias = "comedor"
-        }
-    }
     namespace = "com.espoch.comedor"
     compileSdk = 34
 
@@ -32,10 +23,6 @@ android {
     }
 
     buildTypes {
-        debug {
-
-        }
-
         release {
             isMinifyEnabled = false
         }
@@ -51,7 +38,6 @@ android {
     }
 
     buildFeatures {
-        buildConfig = true
         viewBinding = true
     }
 
@@ -63,11 +49,11 @@ android {
 }
 
 dependencies {
-
     /* basic */
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)
+    /* navigation */
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     /* biometric */
@@ -75,22 +61,15 @@ dependencies {
     /* async */
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
-    /* firebase */
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.firebase.database.ktx)
-    implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.database.ktx)
-    implementation(libs.firebase.analytics.ktx)
-    /* MSAL */
-    implementation(libs.com.squareup.retrofit2.retrofit2)
-    implementation(libs.logging.interceptor)
-    implementation(libs.converter.gson)
-    implementation(libs.msal)
-    /* QR generator */
-    implementation(libs.alex.qr.generator)
-    /* QR scanner */
+
+    /* ... other dependencies for Reservations...
+     implementation "com.google.code.gson:gson:2.8.9"
+
+    // Dependencias necesarias para manejar ActivityResultLauncher
+     */
+
 
     implementation(project(":admin"))
     implementation(project(":customer"))
+    implementation(project(":shared"))
 }
