@@ -1,6 +1,11 @@
 [versions]
 zxing = "1.9.13"
 zxingAndroidEmbedded = "4.1.0"
+agp = "8.4.2"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+material = "1.12.0"
 #agp = "8.3.2"
 
 [libraries]
@@ -22,9 +27,14 @@ firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version 
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.0.2" }
 msal = { module = "com.microsoft.identity.client:msal", version = "5.4.0" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 zxing = { module = "me.dm7.barcodescanner:zxing", version.ref = "zxing" }
 zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
 
 [plugins]
 android-application = { id = "com.android.application", version = "8.4.2" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.23" }
+android-library = { id = "com.android.library", version.ref = "agp" }

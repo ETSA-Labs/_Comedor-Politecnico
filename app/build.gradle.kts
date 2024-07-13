@@ -99,4 +99,7 @@ dependencies {
     // Dependencias necesarias para manejar ActivityResultLauncher
      */
 
+
+    implementation(project(":admin"))
+    implementation(project(":customer"))
 }
