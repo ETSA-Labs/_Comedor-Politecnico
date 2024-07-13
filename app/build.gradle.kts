@@ -32,10 +32,6 @@ android {
     }
 
     buildTypes {
-        debug {
-
-        }
-
         release {
             isMinifyEnabled = false
         }
@@ -51,7 +47,6 @@ android {
     }
 
     buildFeatures {
-        buildConfig = true
         viewBinding = true
     }
 

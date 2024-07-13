@@ -1,6 +1,6 @@
 package com.espoch.comedor.admin
 
-import android.R
+import com.espoch.comedor.R
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -25,7 +25,7 @@ class GestionarRolesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestionar_roles)
 
-        initializeViews()
+        /*initializeViews()
         setupSpinner()
         setupButtonListeners()
         loadExistingUsers()
@@ -42,10 +42,10 @@ class GestionarRolesActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
-        }
+        }*/
     }
 
-    private fun loadUserData(userName: String) {
+    /*private fun loadUserData(userName: String) {
         // Aquí cargarías los datos del usuario seleccionado
         // Por ahora, simularemos con datos ficticios
         val user = User("Usuario 1", "usuario1@example.com", true)
@@ -132,5 +132,5 @@ class GestionarRolesActivity : AppCompatActivity() {
         etEmailUsuario.text.clear()
         rgEstadoAdmin.clearCheck()
         spinnerSeleccionarUsuario.setSelection(0)
-    }
+    }*/
 }

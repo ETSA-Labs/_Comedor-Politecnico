@@ -1,6 +1,6 @@
 package com.espoch.comedor.admin
 
-import android.R
+import com.espoch.comedor.R
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.ArrayAdapter
@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.espoch.comedor.views.Reservation
 import java.io.File
 import java.io.FileWriter
 
@@ -22,13 +23,13 @@ class GestionarReservasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.activity_gestionar_reservas)
 
-        initializeViews()
+        /*initializeViews()
         setupSpinner()
         setupButtonListener()
-        loadExistingReservations()
+        loadExistingReservations()*/
     }
 
-    private fun loadExistingReservations() {
+    /*private fun loadExistingReservations() {
         // Aquí cargarías las reservas desde tu base de datos o API
         // Por ahora, simularemos con datos ficticios
         val reservation = Reservation("Usuario Ejemplo", 2, "pendiente")
@@ -82,5 +83,5 @@ class GestionarReservasActivity : AppCompatActivity() {
             Toast.makeText(this, "Error al generar el reporte", Toast.LENGTH_SHORT).show()
             e.printStackTrace()
         }
-    }
+    }*/
 }
