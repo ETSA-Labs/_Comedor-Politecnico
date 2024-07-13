@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
 import com.espoch.comedor.databinding.FragmentFavouritesBinding
-import com.espoch.comedor.extensions.isLightStatusBar
-import com.espoch.comedor.services.QrService
+import com.espoch.comedor.shared.extensions.isLightStatusBar
+import com.espoch.comedor.shared.services.QrService
 
 class FavouritesFragment : Fragment() {
     private lateinit var binding: FragmentFavouritesBinding

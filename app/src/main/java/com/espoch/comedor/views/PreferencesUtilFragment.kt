@@ -1,3 +1,4 @@
+/*
 package com.espoch.comedor.views
 
 import android.content.Context
@@ -30,4 +31,4 @@ object PreferencesUtilFragment{
         }
     }
 
-}
+}*/

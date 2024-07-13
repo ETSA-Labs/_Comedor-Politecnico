@@ -30,3 +30,4 @@ rootProject.name = "Comedor Politecnico"
 include(":app")
 include(":admin")
 include(":customer")
+include(":shared")
