@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.espoch.comedor.R
-import com.espoch.comedor.data.UserDisplayName
+import com.espoch.comedor.data.DisplayNameResponse
 import com.espoch.comedor.models.AppUser
 import com.microsoft.identity.client.AcquireTokenSilentParameters
 import com.microsoft.identity.client.AuthenticationCallback
@@ -163,6 +163,7 @@ class AuthService {
                      * Called when the sign-out process completes successfully.
                      */
                     override fun onSignOut() {
+                        isSignedIn = false
                         listeners.forEach { it.onSignOut() }
                     }
 
@@ -196,6 +197,9 @@ class AuthService {
             listeners.remove(l)
         }
 
+        /**
+         *
+         */
         private fun getToken(): String? {
             val account = singleApp?.currentAccount?.currentAccount ?: return null
 
@@ -205,7 +209,15 @@ class AuthService {
                 .forAccount(account)
                 .build()
 
-            return singleApp?.acquireTokenSilent(params)?.accessToken
+            return try {
+                singleApp?.acquireTokenSilent(params)?.accessToken
+            } catch (ex: Exception) {
+                Log.d("MSAL", ex.message.toString())
+
+                // The token maybe has expired, idk!
+                signOut()
+                ""
+            }
         }
 
         /**
@@ -225,7 +237,7 @@ class AuthService {
 
             // Make the network request to the API
             api.getDisplayName("Bearer $accessToken").enqueue(
-                object: Callback<UserDisplayName> {
+                object: Callback<DisplayNameResponse> {
                     /**
                      * Called when a response is received from the server.
                      *
@@ -233,15 +245,15 @@ class AuthService {
                      * @param response The response received from the server.
                      */
                     override fun onResponse(
-                        call: Call<UserDisplayName>,
-                        response: Response<UserDisplayName>,
+                        call: Call<DisplayNameResponse>,
+                        response: Response<DisplayNameResponse>,
                     ) {
                         if (response.isSuccessful) {
                             // Successfully received a response, extract and log the user info
                             val info = response.body()?.value
 
                             /* ... */
-                            AppUser.default.fullName = info.toString()
+                            AppUser.default.displayName = info.toString()
 
                             listeners.forEach { it.onSignIn() }
                         } else {
@@ -256,13 +268,12 @@ class AuthService {
                      * @param call The original call that was made.
                      * @param t The error that occurred during the network request.
                      */
-                    override fun onFailure(call: Call<UserDisplayName>, t: Throwable) {
+                    override fun onFailure(call: Call<DisplayNameResponse>, t: Throwable) {
                         listeners.forEach { it.onError("${t.message} - line: 229") }
                     }
                 }
             )
         }
-
     }
 
     /**
