@@ -59,16 +59,6 @@ class MainActivity : AppCompatActivity() {
 
             if (!AuthService.isSignedIn)
                 this@MainActivity.requestSignIn()
-        }
-
-        override fun onSignIn() {
-            super.onSignIn()
-
-            Toast.makeText(
-                this@MainActivity,
-                "Welcome back, ${AppUser.current.shortName}",
-                Toast.LENGTH_SHORT
-            ).show()
 
             // SignIn in Firebase, as Guest, but its better than nothing.
             FirebaseService.signIn()

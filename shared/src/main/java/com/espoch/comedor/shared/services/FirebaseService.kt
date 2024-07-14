@@ -13,6 +13,8 @@ class FirebaseService {
     companion object {
         private val listeners = mutableListOf<ResultListener>()
 
+        var isSignedIn: Boolean = false
+
         /*
         Check this!! IDK why it doesn't work.
 
@@ -62,6 +64,7 @@ class FirebaseService {
         fun signIn() {
             FirebaseAuth.getInstance().signInAnonymously()
                 .addOnCompleteListener {
+                    isSignedIn = true
                     listeners.forEach { it.onSuccess() }
                 }
                 .addOnFailureListener {

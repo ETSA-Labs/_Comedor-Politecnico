@@ -14,6 +14,7 @@
 
     <!--Titles...-->
     <string name="title.welcome">Welcome</string>
+    <string name="title.almost_there">Almost there</string>
     <string name="title.unlock">Unlock app</string>
     <string name="title.success">Success</string>
     <string name="title.error">Oops…</string>

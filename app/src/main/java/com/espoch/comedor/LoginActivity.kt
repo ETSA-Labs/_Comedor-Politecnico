@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnMicrosoft.setOnClickListener(::onMicrosoftButtonClick)
+        binding.incRequestSignin.btnMicrosoft.setOnClickListener(::onMicrosoftButtonClick)
 
         AuthService.addResultListener(AuthResultCallback())
 
@@ -41,7 +41,8 @@ class LoginActivity : AppCompatActivity() {
         override fun onSignIn() {
             super.onSignIn()
 
-            Toast.makeText(this@LoginActivity, AppUser.current.fullName, Toast.LENGTH_SHORT).show()
+            binding.incRequestSignin.btnMicrosoft.isEnabled = false
+
             this@LoginActivity.finish()
         }
     }
@@ -52,3 +53,34 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
+
+/*
+// Obtén una referencia al Spinner
+        val spinner: Spinner = findViewById(R.id.spinner)
+
+        // Crea una lista de objetos Item para el Spinner
+        val items = listOf(
+            Item(1, "Item 1", "Description 1"),
+            Item(2, "Item 2", "Description 2"),
+            Item(3, "Item 3", "Description 3"),
+            Item(4, "Item 4", "Description 4")
+        )
+
+        // Crea un adaptador personalizado utilizando la lista de objetos Item
+        val adapter = ItemAdapter(this, items)
+
+        // Asigna el adaptador al Spinner
+        spinner.adapter = adapter
+
+        // Maneja la selección de elementos
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val selectedItem = parent.getItemAtPosition(position) as Item
+                Toast.makeText(this@MainActivity, "Selected: ${selectedItem.name}", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // Acciones a realizar cuando no se selecciona ningún elemento (opcional)
+            }
+        }
+ */

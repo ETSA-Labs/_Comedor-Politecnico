@@ -269,6 +269,7 @@ class AuthService {
                                 it.shortName = shortName
                             }
 
+                            isSignedIn = true
                             listeners.forEach { it.onSignIn() }
                         } else {
                             // The server returned an error response
