@@ -3,36 +3,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="55dp" />
+
+    <LinearLayout
+        android:id="@+id/navigationOver"
+        android:layout_width="476dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="-4dp"
+        android:background="#CCFFFFFF"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/directionText"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Comedor Politecnico"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/navigationOverlay"
-        android:layout_width="match_parent"
+        android:layout_width="325dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="59dp"
+        android:background="@drawable/rounded_background"
         android:orientation="vertical"
-        android:background="#CCFFFFFF"
-        android:padding="8dp"
-        android:layout_alignParentTop="true">
-
-        <TextView
-            android:id="@+id/directionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gira a la derecha"
-            android:textColor="#000000"
-            android:textSize="24sp"/>
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/nextStepTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Después, gira a la izquierda"
-            android:textColor="#000000"
-            android:textSize="18sp"/>
+            android:textColor="#FFFF"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -40,11 +61,12 @@
         android:id="@+id/navigationBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#CCFFFFFF"
-        android:padding="8dp"
         android:layout_alignParentBottom="true"
-        android:gravity="center_vertical">
+        android:layout_marginBottom="-3dp"
+        android:background="#CCFFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/timeTextView"
@@ -52,17 +74,30 @@
             android:layout_height="wrap_content"
             android:text="1 min"
             android:textColor="#000000"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/distanceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="500 m"
             android:textColor="#000000"
-            android:textSize="24sp"
-            android:layout_marginStart="16dp"/>
+            android:textSize="24sp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:drawableTop="@drawable/ic_back_24dp"
+        android:gravity="center"
+        android:padding="12dp" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

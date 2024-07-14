@@ -3,11 +3,12 @@ package com.espoch.comedor
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.github.alexzhirkevich.customqrgenerator.style.Color
+import com.espoch.comedor.views.MoreFragment
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -29,7 +30,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var currentLatLng: LatLng
     private lateinit var targetLatLng: LatLng
     private lateinit var polyline: Polyline
-    private lateinit var directionTextView: TextView
+    private lateinit var directionText: TextView
     private lateinit var nextStepTextView: TextView
     private lateinit var timeTextView: TextView
     private lateinit var distanceTextView: TextView
@@ -39,7 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.supportfragment)
 
-        directionTextView = findViewById(R.id.directionTextView)
+        directionText = findViewById(R.id.directionText)
         nextStepTextView = findViewById(R.id.nextStepTextView)
         timeTextView = findViewById(R.id.timeTextView)
         distanceTextView = findViewById(R.id.distanceTextView)
@@ -61,6 +62,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     drawRoute(currentLatLng, targetLatLng)
                 }
             }
+        }
+
+        // Configurar el OnClickListener para el botón de retroceso
+        findViewById<Button>(R.id.button2).setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, MoreFragment()) // Asegúrate de tener un contenedor para los fragmentos
+                .addToBackStack(null)
+                .commit()
         }
     }
 
@@ -136,7 +145,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         if (steps.length() > 0) {
             val firstStep = steps.getJSONObject(0)
             val htmlInstructions = firstStep.getString("html_instructions")
-            directionTextView.text = htmlInstructions.replace(Regex("<[^>]*>"), "") // Remove HTML tags
 
             if (steps.length() > 1) {
                 val nextStep = steps.getJSONObject(1)

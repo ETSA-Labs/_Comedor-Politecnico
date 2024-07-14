@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/tv_profile_title"
-            android:layout_width="73dp"
+            android:layout_width="154dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="24dp"

@@ -100,7 +100,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/middle_buttons"
-        android:layout_alignEnd="@+id/bottom_buttons"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="0dp"
         android:gravity="center"
