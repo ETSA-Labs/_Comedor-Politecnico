@@ -1,19 +1,28 @@
 package com.espoch.comedor.views
 
 import android.app.DatePickerDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.espoch.comedor.R
 import com.espoch.comedor.ReservationConfirmationActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+
 
 class ReservationFragment : AppCompatActivity() {
     private lateinit var etPrice: EditText
@@ -33,6 +42,10 @@ class ReservationFragment : AppCompatActivity() {
         etTime.setOnClickListener { showTimePicker() }
 
         btnConfirm.setOnClickListener {
+            Log.d("ReservationFragment", "Botón reservar clicado")
+            crearCanalNotificacion("Reserva Exitosa","Canal de Reserva")
+            crearNotificacion("Reserva Exitosa", "Su reserva se ha realizado exitosamente.",1)
+
             if (validateInputs()) {
                 // Aquí se puede agregar la lógica para reservar el comedor
                 // Por ejemplo, puedes mostrar un mensaje de éxito o navegar a otra pantalla
@@ -42,6 +55,33 @@ class ReservationFragment : AppCompatActivity() {
         }
         setupButtonNavigation()
     }
+    //Notificacion Llamado
+    private fun crearCanalNotificacion(canalId: String, canalNombre: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val canalImportancia = NotificationManager.IMPORTANCE_HIGH
+            val canal = NotificationChannel(canalId, canalNombre, canalImportancia)
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            manager.createNotificationChannel(canal)
+        }
+    }
+    private fun crearNotificacion(titulo: String, texto: String, idNotificacion: Int) {
+        val builder = NotificationCompat.Builder(this, "Reserva Exitosa")
+            .setSmallIcon(R.drawable.ic_polidish_24dp)
+            .setContentTitle(titulo)
+            .setContentText(texto)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+
+        with(NotificationManagerCompat.from(this)) {
+            if (ActivityCompat.checkSelfPermission(this@ReservationFragment, android.Manifest.permission.POST_NOTIFICATIONS) != android.content.pm.PackageManager.PERMISSION_GRANTED) {
+                Log.d("ReservationFragment", "Permiso de notificaciones no concedido")
+                return
+            }
+            notify(idNotificacion, builder.build())
+        }
+    }
+
+
+
     private fun validateInputs(): Boolean {
         if (etPrice.text.isNullOrBlank() || etDate.text.isNullOrBlank() || etTime.text.isNullOrBlank()) {
             Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()

@@ -38,11 +38,11 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonPago"
                 android:layout_width="248dp"
                 android:layout_height="48dp"
                 android:backgroundTint="#75A2CA82"
-                android:text="Save"
+                android:text="Finalizar Pago"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20dp"
@@ -50,7 +50,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardnombretarjeta" />
+                app:layout_constraintTop_toBottomOf="@+id/cardnombretarjeta"
+                app:layout_constraintVertical_bias="0.516" />
 
             <EditText
                 android:id="@+id/cardnombretarjeta"

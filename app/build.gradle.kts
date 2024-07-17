@@ -102,13 +102,20 @@ dependencies {
      */
 
     //Dependencias OneSignal Notificaciones
-    implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
+    implementation(libs.onesignal)
+    implementation ("com.onesignal:OneSignal:[4.4.1, 5.99.99]")
+    implementation ("com.onesignal:OneSignal:4.4.1")
+    implementation ("com.google.firebase:firebase-messaging:23.0.0")
+    implementation ("com.google.firebase:firebase-messaging:23.0.0")
 
-    //Integracion middleware AWS
-    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.02")  // Para convertir JSON a objetos Java/Kotlin
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Integracion middleware AWS
+    implementation(libs.retrofit2)
+    implementation(libs.retrofit2convertergson) // Para convertir JSON a objetos Java/Kotlin
+    implementation(libs.okhttp3)
+    //Integracion Paypal
+    implementation("com.paypal.sdk:paypal-android-sdk:2.16.0")
 
 
 

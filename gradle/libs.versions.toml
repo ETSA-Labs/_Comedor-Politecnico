@@ -36,6 +36,10 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+onesignal = {module = "com.onesignal:OneSignal",version = "[5.0.0, 5.99.99]"}
+retrofit2 = {module = "com.squareup.retrofit2:retrofit", version = "2.11.0"}
+retrofit2convertergson = {module = "com.squareup.retrofit2:converter-gson", version = "2.9.0"}
+okhttp3 = {module = "com.squareup.okhttp3:okhttp", version = "4.9.0"}
 
 [plugins]
 android-application = { id = "com.android.application", version = "8.4.2" }
