@@ -93,6 +93,10 @@ dependencies {
     implementation(libs.maps.utils)
     implementation(libs.okhttp)
 
+    /* AWS */
+    implementation(libs.aws.android.sdk.core)
+    implementation(libs.aws.android.sdk.lambda)
+
     /* ... other dependencies for Reservations...
      implementation "com.google.code.gson:gson:2.8.9"
 

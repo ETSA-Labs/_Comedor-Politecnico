@@ -3,6 +3,7 @@ package com.espoch.comedor
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -35,6 +36,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var timeTextView: TextView
     private lateinit var distanceTextView: TextView
     private lateinit var steps: JSONArray
+    private var travelMode: String = "driving" // Default to driving
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         nextStepTextView = findViewById(R.id.nextStepTextView)
         timeTextView = findViewById(R.id.timeTextView)
         distanceTextView = findViewById(R.id.distanceTextView)
+
+        val driveButton: Button = findViewById(R.id.driveButton)
+        val walkButton: Button = findViewById(R.id.walkButton)
+
+        driveButton.setOnClickListener {
+            travelMode = "driving"
+            drawRoute(currentLatLng, targetLatLng)
+        }
+
+        walkButton.setOnClickListener {
+            travelMode = "walking"
+            drawRoute(currentLatLng, targetLatLng)
+        }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -103,8 +118,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun drawRoute(start: LatLng, end: LatLng) {
+        if (!this::currentLatLng.isInitialized) {
+            Toast.makeText(this, "Esperando ubicación actual...", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val apiKey = getString(R.string.API_KEY)
-        val url = "https://maps.googleapis.com/maps/api/directions/json?origin=${start.latitude},${start.longitude}&destination=${end.latitude},${end.longitude}&key=$apiKey&mode=driving&language=es&units=metric"
+        val url = "https://maps.googleapis.com/maps/api/directions/json?origin=${start.latitude},${start.longitude}&destination=${end.latitude},${end.longitude}&key=$apiKey&mode=$travelMode&language=es&units=metric"
+
+        Log.d("MapsActivity", "Directions API URL: $url") // Log URL
 
         val client = OkHttpClient()
         val request = Request.Builder().url(url).build()
@@ -116,6 +138,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             override fun onResponse(call: Call, response: Response) {
                 response.body?.string()?.let {
+                    Log.d("MapsActivity", "Directions API Response: $it") // Log Response
                     val jsonResponse = JSONObject(it)
                     val routes = jsonResponse.getJSONArray("routes")
                     if (routes.length() > 0) {
@@ -123,6 +146,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         val leg = routes.getJSONObject(0).getJSONArray("legs").getJSONObject(0)
                         steps = leg.getJSONArray("steps")
                         runOnUiThread {
+                            mMap.clear()
                             drawPolyline(points)
                             updateDirections(steps, leg)
                         }
@@ -169,7 +193,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         mMap.animateCamera(CameraUpdateFactory.newLatLng(point))
                         updateDirections(step.getJSONArray("steps"), step)
                     }
-                    Thread.sleep(1000) // Espera 1 segundo antes de mover al siguiente punto
+                    Thread.sleep(20000) // Espera 1 segundo antes de mover al siguiente punto
                 }
             }
         }

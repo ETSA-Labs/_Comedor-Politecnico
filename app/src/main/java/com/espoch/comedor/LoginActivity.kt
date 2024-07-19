@@ -53,4 +53,6 @@ class LoginActivity : AppCompatActivity() {
             this@LoginActivity.finishAffinity()
         }
     }
+
+
 }
