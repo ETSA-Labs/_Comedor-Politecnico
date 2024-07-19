@@ -37,20 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="142dp"
-                android:layout_height="177dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.304"
-                app:srcCompat="@drawable/paypal" />
-
             <Button
-                android:id="@+id/btnPagar"
+                android:id="@+id/btnpayment"
                 android:layout_width="248dp"
                 android:layout_height="48dp"
                 android:layout_marginBottom="128dp"
@@ -63,22 +51,53 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnamount"
-                app:layout_constraintVertical_bias="0.518" />
+                app:layout_constraintTop_toBottomOf="@+id/txtMonto"
+                app:layout_constraintVertical_bias="1.0" />
 
-            <EditText
-                android:id="@+id/btnamount"
+            <TextView
+                android:id="@+id/txtId"
                 android:layout_width="382dp"
                 android:layout_height="54dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text=""
+                android:text="id"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                app:layout_constraintVertical_bias="0.177" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.428" />
+
+            <TextView
+                android:id="@+id/txtEstatus"
+                android:layout_width="382dp"
+                android:layout_height="54dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="estatus"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtId"
+                app:layout_constraintVertical_bias="0.071" />
+
+            <TextView
+                android:id="@+id/txtMonto"
+                android:layout_width="382dp"
+                android:layout_height="54dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="monto"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEstatus"
+                app:layout_constraintVertical_bias="0.087" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

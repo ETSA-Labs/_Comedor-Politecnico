@@ -22,6 +22,16 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1")
         }
+        maven {
+            url = uri("https://cardinalcommerceprod.jfrog.io/artifactory/android")
+            credentials {
+                // Asegúrate de agregar estas credenciales no sensibles para recuperar dependencias del
+                // repositorio privado.
+                username = "paypal_sgerritz"
+                password =
+                    "AKCp8jQ8tAahqpT5JjZ4FRP2mW7GMoFZ674kGqHmupTesKeAY2G8NcmPKLuTxTGkKjDLRzDUQ"
+            }
+        }
     }
 }
 

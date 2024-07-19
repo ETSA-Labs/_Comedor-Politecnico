@@ -116,8 +116,16 @@ dependencies {
     implementation(libs.okhttp3)
     //Integracion Paypal
     implementation("com.paypal.sdk:paypal-android-sdk:2.16.0")
+    implementation ("com.braintreepayments.api:drop-in:6.13.0")
+    // to offer card payments
+    implementation ("com.braintreepayments.api:card:4.39.0")
 
+    // to collect device data
+    implementation ("com.braintreepayments.api:data-collector:4.39.0")
 
+    // to offer PayPal
+    implementation ("com.braintreepayments.api:paypal:4.39.0")
+    implementation(libs.play.services.cast.tv)
 
 
 }
