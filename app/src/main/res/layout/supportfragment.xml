@@ -43,7 +43,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="59dp"
-        android:background="@drawable/rounded_background"
         android:orientation="vertical"
         android:padding="8dp">
 
@@ -84,14 +83,12 @@
             android:text="500 m"
             android:textColor="#000000"
             android:textSize="24sp" />
-
     </LinearLayout>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="56dp"
         android:layout_height="60dp"
-        android:drawableTop="@drawable/ic_back_24dp"
         android:gravity="center"
         android:padding="12dp" />
 
