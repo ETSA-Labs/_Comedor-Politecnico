@@ -8,7 +8,7 @@ import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import com.espoch.comedor.R
 import com.espoch.comedor.databinding.FragmentHomeBinding
-import com.espoch.comedor.shared.extensions.isLightStatusBar
+import com.espoch.comedor.extensions.isLightStatusBar
 
 class HomeFragment : Fragment() {
 

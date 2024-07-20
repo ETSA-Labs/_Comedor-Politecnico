@@ -33,7 +33,7 @@
         android:label="@string/item.more"/>
     <fragment
         android:id="@+id/navigation_menu_management"
-        android:name="com.espoch.comedor.admin.views.ManageMenuFragment"
+        android:name="com.espoch.comedor.views.admin.ManageMenuFragment"
         tools:layout="@layout/fragment_manage_menu"
         android:label=""/>
 

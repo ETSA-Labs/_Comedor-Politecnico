@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.espoch.comedor.shared.services.QrService
+import com.espoch.comedor.services.QrService
 
 class ReservationConfirmationActivity : AppCompatActivity() {
 

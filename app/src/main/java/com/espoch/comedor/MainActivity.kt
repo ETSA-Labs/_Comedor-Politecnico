@@ -3,7 +3,6 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
@@ -11,27 +10,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
-import com.espoch.comedor.shared.models.AppUser
-import com.espoch.comedor.shared.services.AuthService
-import com.espoch.comedor.shared.services.FirebaseService
-import com.espoch.comedor.shared.services.NavigationService
-import com.espoch.comedor.R as R1
-import com.espoch.comedor.shared.R as R2
+import com.espoch.comedor.models.AppUser
+import com.espoch.comedor.services.AuthService
+import com.espoch.comedor.services.FirebaseService
+import com.espoch.comedor.services.NavigationService
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
-        window.navigationBarColor = getColor(R2.color.navigationBar)
+        window.navigationBarColor = getColor(R.color.navigationBar)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHost = supportFragmentManager.findFragmentById(R1.id.app_host_fragment) as NavHostFragment
+        val navHost = supportFragmentManager.findFragmentById(R.id.app_host_fragment) as NavHostFragment
         val navView = binding.bottomNavView
         val navCtrl = navHost.navController
 

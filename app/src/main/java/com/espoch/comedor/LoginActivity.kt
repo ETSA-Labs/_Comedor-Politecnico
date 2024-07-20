@@ -2,14 +2,12 @@ package com.espoch.comedor
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.espoch.comedor.databinding.ActivityLoginBinding
-import com.espoch.comedor.shared.models.AppUser
-import com.espoch.comedor.shared.services.AuthService
+import com.espoch.comedor.services.AuthService
 
 class LoginActivity : AppCompatActivity() {
 
