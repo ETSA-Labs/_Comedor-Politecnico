@@ -11,8 +11,8 @@ import com.espoch.comedor.databinding.FragmentHomeBinding
 import com.espoch.comedor.extensions.isLightStatusBar
 
 class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
 
+    private lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

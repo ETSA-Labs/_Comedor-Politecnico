@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.espoch.comedor.R
-import com.espoch.comedor.data.UserDisplayName
-import com.espoch.comedor.models.AppUser
 import com.microsoft.identity.client.AcquireTokenSilentParameters
 import com.microsoft.identity.client.AuthenticationCallback
 import com.microsoft.identity.client.IAuthenticationResult
@@ -61,17 +59,20 @@ class AuthService {
                             isSignedIn = account != null
 
                             if (account != null) {
-                                val token = getToken()
+                                val accessToken = getToken()
 
-                                /* ... */
-                                AppUser.default.let {
+                                val nickName = account.username
+                                    .substringBefore("@")
+                                    .replace(".", "_")
+
+                                com.espoch.comedor.models.AppUser.current.let {
                                     it.uid = account.id
                                     it.email = account.username
+                                    it.nickName = nickName
                                 }
 
-                                if (!token.isNullOrEmpty()) {
-                                    AppUser.default.token = token
-                                    getFullName(token)
+                                if (!accessToken.isNullOrEmpty()) {
+                                    getFullName(accessToken)
                                 }
                             }
                             listeners.forEach { it.onCreate() }
@@ -84,7 +85,7 @@ class AuthService {
                      * @param exception The exception thrown during the creation process.
                      */
                     override fun onError(exception: MsalException) {
-                        listeners.forEach { it.onError("${exception.message} - line: 79") }
+                        listeners.forEach { it.onError("${exception.message} - line: 84") }
                     }
                 }
             )
@@ -112,16 +113,18 @@ class AuthService {
                             if (account != null) {
                                 val token = getToken()
 
-                                /* ... */
-                                AppUser.default.let {
+                                val nickName = account.username
+                                    .substringBefore("@")
+                                    .replace(".", "_")
+
+                                com.espoch.comedor.models.AppUser.current.let {
                                     it.uid = account.id
                                     it.email = account.username
+                                    it.nickName = nickName
                                 }
 
-                                if (!token.isNullOrEmpty()) {
-                                    AppUser.default.token = token
+                                if (!token.isNullOrEmpty())
                                     getFullName(token)
-                                }
                             } else {
                                 withContext(Dispatchers.Main) {
                                     listeners.forEach { it.onError("account is null") }
@@ -136,7 +139,7 @@ class AuthService {
                      * @param exception The exception thrown during the sign-in process.
                      */
                     override fun onError(exception: MsalException?) {
-                        listeners.forEach { it.onError("${exception?.message.toString()} - line: 110") }
+                        listeners.forEach { it.onError("${exception?.message.toString()} - line: 132") }
                     }
 
                     /**
@@ -160,6 +163,7 @@ class AuthService {
                      * Called when the sign-out process completes successfully.
                      */
                     override fun onSignOut() {
+                        isSignedIn = false
                         listeners.forEach { it.onSignOut() }
                     }
 
@@ -169,7 +173,7 @@ class AuthService {
                      * @param exception The exception thrown during the sign-out process.
                      */
                     override fun onError(exception: MsalException) {
-                        listeners.forEach { it.onError("${exception.message} - line: 143") }
+                        listeners.forEach { it.onError("${exception.message} - line: 166") }
                     }
                 }
             )
@@ -193,6 +197,9 @@ class AuthService {
             listeners.remove(l)
         }
 
+        /**
+         *
+         */
         private fun getToken(): String? {
             val account = singleApp?.currentAccount?.currentAccount ?: return null
 
@@ -202,7 +209,15 @@ class AuthService {
                 .forAccount(account)
                 .build()
 
-            return singleApp?.acquireTokenSilent(params)?.accessToken
+            return try {
+                singleApp?.acquireTokenSilent(params)?.accessToken
+            } catch (ex: Exception) {
+                Log.d("MSAL", ex.message.toString())
+
+                // The token maybe has expired, idk!
+                signOut()
+                ""
+            }
         }
 
         /**
@@ -222,7 +237,7 @@ class AuthService {
 
             // Make the network request to the API
             api.getDisplayName("Bearer $accessToken").enqueue(
-                object: Callback<UserDisplayName> {
+                object: Callback<com.espoch.comedor.data.DisplayNameResponse> {
                     /**
                      * Called when a response is received from the server.
                      *
@@ -230,20 +245,33 @@ class AuthService {
                      * @param response The response received from the server.
                      */
                     override fun onResponse(
-                        call: Call<UserDisplayName>,
-                        response: Response<UserDisplayName>,
+                        call: Call<com.espoch.comedor.data.DisplayNameResponse>,
+                        response: Response<com.espoch.comedor.data.DisplayNameResponse>,
                     ) {
                         if (response.isSuccessful) {
                             // Successfully received a response, extract and log the user info
                             val info = response.body()?.value
 
                             /* ... */
-                            AppUser.default.fullName = info.toString()
+                            val fullName = info.toString()
+                                .split(" ")
+                                .joinToString(" ") {
+                                    it.lowercase().capitalize()
+                                }
+                            val shortName = fullName
+                                .split(" ")
+                                .firstOrNull() ?: ""
 
+                            com.espoch.comedor.models.AppUser.current.let {
+                                it.fullName = fullName
+                                it.shortName = shortName
+                            }
+
+                            isSignedIn = true
                             listeners.forEach { it.onSignIn() }
                         } else {
                             // The server returned an error response
-                            listeners.forEach { it.onError("${response.errorBody().toString()} - line: 218") }
+                            listeners.forEach { it.onError("${response.errorBody().toString()} - line: 262") }
                         }
                     }
 
@@ -253,13 +281,12 @@ class AuthService {
                      * @param call The original call that was made.
                      * @param t The error that occurred during the network request.
                      */
-                    override fun onFailure(call: Call<UserDisplayName>, t: Throwable) {
-                        listeners.forEach { it.onError("${t.message} - line: 229") }
+                    override fun onFailure(call: Call<com.espoch.comedor.data.DisplayNameResponse>, t: Throwable) {
+                        listeners.forEach { it.onError("${t.message} - line: 273") }
                     }
                 }
             )
         }
-
     }
 
     /**

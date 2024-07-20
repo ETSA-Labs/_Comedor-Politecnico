@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Comedor Politecnico</string>
     <string name="app_brand">ESPOCH</string>
@@ -15,6 +16,7 @@
 
     <!--Titles...-->
     <string name="title.welcome">Bienvenido</string>
+    <string name="title.almost_there">Solo un paso más</string>
     <string name="title.unlock">Unlock app</string>
     <string name="title.success">Success</string>
     <string name="title.error">Oops…</string>

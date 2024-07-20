@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="36dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:textColor="@color/accent"
+        android:text="@string/title.welcome"
+        style="@style/HeaderTextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:textAlignment="center"
+        android:textColor="@color/fore.medium"
+        android:text="@string/body.welcome"
+        style="@style/BodyLargeTextView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:textAlignment="center"
+        android:textColor="@color/accent"
+        android:text="@string/domain.espoch"
+        style="@style/BodyLargeTextView"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_microsoft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MicrosoftButton"/>
+
+</LinearLayout>

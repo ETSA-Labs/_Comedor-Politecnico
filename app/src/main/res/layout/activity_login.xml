@@ -29,45 +29,15 @@
         app:cardBackgroundColor="@color/back.card_2"
         app:cardCornerRadius="64dp">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:padding="36dp">
+        <include
+            android:id="@+id/inc_request_signin"
+            android:visibility="visible"
+            layout="@layout/view_request_signin"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="36dp"
-                android:textColor="@color/accent"
-                android:text="@string/title.welcome"
-                style="@style/HeaderTextView"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="36dp"
-                android:textAlignment="center"
-                android:textColor="@color/fore.medium"
-                android:text="@string/body.welcome"
-                style="@style/BodyLargeTextView"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="36dp"
-                android:textAlignment="center"
-                android:textColor="@color/accent"
-                android:text="@string/domain.espoch"
-                style="@style/BodyLargeTextView"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_microsoft"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/MicrosoftButton"/>
-        </LinearLayout>
+        <include
+            android:id="@+id/inc_choose_faculty"
+            android:visibility="gone"
+            layout="@layout/view_choose_faculty"/>
 
     </androidx.cardview.widget.CardView>
 
