@@ -1,4 +1,3 @@
-/*
 package com.espoch.comedor.views
 
 import android.os.Bundle
@@ -33,18 +32,9 @@ class ReservationDetailsActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavigation(){
-        findViewById<ImageButton>(R.id.navigation_home).setOnClickListener {*/
-/*Navegacion al inicio*//*
-}
-        findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener {*/
-/*Navegacion a favoritos*//*
-}
-        findViewById<ImageButton>(R.id.navigation_booking).setOnClickListener {*/
-/*Navegacion al calendario*//*
-}
-        findViewById<ImageButton>(R.id.navigation_location).setOnClickListener {*/
-/*Navegacion al perfil*//*
-}
+        findViewById<ImageButton>(R.id.navigation_home).setOnClickListener {/*Navegacion al inicio*/}
+        findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener {/*Navegacion a favoritos*/}
+        findViewById<ImageButton>(R.id.navigation_booking).setOnClickListener {/*Navegacion al calendario*/}
+        findViewById<ImageButton>(R.id.navigation_location).setOnClickListener {/*Navegacion al perfil*/}
     }
 }
-*/

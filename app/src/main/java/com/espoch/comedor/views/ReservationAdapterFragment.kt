@@ -1,4 +1,3 @@
-/*
 package com.espoch.comedor.views
 
 import android.view.LayoutInflater
@@ -51,4 +50,4 @@ class ReservationAdapterFragment(private val reservations : List<Reservation>) :
     }
     override fun getItemCount() = reservations.size
 
-}*/
+}

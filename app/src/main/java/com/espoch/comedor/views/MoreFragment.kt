@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import com.espoch.comedor.MainActivity
 import com.espoch.comedor.R
 import com.espoch.comedor.databinding.FragmentMoreBinding
-import com.espoch.comedor.shared.extensions.isLightStatusBar
-import com.espoch.comedor.shared.models.AppUser
-import com.espoch.comedor.shared.services.NavigationService
+import com.espoch.comedor.extensions.isLightStatusBar
+import com.espoch.comedor.models.AppUser
+import com.espoch.comedor.services.NavigationService
 
 class MoreFragment : Fragment() {
     private lateinit var binding: FragmentMoreBinding
@@ -34,7 +34,7 @@ class MoreFragment : Fragment() {
         binding.btnAdminPanel.setOnClickListener(::onAdminPanelButtonClick)
 
         binding.btnAdminPanel.visibility =
-            if (AppUser.current.role == AppUser.ADMIN)
+            if (AppUser.default.role == AppUser.UserRole.ADMIN)
                 View.VISIBLE
             else View.GONE
     }

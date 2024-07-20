@@ -1,4 +1,3 @@
-/*
 package com.espoch.comedor.views
 
 import android.app.DatePickerDialog
@@ -81,18 +80,10 @@ class ReservationFragment : AppCompatActivity() {
     }
 
     private fun setupButtonNavigation() {
-        findViewById<ImageButton>(R.id.navigation_home).setOnClickListener { */
-/* Navigate to home *//*
- }
-        findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener { */
-/* Navigate to favorites *//*
- }
-        findViewById<ImageButton>(R.id.navigation_booking).setOnClickListener { */
-/* Navigate to calendar *//*
- }
-        findViewById<ImageButton>(R.id.navigation_location).setOnClickListener { */
-/* Navigate to profile *//*
- }
+        findViewById<ImageButton>(R.id.navigation_home).setOnClickListener { /* Navigate to home */ }
+        findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener { /* Navigate to favorites */ }
+        findViewById<ImageButton>(R.id.navigation_booking).setOnClickListener { /* Navigate to calendar */ }
+        findViewById<ImageButton>(R.id.navigation_location).setOnClickListener { /* Navigate to profile */ }
     }
 
     private fun showDatePicker() {
@@ -119,4 +110,4 @@ class ReservationFragment : AppCompatActivity() {
             etTime.setText(selectedTime)
         }, hour, minute, true).show()
     }
-}*/
+}

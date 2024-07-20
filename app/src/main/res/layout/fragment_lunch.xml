@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/im_hero"/>
+        android:src="@drawable/im_arribaback"/>
 
     <!-- SearchView en la parte superior -->
     <SearchView

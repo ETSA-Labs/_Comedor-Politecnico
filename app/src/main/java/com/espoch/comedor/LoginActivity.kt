@@ -8,18 +8,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.espoch.comedor.databinding.ActivityLoginBinding
-import com.espoch.comedor.shared.models.AppUser
-import com.espoch.comedor.shared.services.AuthService
+import com.espoch.comedor.models.AppUser
+import com.espoch.comedor.services.AuthService
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
 
         val controller = WindowCompat.getInsetsController(window, window.decorView)
+
         controller.isAppearanceLightStatusBars = true
         controller.isAppearanceLightNavigationBars = true
 
@@ -41,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         override fun onSignIn() {
             super.onSignIn()
 
-            Toast.makeText(this@LoginActivity, AppUser.current.fullName, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@LoginActivity, AppUser.default.displayName, Toast.LENGTH_SHORT).show()
             this@LoginActivity.finish()
         }
     }
