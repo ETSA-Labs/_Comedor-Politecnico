@@ -72,4 +72,5 @@ dependencies {
     implementation(project(":admin"))
     implementation(project(":customer"))
     implementation(project(":shared"))
+    implementation(kotlin("script-runtime"))
 }
