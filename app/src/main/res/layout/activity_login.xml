@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/im_comedor"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/empty"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="96dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/im_espoch"
+        android:contentDescription="@string/empty"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="64dp"
+        android:layout_alignParentBottom="true"
+        app:cardBackgroundColor="@color/back.card_2"
+        app:cardCornerRadius="64dp">
+
+        <include
+            android:id="@+id/inc_request_signin"
+            android:visibility="visible"
+            layout="@layout/view_request_signin"/>
+
+        <include
+            android:id="@+id/inc_choose_faculty"
+            android:visibility="gone"
+            layout="@layout/view_choose_faculty"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
