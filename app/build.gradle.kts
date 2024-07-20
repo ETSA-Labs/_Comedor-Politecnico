@@ -125,7 +125,10 @@ dependencies {
 
     // to offer PayPal
     implementation ("com.braintreepayments.api:paypal:4.39.0")
+
+    implementation ("com.stripe:stripe-android:20.5.0")
+    implementation ("com.stripe:stripe-java:26.0.0")
+    implementation ("com.github.kittinunf.fuel:fuel:2.3.1")
+
     implementation(libs.play.services.cast.tv)
-
-
 }

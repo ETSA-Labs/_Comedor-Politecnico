@@ -22,13 +22,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31" >
         <activity
+            android:name=".services.Stripe"
+            android:exported="true" >
+        </activity>
+        <activity
             android:name=".views.DetallesPago"
             android:exported="false" />
-        <activity
-            android:name=".views.ConfPaypal"
-            android:exported="true" >
-
-        </activity>
         <activity
             android:name="com.microsoft.identity.client.BrowserTabActivity"
             android:exported="true" >
@@ -52,12 +51,12 @@
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleInstance"
-            android:windowSoftInputMode="adjustPan" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:windowSoftInputMode="adjustPan">
+        <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
         </activity>
         <activity
             android:name=".services.PushNotificacionService"
