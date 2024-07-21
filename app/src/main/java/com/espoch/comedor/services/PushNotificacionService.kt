@@ -30,6 +30,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class PushNotificacionService : AppCompatActivity() {
+
     private val ONESIGNAL_APP_ID = "86ae695b-f765-4e4c-989c-7875ba0def33"
     private val canalReserva = "Reserva Exitosa"
     private val canalPago = "Pago Correcto"

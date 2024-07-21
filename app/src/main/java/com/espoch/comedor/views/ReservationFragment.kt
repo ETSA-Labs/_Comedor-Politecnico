@@ -83,6 +83,7 @@ class ReservationFragment : AppCompatActivity() {
 
 
 
+
     private fun validateInputs(): Boolean {
         if (etPrice.text.isNullOrBlank() || etDate.text.isNullOrBlank() || etTime.text.isNullOrBlank()) {
             Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
