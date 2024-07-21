@@ -97,6 +97,9 @@ dependencies {
     implementation(libs.aws.android.sdk.core)
     implementation(libs.aws.android.sdk.lambda)
 
+    /* Brevo */
+    implementation(libs.code.gson)
+
     /* ... other dependencies for Reservations...
      implementation "com.google.code.gson:gson:2.8.9"
 

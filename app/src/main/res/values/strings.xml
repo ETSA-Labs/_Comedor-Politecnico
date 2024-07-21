@@ -12,6 +12,7 @@
     <string name="item.lunches">Lunches</string>
     <string name="item.dinner">Dinner</string>
     <string name="item.profile_">Profile</string>
+    <string name="item.sugerencias">Sugerencias</string>
 
 
     <!--Titles...-->
@@ -46,6 +47,7 @@
     <string name="comedor">comedor</string>
     <string name="perfil">Perfil</string>
     <string name="API_KEY">AIzaSyBn7jLZDLCLXCma12MzE4xvdtt6xivdWaM</string>
+    <string name="API_KEY_BREVO">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</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Leanback Maps</string>
