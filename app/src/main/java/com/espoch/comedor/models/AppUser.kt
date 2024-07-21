@@ -1,63 +1,68 @@
 package com.espoch.comedor.models
 
+import com.google.firebase.firestore.Exclude
+
 /**
  * Represents an user within the app
  */
-class AppUser private constructor() : Observable() {
+class AppUser private constructor() {
     companion object {
-        private var _default: AppUser? = null
+        private var _current: AppUser? = null
 
         /**
-         * Gets the singleton object class.
+         * Gets the current app user.
          */
-        val default: AppUser
+        val current: AppUser
             get() {
-                if (_default == null)
-                    _default = AppUser()
+                if (AppUser.Companion._current == null)
+                    AppUser.Companion._current =
+                        AppUser()
 
-                return _default!!
+                return AppUser.Companion._current!!
             }
+
+        /**
+         * User has regular access.
+         */
+        const val CUSTOMER: Int = 0
+
+        /**
+         * User has full access.
+         */
+        const val ADMIN: Int = 1
     }
+
 
     /**
      * Unique identifier for the user.
      */
-    var uid: String by property("")
+    @get:Exclude
+    var uid: String = ""
 
     /**
      * Short name of the user.
      */
-    var shortName: String by property("")
+    @get:Exclude
+    var shortName: String = ""
 
     /**
      * Full name of the user.
      */
-    var fullName: String by property("")
+    var fullName: String = ""
 
     /**
      * Nickname of the user.
      */
-    var nickName: String by property("")
+    @get:Exclude
+    var nickName: String = ""
 
     /**
      * Email address of the user.
      */
-    var email: String by property("")
-
-    /**
-     * Auth token of the user.
-     */
-    var token: String by property("")
+    var email: String = ""
 
     /**
      * Role of the user, either CUSTOMER or ADMIN.
      */
-    var role: UserRole by property(UserRole.CUSTOMER)
-
-    /**
-     * Enum representing the user roles.
-     */
-    enum class UserRole {
-        CUSTOMER, ADMIN
-    }
+    var role: Int = 0
 }

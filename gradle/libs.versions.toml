@@ -11,10 +11,21 @@ constraintlayout = "2.1.4"
 lifecycleLivedataKtx = "2.8.2"
 lifecycleViewmodelKtx = "2.8.2"
 playServicesCastTv = "21.1.0"
+playServicesMaps = "19.0.0"
+playServicesLocation = "21.3.0"
+mapsUtils = "2.2.5"
+
+zxing = "1.9.13"
+zxingAndroidEmbedded = "4.1.0"
+agp = "8.4.2"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+material = "1.12.0"
 #agp = "8.3.2"
 
 [libraries]
-androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
+androidx-activity = { module = "androidx.activity:activity", version = "1.9.0" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.7.0" }
 androidx-appcompat-v131 = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-constraintlayout-v210 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
@@ -22,17 +33,27 @@ androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version = "2.7.7" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version = "2.7.7" }
 androidx-biometric = { module = "androidx.biometric:biometric", version = "1.1.0" }
-com-squareup-retrofit2-retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "comSquareupRetrofit2Retrofit" }
-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "comSquareupRetrofit2Retrofit" }
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+com-squareup-retrofit2-retrofit2 = { module = "com.squareup.retrofit2:retrofit", version = "2.11.0" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version = "2.11.0" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.8.1" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.1" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version = "4.12.0" }
 alex-qr-generator = { module = "com.github.alexzhirkevich:custom-qr-generator", version = "1.6.2" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.1.0" }
-firebase-database = { module = "com.google.firebase:firebase-database-ktx", version = "21.0.0" }
-firebase-auth = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
-firebase-firestore = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
+firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version = "21.0.0" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version="22.0.2" }
 msal = { module = "com.microsoft.identity.client:msal", version = "5.3.1" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "mapsUtils" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version = "4.12.0" }
+aws-android-sdk-core = { module = "com.amazonaws:aws-android-sdk-core", version = "2.24.0"}
+aws-android-sdk-lambda = { module = "com.amazonaws:aws-android-sdk-lambda", version = "2.24.0"}
+code-gson = { module = "com.google.code.gson:gson", version = "2.10.1"}
+zxing = { module="me.dm7.barcodescanner:zxing", version="1.9.13" }
+zxing-android-embedded = { module="com.journeyapps:zxing-android-embedded", version="4.1.0" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }

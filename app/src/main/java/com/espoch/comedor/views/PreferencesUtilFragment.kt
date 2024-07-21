@@ -2,6 +2,7 @@ package com.espoch.comedor.views
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.espoch.comedor.models.Reservation
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

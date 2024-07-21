@@ -9,9 +9,9 @@
         android:icon="@drawable/ic_heart_24dp"
         android:title="@string/item.favorite" />
     <item
-        android:id="@+id/navigation_location"
-        android:icon="@drawable/ic_location_24dp"
-        android:title="@string/item.location" />
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_user_24dp"
+        android:title="@string/item.profile_" />
     <item
         android:id="@+id/navigation_booking"
         android:icon="@drawable/ic_schedule_24dp"
@@ -20,4 +20,5 @@
         android:id="@+id/navigation_more"
         android:icon="@drawable/ic_widgets_24dp"
         android:title="@string/item.more" />
+
 </menu>

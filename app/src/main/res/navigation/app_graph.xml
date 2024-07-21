@@ -17,9 +17,9 @@
         tools:layout="@layout/fragment_favourites"
         android:label="@string/item.favorite"/>
     <fragment
-        android:id="@+id/navigation_location"
-        android:name="com.espoch.comedor.views.LocationFragment"
-        tools:layout="@layout/fragment_location"
+        android:id="@+id/navigation_profile"
+        android:name="com.espoch.comedor.views.ProfileFragment_"
+        tools:layout="@layout/fragment_profile_"
         android:label="@string/item.location"/>
     <fragment
         android:id="@+id/navigation_booking"
@@ -31,5 +31,10 @@
         android:name="com.espoch.comedor.views.MoreFragment"
         tools:layout="@layout/fragment_more"
         android:label="@string/item.more"/>
+    <fragment
+        android:id="@+id/navigation_menu_management"
+        android:name="com.espoch.comedor.views.admin.ManageMenuFragment"
+        tools:layout="@layout/fragment_manage_menu"
+        android:label=""/>
 
 </navigation>

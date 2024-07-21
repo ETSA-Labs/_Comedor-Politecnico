@@ -7,19 +7,19 @@ import androidx.fragment.app.FragmentActivity
 private var winCtrl: WindowInsetsControllerCompat? = null
 
 private fun checkWinCtrl(window: Window) {
-    if (winCtrl == null)
-        winCtrl = WindowInsetsControllerCompat(window, window.decorView)
+    if (com.espoch.comedor.extensions.winCtrl == null)
+        com.espoch.comedor.extensions.winCtrl = WindowInsetsControllerCompat(window, window.decorView)
 }
 
 var FragmentActivity.isLightStatusBar: Boolean
     get() {
-        checkWinCtrl(window)
+        com.espoch.comedor.extensions.checkWinCtrl(window)
 
-        return winCtrl!!.isAppearanceLightStatusBars
+        return com.espoch.comedor.extensions.winCtrl!!.isAppearanceLightStatusBars
     }
     set(value) {
-        checkWinCtrl(window)
+        com.espoch.comedor.extensions.checkWinCtrl(window)
 
-        winCtrl!!.isAppearanceLightStatusBars = value
+        com.espoch.comedor.extensions.winCtrl!!.isAppearanceLightStatusBars = value
 
     }

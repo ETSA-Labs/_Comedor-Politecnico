@@ -1,6 +1,6 @@
 package com.espoch.comedor.services
 
-import com.espoch.comedor.data.UserDisplayName
+import com.espoch.comedor.data.DisplayNameResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -20,5 +20,5 @@ interface GraphService {
     @GET("/v1.0/me")
     fun getDisplayName(
         @Header("Authorization") accessToken: String
-    ): Call<UserDisplayName>
+    ): Call<com.espoch.comedor.data.DisplayNameResponse>
 }

@@ -19,6 +19,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.espoch.comedor.R
 import com.espoch.comedor.ReservationConfirmationActivity
+import com.espoch.comedor.models.Reservation
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -123,7 +124,7 @@ class ReservationFragment : AppCompatActivity() {
         findViewById<ImageButton>(R.id.navigation_home).setOnClickListener { /* Navigate to home */ }
         findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener { /* Navigate to favorites */ }
         findViewById<ImageButton>(R.id.navigation_booking).setOnClickListener { /* Navigate to calendar */ }
-        findViewById<ImageButton>(R.id.navigation_location).setOnClickListener { /* Navigate to profile */ }
+        findViewById<ImageButton>(R.id.navigation_profile).setOnClickListener { /* Navigate to profile */ }
     }
 
     private fun showDatePicker() {

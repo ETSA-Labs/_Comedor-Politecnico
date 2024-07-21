@@ -1,4 +1,4 @@
-package com.espoch.comedor.views
+package com.espoch.comedor.models
 
 data class Reservation(
     val mealType: String,
