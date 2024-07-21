@@ -17,9 +17,9 @@
         tools:layout="@layout/fragment_favourites"
         android:label="@string/item.favorite"/>
     <fragment
-        android:id="@+id/navigation_location"
-        android:name="com.espoch.comedor.views.LocationFragment"
-        tools:layout="@layout/fragment_location"
+        android:id="@+id/navigation_profile"
+        android:name="com.espoch.comedor.views.ProfileFragment_"
+        tools:layout="@layout/fragment_profile_"
         android:label="@string/item.location"/>
     <fragment
         android:id="@+id/navigation_booking"

@@ -1,4 +1,13 @@
 [versions]
+activity = "1.9.0"
+comSquareupRetrofit2Retrofit = "2.9.0"
+kotlinxCoroutinesAndroid = "1.8.0"
+kotlinxCoroutinesCore = "1.6.2"
+loggingInterceptor = "4.12.0"
+playServicesMaps = "19.0.0"
+playServicesLocation = "21.3.0"
+mapsUtils = "2.2.5"
+
 zxing = "1.9.13"
 zxingAndroidEmbedded = "4.1.0"
 agp = "8.4.2"
@@ -21,20 +30,22 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.8.1" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version = "4.12.0" }
 alex-qr-generator = { module = "com.github.alexzhirkevich:custom-qr-generator", version = "1.6.2" }
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.1.2" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.1.0" }
 firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version = "21.0.0" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.0.2" }
-msal = { module = "com.microsoft.identity.client:msal", version = "5.4.0" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-zxing = { module = "me.dm7.barcodescanner:zxing", version.ref = "zxing" }
-zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version="22.0.2" }
+msal = { module = "com.microsoft.identity.client:msal", version = "5.3.1" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "mapsUtils" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version = "4.12.0" }
+aws-android-sdk-core = { module = "com.amazonaws:aws-android-sdk-core", version = "2.24.0"}
+aws-android-sdk-lambda = { module = "com.amazonaws:aws-android-sdk-lambda", version = "2.24.0"}
+code-gson = { module = "com.google.code.gson:gson", version = "2.10.1"}
+zxing = { module="me.dm7.barcodescanner:zxing", version="1.9.13" }
+zxing-android-embedded = { module="com.journeyapps:zxing-android-embedded", version="4.1.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version = "8.4.2" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.23" }
-android-library = { id = "com.android.library", version.ref = "agp" }

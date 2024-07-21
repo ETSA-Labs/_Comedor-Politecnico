@@ -104,25 +104,8 @@
         android:orientation="vertical"
         android:gravity="center">
 
-       <!-- <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/white"
-            app:iconTint="@android:color/black"
-            app:icon="@drawable/ic_booking_24dp"
-            android:paddingTop="24dp"
-            android:paddingBottom="24dp"
-            app:iconGravity="textStart"
-            app:iconSize="36dp"
-            app:iconPadding="24dp"
-            android:textColor="@android:color/black"
-            android:text="Booking"
-            app:cornerRadius="20dp"
-            android:textSize="14sp"
-            android:textAllCaps="false"
-            />
--->
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/white"
@@ -147,6 +130,7 @@
             android:visibility="gone"
             app:cornerRadius="12dp"
             android:text="Admin panel"/>
+
     </LinearLayout>
 
 </RelativeLayout>

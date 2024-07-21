@@ -5,6 +5,15 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storeFile =
+                file("src\\main\\assets\\app.keystore")
+            storePassword = "@@proyectolmm@@"
+            keyPassword = "@@proyectolmm@@"
+            keyAlias = "comedor"
+        }
+    }
     namespace = "com.espoch.comedor"
     compileSdk = 34
 
@@ -32,7 +41,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -66,7 +75,6 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.database.ktx)
     implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.database.ktx)
     implementation(libs.firebase.analytics.ktx)
     /* MSAL */
     implementation(libs.com.squareup.retrofit2.retrofit2)
@@ -79,4 +87,15 @@ dependencies {
     implementation(libs.zxing)
     implementation(libs.zxing.android.embedded)
     implementation(kotlin("reflect"))
+    /* MAP */
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
+    implementation(libs.maps.utils)
+    implementation(libs.okhttp)
+    /* AWS */
+    implementation(libs.aws.android.sdk.core)
+    implementation(libs.aws.android.sdk.lambda)
+
+    /* Brevo */
+    implementation(libs.code.gson)
 }
