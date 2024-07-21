@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.PagoTarjeta">
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/im_background" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A6FFFFFF" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="413dp"
+            android:layout_height="105dp"
+            app:srcCompat="@drawable/encabezado" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonPago"
+                android:layout_width="248dp"
+                android:layout_height="48dp"
+                android:backgroundTint="#75A2CA82"
+                android:text="Finalizar Pago"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardnombretarjeta"
+                app:layout_constraintVertical_bias="0.516" />
+
+            <EditText
+                android:id="@+id/cardnombretarjeta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nombretarjeta"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <TextView
+                android:id="@+id/nombretarjeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Nombre"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardexpdate" />
+
+            <TextView
+                android:id="@+id/expdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="Fecha de Expiración"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.151"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardNumberInput" />
+
+            <EditText
+                android:id="@+id/cardcvc"
+                android:layout_width="141dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="36dp"
+                android:hint="XXX"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvc"
+                app:layout_constraintVertical_bias="0.02"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <TextView
+                android:id="@+id/cvc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="CVC "
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.269"
+                app:layout_constraintStart_toEndOf="@+id/expdate"
+                app:layout_constraintTop_toBottomOf="@+id/cardNumberInput" />
+
+            <EditText
+                android:id="@+id/cardexpdate"
+                android:layout_width="141dp"
+                android:layout_height="52dp"
+                android:hint="dd/mm/yy"
+                android:inputType="date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.151"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/expdate"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_percent="0.8"/>
+
+            <TextView
+                android:id="@+id/cardNumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:text="Número de Tarjeta"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+            <EditText
+                android:id="@+id/cardNumberInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="XXXX XXXX XXXX XXXX"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardNumberLabel"
+                app:layout_constraintWidth_percent="0.8" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="248dp"
+                android:layout_height="48dp"
+                android:backgroundTint="#75A2CA82"
+                android:text="Pago con Tarjeta"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.194" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Comedor Politecnico</string>
     <string name="app_brand">ESPOCH</string>
@@ -46,6 +45,9 @@
     <string name="domain.espoch">&#64;espoch.edu.ec</string>
     <string name="domain.auth0">dev-64fbqx2xpo43kv1g.us.auth0.com</string>
     <string name="comedor">comedor</string>
+
+    <string name="onesignal_notification_accent_color" translatable="false">FF00FF00</string>
+
     <string name="perfil">Perfil</string>
     <string name="API_KEY">AIzaSyBn7jLZDLCLXCma12MzE4xvdtt6xivdWaM</string>
     <string name="API_KEY_BREVO">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</string>
