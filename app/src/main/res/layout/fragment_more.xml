@@ -101,27 +101,36 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/middle_buttons"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="0dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/location_button"
-            android:layout_width="332dp"
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/white"
-            android:paddingTop="24dp"
-            android:paddingBottom="24dp"
-            android:text="Location"
-            android:textAllCaps="false"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            app:cornerRadius="20dp"
+            app:iconTint="@android:color/black"
             app:icon="@drawable/ic_map_24dp"
             app:iconGravity="textStart"
-            app:iconPadding="24dp"
             app:iconSize="36dp"
-            app:iconTint="@android:color/black" />
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            app:iconPadding="24dp"
+            android:textColor="@android:color/black"
+            android:text="Location"
+            app:cornerRadius="20dp"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_admin_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cornerRadius="12dp"
+            android:text="Admin panel"/>
+
     </LinearLayout>
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -21,7 +22,7 @@ android {
         minSdk = 28
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -31,10 +32,6 @@ android {
     }
 
     buildTypes {
-        debug {
-
-        }
-
         release {
             isMinifyEnabled = false
         }
@@ -50,7 +47,6 @@ android {
     }
 
     buildFeatures {
-        buildConfig = true
         viewBinding = true
     }
 
@@ -62,11 +58,11 @@ android {
 }
 
 dependencies {
-
     /* basic */
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.appcompat)
+    /* navigation */
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     /* biometric */
@@ -76,9 +72,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     /* firebase */
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.auth)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.analytics.ktx)
     /* MSAL */
     implementation(libs.com.squareup.retrofit2.retrofit2)
     implementation(libs.logging.interceptor)
@@ -87,23 +84,18 @@ dependencies {
     /* QR generator */
     implementation(libs.alex.qr.generator)
     /* QR scanner */
+    implementation(libs.zxing)
+    implementation(libs.zxing.android.embedded)
+    implementation(kotlin("reflect"))
     /* MAP */
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
     implementation(libs.maps.utils)
     implementation(libs.okhttp)
-
     /* AWS */
     implementation(libs.aws.android.sdk.core)
     implementation(libs.aws.android.sdk.lambda)
 
     /* Brevo */
     implementation(libs.code.gson)
-
-    /* ... other dependencies for Reservations...
-     implementation "com.google.code.gson:gson:2.8.9"
-
-    // Dependencias necesarias para manejar ActivityResultLauncher
-     */
-
 }

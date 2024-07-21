@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.espoch.comedor.R
 import com.espoch.comedor.ReservationConfirmationActivity
+import com.espoch.comedor.models.Reservation
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
