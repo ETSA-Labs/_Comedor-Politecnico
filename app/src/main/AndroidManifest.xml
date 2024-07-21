@@ -30,7 +30,6 @@
         <activity
             android:name=".views.DetallesPago"
             android:exported="false" />
-        tools:targetApi="31">
 
         <activity android:name=".MapsActivity" />
 
@@ -76,7 +75,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReservationConfirmationActivity" />
         <activity
             android:name=".views.ReservationDetailsActivity"
             android:exported="false" />

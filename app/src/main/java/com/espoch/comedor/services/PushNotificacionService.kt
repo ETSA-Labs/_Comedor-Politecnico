@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -23,6 +24,7 @@ import com.espoch.comedor.ReservationConfirmationActivity
 import com.espoch.comedor.views.PagoTarjeta
 import com.onesignal.OneSignal
 import com.onesignal.debug.LogLevel
+import com.onesignal.notifications.IPermissionObserver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -48,7 +50,16 @@ class PushNotificacionService : AppCompatActivity() {
         // requestPermission will show the native Android notification permission prompt.
         // NOTE: It's recommended to use a OneSignal In-App Message to prompt instead.
         CoroutineScope(Dispatchers.IO).launch {
-            OneSignal.Notifications.requestPermission(false)
+            OneSignal.Notifications.addPermissionObserver(
+                object : IPermissionObserver {
+                    override fun onNotificationPermissionChange(permission: Boolean) {
+                        this@PushNotificacionService.finish()
+                    }
+                }
+            )
+
+            if (!OneSignal.Notifications.requestPermission(false))
+                this@PushNotificacionService.finish()
         }
         enableEdgeToEdge()
 

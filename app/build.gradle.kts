@@ -78,6 +78,8 @@ dependencies {
     implementation(libs.firebase.database.ktx)
     implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.analytics.ktx)
+    implementation ("com.google.firebase:firebase-messaging:23.0.0")
+    implementation ("com.google.firebase:firebase-messaging:23.0.0")
     /* MSAL */
     implementation(libs.com.squareup.retrofit2.retrofit2)
     implementation(libs.logging.interceptor)
@@ -101,36 +103,19 @@ dependencies {
     /* AWS */
     implementation(libs.aws.android.sdk.core)
     implementation(libs.aws.android.sdk.lambda)
-
     /* Brevo */
     implementation(libs.code.gson)
-    // Dependencias necesarias para manejar ActivityResultLauncher
-     */
-
     //Dependencias OneSignal Notificaciones
     implementation(libs.onesignal)
     implementation ("com.onesignal:OneSignal:[4.4.1, 5.99.99]")
     implementation ("com.onesignal:OneSignal:4.4.1")
-    implementation ("com.google.firebase:firebase-messaging:23.0.0")
-    implementation ("com.google.firebase:firebase-messaging:23.0.0")
-
+    /* HTTP requests */
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     //Integracion middleware AWS
     implementation(libs.retrofit2)
-    implementation(libs.retrofit2convertergson) // Para convertir JSON a objetos Java/Kotlin
+    implementation(libs.retrofit2convertergson)
     implementation(libs.okhttp3)
-    //Integracion Paypal
-    implementation("com.paypal.sdk:paypal-android-sdk:2.16.0")
-    implementation ("com.braintreepayments.api:drop-in:6.13.0")
-    // to offer card payments
-    implementation ("com.braintreepayments.api:card:4.39.0")
-
-    // to collect device data
-    implementation ("com.braintreepayments.api:data-collector:4.39.0")
-
-    // to offer PayPal
-    implementation ("com.braintreepayments.api:paypal:4.39.0")
 
     implementation ("com.stripe:stripe-android:20.5.0")
     implementation ("com.stripe:stripe-java:26.0.0")

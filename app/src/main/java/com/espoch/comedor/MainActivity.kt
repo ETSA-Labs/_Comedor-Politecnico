@@ -3,12 +3,10 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
@@ -16,12 +14,6 @@ import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
 import com.espoch.comedor.services.NavigationService
-import com.espoch.comedor.views.ReservationDetailsActivity
-import com.espoch.comedor.views.ReservationFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.FirebaseApp
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.ktx.initialize
 
 class MainActivity : AppCompatActivity() {
 
