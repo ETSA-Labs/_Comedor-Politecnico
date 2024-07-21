@@ -11,9 +11,9 @@ import com.espoch.comedor.MapsActivity
 import com.espoch.comedor.R
 import com.espoch.comedor.databinding.FragmentMoreBinding
 import com.espoch.comedor.extensions.isLightStatusBar
-import com.google.android.material.button.MaterialButton
 import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.NavigationService
+import com.google.android.material.button.MaterialButton
 
 class MoreFragment : Fragment() {
     private lateinit var binding: FragmentMoreBinding
@@ -39,7 +39,6 @@ class MoreFragment : Fragment() {
             startActivity(intent)
         }
 
-        /* Anything from here... */
         binding.btnAdminPanel.setOnClickListener(::onAdminPanelButtonClick)
 
         binding.btnAdminPanel.visibility =

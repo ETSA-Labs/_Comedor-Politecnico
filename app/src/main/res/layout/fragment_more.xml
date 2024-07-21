@@ -17,6 +17,7 @@
         android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sugerencia"
             android:layout_width="150dp"
             android:layout_height="130dp"
             android:backgroundTint="@android:color/white"
@@ -26,7 +27,7 @@
             app:iconSize="36dp"
             app:iconPadding="24dp"
             android:textColor="@android:color/black"
-            android:text="Messages"
+            android:text="Sugerencia"
             android:layout_marginEnd="10dp"
             app:cornerRadius="20dp"
             android:textSize="14sp"
