@@ -9,18 +9,18 @@ import com.espoch.comedor.R
 
 class ReservationDetailsActivity : AppCompatActivity() {
     private lateinit var rvReservation: RecyclerView
-    private lateinit var reservationAdapter : ReservationAdapterFragment
+    //private lateinit var reservationAdapter : ReservationAdapterFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_reservation_details)
 
         rvReservation = findViewById(R.id.rvReservations)
-        setupRecyclerView()
+        //setupRecyclerView()
         setupBottomNavigation()
     }
 
-    private fun setupRecyclerView(){
+/*   private fun setupRecyclerView(){
         reservationAdapter = ReservationAdapterFragment(getReservations())
         rvReservation.layoutManager = LinearLayoutManager(this)
         rvReservation.adapter = reservationAdapter
@@ -30,7 +30,7 @@ class ReservationDetailsActivity : AppCompatActivity() {
         // Replace this with your actual data retrieval logic
         return PreferencesUtilFragment.getReservation(this)
     }
-
+*/
     private fun setupBottomNavigation(){
         findViewById<ImageButton>(R.id.navigation_home).setOnClickListener {/*Navegacion al inicio*/}
         findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener {/*Navegacion a favoritos*/}

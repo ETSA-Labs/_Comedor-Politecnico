@@ -34,7 +34,7 @@ class MoreFragment : Fragment() {
         activity.isLightStatusBar = true
 
         // Configurar el OnClickListener para el botón de "Location"
-        binding.bottomButtons.findViewById<MaterialButton>(R.id.location_button).setOnClickListener {
+        binding.bottomButtons.findViewById<MaterialButton>(R.id.btn_location).setOnClickListener {
             val intent = Intent(activity, MapsActivity::class.java)
             startActivity(intent)
         }

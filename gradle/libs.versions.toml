@@ -40,16 +40,10 @@ play-services-maps = { module = "com.google.android.gms:play-services-maps", ver
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "mapsUtils" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version = "4.9.3" }
-firebase-bom = { module = "com.google.firebase:firebase-bom", version = "33.1.2" }
 firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version = "21.0.0" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx", version = "23.0.0" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version = "25.0.0"}
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.0.2" }
-msal = { module = "com.microsoft.identity.client:msal", version = "5.4.0" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 zxing = { module = "me.dm7.barcodescanner:zxing", version.ref = "zxing" }
 zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
 
