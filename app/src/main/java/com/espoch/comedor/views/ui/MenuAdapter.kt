@@ -1,4 +1,4 @@
-package com.espoch.comedor.views.ui
+package com.espoch.comedor.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

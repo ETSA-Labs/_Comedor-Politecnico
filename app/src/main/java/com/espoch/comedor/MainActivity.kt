@@ -3,12 +3,10 @@ package com.espoch.comedor
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.espoch.comedor.databinding.ActivityMainBinding
@@ -16,7 +14,6 @@ import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
 import com.espoch.comedor.services.NavigationService
-import com.espoch.comedor.views.ui.BreakfastFragment
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
 import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
@@ -24,7 +21,6 @@ import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderF
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,13 +36,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Iniciar PushNotificacionService al iniciar la aplicación
+        // Iniciar PushNotificationService al iniciar la aplicación
         val intent = Intent(this, com.espoch.comedor.services.PushNotificacionService::class.java)
         startActivity(intent)
 
-
         val navHost = supportFragmentManager.findFragmentById(R.id.app_host_fragment) as NavHostFragment
-        val navView = binding.bottomNavView
+        val navView = binding.navView
         val navCtrl = navHost.navController
 
         navView.setupWithNavController(navCtrl)
@@ -94,8 +89,7 @@ class MainActivity : AppCompatActivity() {
             super.onSuccess()
 
             FirebaseService.Users.get(AppUser.current.uid,
-                object: FirebaseService.FirestoreResult<AppUser>()
-                {
+                object : FirebaseService.FirestoreResult<AppUser>() {
                     override fun onComplete(value: AppUser?) {
                         super.onComplete(value)
 
@@ -114,33 +108,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
- /*
- * navView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_booking -> {
-                    // Abrir la actividad de reservas al seleccionar el ícono de reservas
-                    val intent = Intent(this@MainActivity, ReservationConfirmationActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_profile -> {
-                    // Navegar al fragmento de perfil al seleccionar el ícono de perfil
-                    navCtrl.navigate(R.id.navigation_profile)
-                    true
-                }
-
-                R.id.navigation_more -> {
-                    // Navegar al fragmento de perfil al seleccionar el ícono de more
-                    navCtrl.navigate(R.id.navigation_more)
-                    true
-                }
-                R.id.navigation_home -> {
-                    // Navegar al fragmento de perfil al seleccionar el ícono de perfil
-                    navCtrl.navigate(R.id.navigation_home)
-                    true
-                }
-                // Agregar otros casos si tienes más íconos en la barra de navegación
-                else -> false
-            }
-        }*/

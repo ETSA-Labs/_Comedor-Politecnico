@@ -1,4 +1,4 @@
-package com.espoch.comedor.views.ui
+package com.espoch.comedor.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.espoch.comedor.databinding.FragmentBreakfastBinding
+import com.espoch.comedor.databinding.FragmentLunchBinding
+import com.espoch.comedor.adapters.MenuAdapter
 import com.espoch.comedor.models.MenuItem
 import com.google.firebase.firestore.FirebaseFirestore
 
-class BreakfastFragment : Fragment() {
+class LunchFragment : Fragment() {
 
-    private lateinit var binding: FragmentBreakfastBinding
+    private lateinit var binding: FragmentLunchBinding
     private val firestore by lazy { FirebaseFirestore.getInstance() }
     private lateinit var adapter: MenuAdapter
 
@@ -20,7 +21,7 @@ class BreakfastFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentBreakfastBinding.inflate(inflater, container, false)
+        binding = FragmentLunchBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,15 +31,15 @@ class BreakfastFragment : Fragment() {
         adapter = MenuAdapter()
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = this@BreakfastFragment.adapter
+            adapter = this@LunchFragment.adapter
         }
 
-        loadBreakfastMenu()
+        loadLunchMenu()
     }
 
-    private fun loadBreakfastMenu() {
+    private fun loadLunchMenu() {
         firestore.collection("menu")
-            .whereEqualTo("categoria", "Desayuno")
+            .whereEqualTo("categoria", "Almuerzo")
             .get()
             .addOnSuccessListener { documents ->
                 val menuItems = documents.map { document ->

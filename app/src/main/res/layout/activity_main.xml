@@ -10,13 +10,12 @@
         android:layout_height="match_parent"
         android:src="@drawable/im_background"
         android:scaleType="centerCrop"
-        android:alpha="0.04"/>
+        android:alpha="0.04" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/app_host_fragment"
@@ -25,10 +24,10 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/app_graph"/>
+            app:navGraph="@navigation/app_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_nav_view"
+            android:id="@+id/nav_view"
             android:background="@color/navigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,12 +36,7 @@
             app:itemTextColor="@drawable/nav_item_selector"
             app:itemIconSize="28dp"
             app:elevation="0dp"
-            app:menu="@menu/bottom_nav_menu"/>
-
+            app:menu="@menu/bottom_nav_menu" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </RelativeLayout>
