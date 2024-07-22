@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/im_hero" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Objetivo"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_rounded_corners"
+            android:padding="16dp"
+            android:text="Desarrollar una aplicación móvil para el Comedor Politécnico que ofrezca al usuario el acceso a los servicios del comedor, como: realizar reservas de comida, recibir notificaciones relevantes y realizar pagos en línea, todo mientras se garantiza la integridad y privacidad para todos los usuarios."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Misión"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_rounded_corners"
+            android:padding="16dp"
+            android:text="Nuestra misión es proporcionar una solución tecnológica eficiente que permita a la comunidad de la ESPOCH realizar reservas de menús diarios en el comedor politécnico de manera fácil y rápida. A través de nuestra aplicación móvil, buscamos mejorar la experiencia de los usuarios del comedor, optimizando el tiempo y los recursos disponibles, y fomentando una alimentación planificada y saludable."
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Visión"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background_rounded_corners"
+            android:padding="16dp"
+            android:text="Nos proyectamos hacia el futuro mejorando continuamente nuestra plataforma para ofrecer nuevos servicios y funcionalidades que beneficien a toda la comunidad politécnica, contribuyendo así a una experiencia universitaria más eficiente y satisfactoria."
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

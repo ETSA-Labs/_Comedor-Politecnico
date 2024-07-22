@@ -90,6 +90,7 @@
         <activity
             android:name=".ReservationConfirmationActivity"
             android:exported="false" />
+        <activity android:name=".views.AboutActivity" />
     </application>
 
 </manifest>
