@@ -15,25 +15,6 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:src="@drawable/im_hero"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="40dp"
-            app:cardElevation="0dp"
-            app:cardCornerRadius="24dp">
-
-            <SearchView
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:iconifiedByDefault="false"
-                android:queryHint="@string/search"/>
-
-        </androidx.cardview.widget.CardView>
-
     </RelativeLayout>
 
     <HorizontalScrollView
