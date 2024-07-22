@@ -6,48 +6,47 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.espoch.comedor.MainActivity
-import com.espoch.comedor.MapsActivity
 import com.espoch.comedor.R
-import com.espoch.comedor.databinding.FragmentMoreBinding
-import com.espoch.comedor.extensions.isLightStatusBar
-import com.espoch.comedor.models.AppUser
-import com.espoch.comedor.services.NavigationService
 import com.google.android.material.button.MaterialButton
 
 class MoreFragment : Fragment() {
-    private lateinit var binding: FragmentMoreBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentMoreBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_more, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val activity = requireActivity() as MainActivity
-        activity.isLightStatusBar = true
-
-        // Configurar el OnClickListener para el botón de "Location"
-        binding.bottomButtons.findViewById<MaterialButton>(R.id.btn_location).setOnClickListener {
-            val intent = Intent(activity, MapsActivity::class.java)
+        view.findViewById<MaterialButton>(R.id.btn_about).setOnClickListener {
+            val intent = Intent(activity, AboutActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnAdminPanel.setOnClickListener(::onAdminPanelButtonClick)
+        view.findViewById<MaterialButton>(R.id.btn_messages).setOnClickListener {
+            // Lógica para Messages
+        }
 
-        binding.btnAdminPanel.visibility =
-            if (AppUser.current.role == AppUser.ADMIN)
-                View.VISIBLE
-            else View.GONE
-    }
+        view.findViewById<MaterialButton>(R.id.btn_privacy_policy).setOnClickListener {
+            // Lógica para Política de privacidad
+        }
 
-    private fun onAdminPanelButtonClick(v: View) {
-        NavigationService.navigate("App", R.id.navigation_menu_management)
+        view.findViewById<MaterialButton>(R.id.btn_support).setOnClickListener {
+            // Lógica para Support
+        }
+
+        view.findViewById<MaterialButton>(R.id.btn_user_guide).setOnClickListener {
+            // Lógica para Guía de uso
+
+        }
+
+        view.findViewById<MaterialButton>(R.id.btn_terms_conditions).setOnClickListener {
+            // Lógica para Términos y condiciones
+        }
+
+        view.findViewById<MaterialButton>(R.id.btn_logout).setOnClickListener {
+            // Lógica para Cerrar Sesión
+        }
+
+        return view
     }
 }

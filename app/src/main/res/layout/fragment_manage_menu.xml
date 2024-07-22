@@ -1,62 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/headerImage"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
         android:src="@drawable/im_hero"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         android:text="Gestionar Menú"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
 
     <Spinner
         android:id="@+id/spinnerCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:hint="Seleccionar Categoría" />
 
     <EditText
         android:id="@+id/etNombrePlato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:hint="Nombre del plato" />
 
     <Button
         android:id="@+id/btnSeleccionarImagen"
         android:layout_width="wrap_content"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Seleccionar Imagen" />
 
     <TextView
         android:id="@+id/tvImagenVerificada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#BAAAA7A7"
         android:text="Imagen no verificada"
-        android:textColor="#FF0000" />
+        android:textColor="@color/colorRed" />
 
     <EditText
         android:id="@+id/etDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:hint="Descripción breve"
         android:inputType="textMultiLine"
         android:lines="3" />
@@ -65,7 +64,7 @@
         android:id="@+id/etPrecio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:hint="Precio"
         android:inputType="none"
         android:focusable="false"
@@ -74,7 +73,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
         <Button
@@ -97,7 +96,6 @@
         android:id="@+id/btnEliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Eliminar"
         android:textColor="#FF0000" />
 

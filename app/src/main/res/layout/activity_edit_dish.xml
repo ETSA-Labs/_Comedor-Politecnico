@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextDishName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del Plato" />
+
+    <EditText
+        android:id="@+id/editTextDishDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción del Plato"
+        android:layout_below="@id/editTextDishName"
+        android:layout_marginTop="16dp" />
+
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDishDescription"
+        android:layout_marginTop="16dp"
+        android:entries="@array/categories_array" />
+
+    <Button
+        android:id="@+id/buttonSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Imagen"
+        android:layout_below="@id/spinnerCategory"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewImageStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imagen no verificada"
+        android:layout_below="@id/buttonSelectImage"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonUpdateDish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar Plato"
+        android:layout_below="@id/textViewImageStatus"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
