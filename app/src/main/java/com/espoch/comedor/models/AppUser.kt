@@ -36,7 +36,7 @@ class AppUser private constructor() {
     /**
      * Unique identifier for the user.
      */
-    @get:Exclude
+    //@get:Exclude
     var uid: String = ""
 
     /**
@@ -44,11 +44,6 @@ class AppUser private constructor() {
      */
     @get:Exclude
     var shortName: String = ""
-
-    /**
-     * Full name of the user.
-     */
-    var fullName: String = ""
 
     /**
      * Nickname of the user.
@@ -62,7 +57,23 @@ class AppUser private constructor() {
     var email: String = ""
 
     /**
+     * Full name of the user.
+     */
+    var fullName: String = ""
+
+    /**
      * Role of the user, either CUSTOMER or ADMIN.
      */
     var role: Int = 0
+
+    /**
+     * Faculty of the user.
+     */
+    var faculty: String = ""
+
+    /**
+     * Career of the user.
+     */
+    var career: String = ""
+
 }

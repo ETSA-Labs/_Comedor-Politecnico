@@ -75,12 +75,7 @@ class AuthService {
                                 if (!accessToken.isNullOrEmpty()) {
                                     getFullName(accessToken)
                                 }
-                                // Guardar datos en SharedPreferences
-                                /*val sharedPreferences = context?.getSharedPreferences("USER_PREF", Context.MODE_PRIVATE)
-                                val editor = sharedPreferences?.edit()
-                                editor?.putString("USER_NAME", com.espoch.comedor.models.AppUser.current.fullName)
-                                editor?.putString("USER_EMAIL", com.espoch.comedor.models.AppUser.current.email)
-                                editor?.apply()*/
+
                             }
                             listeners.forEach { it.onCreate() }
                         }
@@ -137,6 +132,13 @@ class AuthService {
                                     listeners.forEach { it.onError("account is null") }
                                 }
                             }
+                            // Después de recuperar los datos del usuario y guardarlos en Firebase
+                            val sharedPreferences = context?.getSharedPreferences("USER_PREF", Context.MODE_PRIVATE)
+                            val editor = sharedPreferences?.edit()
+                            editor?.putString("USER_NAME", com.espoch.comedor.models.AppUser.current.fullName)
+                            editor?.putString("USER_EMAIL", com.espoch.comedor.models.AppUser.current.email)
+                            editor?.putString("USER_ID", com.espoch.comedor.models.AppUser.current.uid)
+                            editor?.apply()
                         }
                     }
 

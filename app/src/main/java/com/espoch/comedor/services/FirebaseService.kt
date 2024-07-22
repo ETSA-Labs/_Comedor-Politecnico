@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import com.espoch.comedor.models.AppUser
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.lang.Exception
@@ -16,7 +17,7 @@ class FirebaseService {
         var isSignedIn: Boolean = false
 
         /*
-        Check this!! IDK why it doesn't work.
+           Check this!! IDK why it doesn't work.
 
         fun signIn(activity: FragmentActivity, accessToken: String, idToken: String) {
             val credential = OAuthProvider.newCredentialBuilder("microsoft.com")
@@ -139,5 +140,20 @@ class FirebaseService {
                     }
             }
         }
+    }
+    fun saveUserToFirestore(userId: String, email: String, fullName: String, role: Int) {
+        val db = FirebaseFirestore.getInstance()
+        val user = hashMapOf(
+            "email" to email,
+            "fullName" to fullName,
+            "role" to role
+        )
+        db.collection("users").document(userId).set(user)
+            .addOnSuccessListener {
+                Log.d("Firebase", "User successfully written!")
+            }
+            .addOnFailureListener { e ->
+                Log.w("Firebase", "Error writing user", e)
+            }
     }
 }
