@@ -4,12 +4,14 @@ import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.app.Service.START_NOT_STICKY
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.IBinder
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
@@ -67,30 +69,46 @@ class PushNotificacionService : AppCompatActivity() {
         // Notificaciones Push Manuales
         setupNotificationChannels()
 
-        // Ejemplo de creación de notificación manual
-        Handler(Looper.getMainLooper()).postDelayed({
-            Log.d("PushNotificacionService", "Ejemplo de notificación programada")
-            crearNotificacion("Ejemplo Programado", "Esta es una notificación programada", 999)
-        }, 5000) // 5 segundos en milisegundos
+    }
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 1) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // El permiso ha sido concedido
+                Log.d("PushNotificacionService", "Permiso de notificaciones concedido")
+            } else {
+                // El permiso ha sido denegado
+                Log.d("PushNotificacionService", "Permiso de notificaciones denegado")
+            }
+        }
     }
 
     private fun setupNotificationChannels() {
-        // Crear canales de notificación si es necesario
-        crearCanalNotificacion(canalReserva, "Reserva Exitosa")
-        crearCanalNotificacion(canalPago, "Pago Correcto")
-        crearCanalNotificacion(canalAviso, "Aviso de Retiro")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            crearCanalNotificacion(canalReserva, "Reserva Exitosa")
+            crearCanalNotificacion(canalPago, "Pago Correcto")
+            crearCanalNotificacion(canalAviso, "Aviso de Retiro")
+        }
     }
 
     private fun crearCanalNotificacion(canalId: String, canalNombre: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val canalImportancia = NotificationManager.IMPORTANCE_HIGH
             val canal = NotificationChannel(canalId, canalNombre, canalImportancia)
+            canal.description = "Descripción del canal $canalNombre"
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(canal)
         }
     }
 
     private fun crearNotificacion(title: String, text: String, notificacionId: Int) {
+        val canalId = when (notificacionId) {
+            notificacionIdReserva -> canalReserva
+            notificacionIdPago -> canalPago
+            notificacionIdAviso -> canalAviso
+            else -> canalReserva
+        }
+
         val resultIntent = when (notificacionId) {
             notificacionIdReserva -> Intent(this, ReservationConfirmationActivity::class.java)
             notificacionIdPago -> Intent(this, PagoTarjeta::class.java)
@@ -105,7 +123,7 @@ class PushNotificacionService : AppCompatActivity() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        val notificacion = NotificationCompat.Builder(this, canalID).apply {
+        val notificacion = NotificationCompat.Builder(this, canalId).apply {
             setContentTitle(title)
             setContentText(text)
             setSmallIcon(R.drawable.ic_polidish_24dp)
@@ -120,5 +138,7 @@ class PushNotificacionService : AppCompatActivity() {
             return
         }
         notificationManager.notify(notificacionId, notificacion)
+        Log.d("PushNotificacionService", "Notificación enviada con ID: $notificacionId")
     }
+
 }

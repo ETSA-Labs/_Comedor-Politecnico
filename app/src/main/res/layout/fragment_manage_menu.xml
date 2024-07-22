@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -38,10 +39,18 @@
 
     <Button
         android:id="@+id/btnSeleccionarImagen"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="Seleccionar Imagen" />
+
+    <TextView
+        android:id="@+id/tvImagenVerificada"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Imagen del plato" />
+        android:text="Imagen no verificada"
+        android:textColor="#FF0000" />
 
     <EditText
         android:id="@+id/etDescripcion"
@@ -58,7 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Precio"
-        android:inputType="numberDecimal" />
+        android:inputType="none"
+        android:focusable="false"
+        android:text="1.50" />
 
     <LinearLayout
         android:layout_width="match_parent"

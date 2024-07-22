@@ -14,6 +14,9 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -26,11 +29,8 @@
         <activity
             android:name=".services.Stripe"
             android:exported="true" >
-        </activity>
-        <activity
-            android:name=".views.DetallesPago"
-            android:exported="false" />
 
+        </activity>
         <activity android:name=".MapsActivity" />
 
         <meta-data
@@ -59,11 +59,10 @@
             android:launchMode="singleInstance"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
-        <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -81,5 +80,6 @@
         <activity
             android:name=".ReservationConfirmationActivity"
             android:exported="false" />
+
     </application>
 </manifest>

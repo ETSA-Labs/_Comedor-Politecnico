@@ -122,4 +122,12 @@ dependencies {
     implementation ("com.github.kittinunf.fuel:fuel:2.3.1")
 
     implementation(libs.play.services.cast.tv)
+    implementation(libs.firebase.storage.ktx)
+
+    implementation ("com.google.firebase:firebase-appcheck-playintegrity:16.1.0")
+
+
+    implementation ("com.google.firebase:firebase-storage:20.0.1")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 }

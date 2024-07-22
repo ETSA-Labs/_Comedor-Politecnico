@@ -7,6 +7,7 @@ playServicesMaps = "19.0.0"
 playServicesLocation = "21.3.0"
 mapsUtils = "2.2.5"
 material = "1.12.0"
+firebaseStorageKtx = "21.0.0"
 
 [libraries]
 androidx-activity = { module = "androidx.activity:activity", version = "1.9.0" }
@@ -45,6 +46,7 @@ retrofit2 = {module = "com.squareup.retrofit2:retrofit", version = "2.11.0"}
 retrofit2convertergson = {module = "com.squareup.retrofit2:converter-gson", version = "2.9.0"}
 okhttp3 = {module = "com.squareup.okhttp3:okhttp", version = "4.9.0"}
 play-services-cast-tv = { group = "com.google.android.gms", name = "play-services-cast-tv", version.ref = "playServicesCastTv" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version = "8.4.2" }

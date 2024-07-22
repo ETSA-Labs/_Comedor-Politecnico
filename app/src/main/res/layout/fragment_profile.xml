@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ProfileFragment_">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.10"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/im_background" />
+    tools:context=".views.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,44 +12,27 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tv_profile_title"
-            android:layout_width="154dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="24dp"
-            android:text="Perfil"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="180dp"
-            android:layout_height="3dp"
-            android:background="#FF0000" />
-
         <ImageView
-            android:id="@+id/iv_profile_image"
+            android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:layout_marginTop="50dp"
             app:srcCompat="@drawable/ic_user_24dp" />
 
         <Button
-            android:id="@+id/changePhotoButton"
+            android:id="@+id/change_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:text="Cambiar foto" />
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Cambiar foto"
+            android:textColor="@color/primary" />
 
         <TextView
             android:id="@+id/tv_about_you"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:text="Acerca de ti"
             android:textColor="@android:color/black"
@@ -79,14 +54,12 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:hint="Nombre"
+                android:enabled="false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -96,14 +69,12 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_email"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="melany.orna@espoch.edu.ec"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:hint="Correo"
+                android:enabled="false"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,14 +84,12 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_faculty"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/user_faculty"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="FIE"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:hint="Facultad"
+                android:inputType="text"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,15 +99,19 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_department"
+            <EditText
+                android:id="@+id/user_career"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Carrera"
+                android:inputType="text"/>
+
+            <Button
+                android:id="@+id/save_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Tecnologías de la información"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:layout_gravity="center"
+                android:text="Guardar cambios" />
         </LinearLayout>
     </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

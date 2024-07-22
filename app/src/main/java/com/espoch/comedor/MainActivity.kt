@@ -14,6 +14,9 @@ import com.espoch.comedor.models.AppUser
 import com.espoch.comedor.services.AuthService
 import com.espoch.comedor.services.FirebaseService
 import com.espoch.comedor.services.NavigationService
+import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +26,11 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        FirebaseApp.initializeApp(this)
+        val firebaseAppCheck = FirebaseAppCheck.getInstance()
+        firebaseAppCheck.installAppCheckProviderFactory(
+            PlayIntegrityAppCheckProviderFactory.getInstance()
+        )
         enableEdgeToEdge()
         window.navigationBarColor = getColor(R.color.navigationBar)
 

@@ -1,6 +1,7 @@
 package com.espoch.comedor.services
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.espoch.comedor.R
@@ -74,6 +75,7 @@ class AuthService {
                                 if (!accessToken.isNullOrEmpty()) {
                                     getFullName(accessToken)
                                 }
+
                             }
                             listeners.forEach { it.onCreate() }
                         }
@@ -130,6 +132,13 @@ class AuthService {
                                     listeners.forEach { it.onError("account is null") }
                                 }
                             }
+                            // Después de recuperar los datos del usuario y guardarlos en Firebase
+                            val sharedPreferences = context?.getSharedPreferences("USER_PREF", Context.MODE_PRIVATE)
+                            val editor = sharedPreferences?.edit()
+                            editor?.putString("USER_NAME", com.espoch.comedor.models.AppUser.current.fullName)
+                            editor?.putString("USER_EMAIL", com.espoch.comedor.models.AppUser.current.email)
+                            editor?.putString("USER_ID", com.espoch.comedor.models.AppUser.current.uid)
+                            editor?.apply()
                         }
                     }
 
