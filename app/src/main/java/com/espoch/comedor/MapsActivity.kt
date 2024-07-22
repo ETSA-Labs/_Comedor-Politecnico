@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.espoch.comedor.views.HomeFragment
 import com.espoch.comedor.views.MoreFragment
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -77,14 +78,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     drawRoute(currentLatLng, targetLatLng)
                 }
             }
-        }
-
-        // Configurar el OnClickListener para el botón de retroceso
-        findViewById<Button>(R.id.button2).setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MoreFragment()) // Asegúrate de tener un contenedor para los fragmentos
-                .addToBackStack(null)
-                .commit()
         }
     }
 

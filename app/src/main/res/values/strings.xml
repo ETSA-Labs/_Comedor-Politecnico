@@ -4,7 +4,7 @@
 
     <!--Nav destines headers...-->
     <string name="item.home">Home</string>
-    <string name="item.favorite">Favourites</string>
+    <string name="item.mapa" translatable="false">Mapa</string>
     <string name="item.location">Location</string>
     <string name="item.booking">Booking</string>
     <string name="item.more">More</string>

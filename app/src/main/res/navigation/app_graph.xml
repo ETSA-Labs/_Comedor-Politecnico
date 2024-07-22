@@ -11,26 +11,31 @@
         android:name="com.espoch.comedor.views.HomeFragment"
         tools:layout="@layout/fragment_home"
         android:label="@string/item.home"/>
-    <fragment
-        android:id="@+id/navigation_favourites"
-        android:name="com.espoch.comedor.views.FavouritesFragment"
-        tools:layout="@layout/fragment_favourites"
-        android:label="@string/item.favorite"/>
+
+    <activity
+        android:id="@+id/navigation_mapa"
+        android:name="com.espoch.comedor.MapsActivity"
+        tools:layout="@layout/supportfragment"
+        android:label="@string/item.mapa"/>
+
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.espoch.comedor.views.ProfileFragment"
         tools:layout="@layout/fragment_profile"
-        android:label="@string/item.location"/>
+        android:label="@string/item.profile_"/>
+
     <fragment
         android:id="@+id/navigation_booking"
         android:name="com.espoch.comedor.views.BookingFragment"
         tools:layout="@layout/fragment_item_reservation"
         android:label="@string/item.booking"/>
+
     <fragment
         android:id="@+id/navigation_more"
         android:name="com.espoch.comedor.views.MoreFragment"
         tools:layout="@layout/fragment_more"
         android:label="@string/item.more"/>
+
     <fragment
         android:id="@+id/navigation_menu_management"
         android:name="com.espoch.comedor.views.admin.ManageMenuFragment"
