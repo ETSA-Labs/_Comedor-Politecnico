@@ -1,6 +1,7 @@
 package com.espoch.comedor.views.admin
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +15,7 @@ import com.espoch.comedor.databinding.FragmentManageMenuBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.util.*
+import java.util.UUID
 
 class ManageMenuFragment : Fragment() {
 
@@ -47,12 +48,12 @@ class ManageMenuFragment : Fragment() {
 
         // Manejar el evento del botón Actualizar
         binding.btnActualizar.setOnClickListener {
-            updateDish()
+            chooseDish("Actualizar")
         }
 
         // Manejar el evento del botón Eliminar
         binding.btnEliminar.setOnClickListener {
-            deleteDish()
+            chooseDish("Eliminar")
         }
 
         // Manejar el evento del botón Seleccionar Imagen
@@ -79,7 +80,8 @@ class ManageMenuFragment : Fragment() {
                 "descripcion" to description,
                 "precio" to price,
                 "disponibilidad" to availability,
-                "imagen" to imageUrl
+                "imagen" to imageUrl,
+                "categoria" to category // Asegúrate de incluir la categoría aquí
             )
 
             firestore.collection("menu")
@@ -97,12 +99,79 @@ class ManageMenuFragment : Fragment() {
     }
 
 
-    private fun updateDish() {
-        // Implementa la lógica para actualizar un plato, usando menu_id para identificar el documento
+    private fun chooseDish(action: String) {
+        val category = binding.spinnerCategoria.selectedItem.toString()
+
+        firestore.collection("menu")
+            .whereEqualTo("categoria", category)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (documents.isEmpty) {
+                    Toast.makeText(requireContext(), "No hay platos disponibles en esta categoría", Toast.LENGTH_SHORT).show()
+                    return@addOnSuccessListener
+                }
+
+                val dishNames = documents.map { it.getString("nombre_plato") ?: "" }
+                if (dishNames.isEmpty()) {
+                    Toast.makeText(requireContext(), "No hay platos disponibles en esta categoría", Toast.LENGTH_SHORT).show()
+                    return@addOnSuccessListener
+                }
+
+                val dialogBuilder = AlertDialog.Builder(requireContext())
+                dialogBuilder.setTitle("Selecciona el plato a $action")
+                dialogBuilder.setItems(dishNames.toTypedArray()) { _, which ->
+                    val selectedDishName = dishNames[which]
+                    if (action == "Actualizar") {
+                        openEditDishActivity(category, selectedDishName)
+                    } else {
+                        openConfirmDeleteActivity(category, selectedDishName)
+                    }
+                }
+                dialogBuilder.create().show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Error al cargar los platos", Toast.LENGTH_SHORT).show()
+            }
     }
 
-    private fun deleteDish() {
-        // Implementa la lógica para eliminar un plato, usando menu_id para identificar el documento
+
+
+    private fun openEditDishActivity(category: String, dishName: String) {
+        val query = firestore.collection("menu")
+            .whereEqualTo("categoria", category)
+            .whereEqualTo("nombre_plato", dishName)
+
+        query.get().addOnSuccessListener { documents ->
+            if (documents.isEmpty) {
+                Toast.makeText(requireContext(), "No se encontró el plato", Toast.LENGTH_SHORT).show()
+                return@addOnSuccessListener
+            }
+
+            val dishId = documents.documents.first().id
+            val intent = Intent(requireContext(), EditDishActivity::class.java)
+            intent.putExtra("DISH_ID", dishId)
+            intent.putExtra("CATEGORY", category)
+            startActivity(intent)
+        }
+    }
+
+
+    private fun openConfirmDeleteActivity(category: String, dishName: String) {
+        val query = firestore.collection("menu")
+            .whereEqualTo("categoria", category)
+            .whereEqualTo("nombre_plato", dishName)
+
+        query.get().addOnSuccessListener { documents ->
+            if (documents.isEmpty) {
+                Toast.makeText(requireContext(), "No se encontró el plato", Toast.LENGTH_SHORT).show()
+                return@addOnSuccessListener
+            }
+
+            val dishId = documents.documents.first().id
+            val intent = Intent(requireContext(), ConfirmDeleteActivity::class.java)
+            intent.putExtra("DISH_ID", dishId)
+            startActivity(intent)
+        }
     }
 
     private fun openImageUploadActivity() {
@@ -125,7 +194,6 @@ class ManageMenuFragment : Fragment() {
         }
     }
 
-
     private fun clearFields() {
         binding.etNombrePlato.text.clear()
         binding.etDescripcion.text.clear()
@@ -135,9 +203,7 @@ class ManageMenuFragment : Fragment() {
         binding.btnSeleccionarImagen.text = "Seleccionar Imagen"
         imageUrl = ""
     }
-
 }
-
 
 
 /*
