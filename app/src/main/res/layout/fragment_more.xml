@@ -151,5 +151,14 @@
             android:padding="16dp"
             android:layout_marginTop="16dp"
             android:textAllCaps="false" />
-    </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_admin_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cornerRadius="12dp"
+            android:text="Admin panel"/>
+   </LinearLayout>
+
 </RelativeLayout>
