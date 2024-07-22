@@ -141,6 +141,23 @@
             android:textAllCaps="false" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_admin_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            app:iconTint="@android:color/black"
+            app:iconGravity="textStart"
+            app:iconSize="36dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            app:iconPadding="24dp"
+            android:textColor="@android:color/black"
+            android:text="Admin Panel"
+            app:cornerRadius="20dp"
+            android:textSize="14sp"
+            android:textAllCaps="false" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -151,14 +168,5 @@
             android:padding="16dp"
             android:layout_marginTop="16dp"
             android:textAllCaps="false" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_admin_panel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:cornerRadius="12dp"
-            android:text="Admin panel"/>
-   </LinearLayout>
-
+    </LinearLayout>
 </RelativeLayout>

@@ -67,22 +67,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(R.layout.activity_main)
-
-        // Muestra el fragmento de desayunos por defecto
-        if (savedInstanceState == null) {
-            loadFragment(BreakfastFragment())
-        }
-    }
-
-    private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .commit()
-    }
-
     private inner class AuthResultCallback : AuthService.ResultListener() {
         override fun onCreate() {
             super.onCreate()

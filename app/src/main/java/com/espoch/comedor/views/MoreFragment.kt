@@ -6,47 +6,69 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.espoch.comedor.MainActivity
 import com.espoch.comedor.R
-import com.google.android.material.button.MaterialButton
+import com.espoch.comedor.databinding.FragmentMoreBinding
+import com.espoch.comedor.extensions.isLightStatusBar
+import com.espoch.comedor.models.AppUser
+import com.espoch.comedor.services.NavigationService
 
 class MoreFragment : Fragment() {
+    private lateinit var binding: FragmentMoreBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_more, container, false)
+    ): View {
+        binding = FragmentMoreBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        view.findViewById<MaterialButton>(R.id.btn_about).setOnClickListener {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val activity = requireActivity() as MainActivity
+        activity.isLightStatusBar = true
+
+        binding.btnAdminPanel.setOnClickListener(::onAdminPanelButtonClick)
+
+        binding.btnAdminPanel.visibility =
+            if (AppUser.current.role == AppUser.ADMIN)
+                View.VISIBLE
+            else View.GONE
+
+        binding.btnAbout.setOnClickListener {
             val intent = Intent(activity, AboutActivity::class.java)
             startActivity(intent)
         }
 
-        view.findViewById<MaterialButton>(R.id.btn_messages).setOnClickListener {
+        // Configurar los otros botones con sus respectivas lógicas
+        binding.btnMessages.setOnClickListener {
             // Lógica para Messages
         }
 
-        view.findViewById<MaterialButton>(R.id.btn_privacy_policy).setOnClickListener {
+        binding.btnPrivacyPolicy.setOnClickListener {
             // Lógica para Política de privacidad
         }
 
-        view.findViewById<MaterialButton>(R.id.btn_support).setOnClickListener {
+        binding.btnSupport.setOnClickListener {
             // Lógica para Support
         }
 
-        view.findViewById<MaterialButton>(R.id.btn_user_guide).setOnClickListener {
+        binding.btnUserGuide.setOnClickListener {
             // Lógica para Guía de uso
-
         }
 
-        view.findViewById<MaterialButton>(R.id.btn_terms_conditions).setOnClickListener {
+        binding.btnTermsConditions.setOnClickListener {
             // Lógica para Términos y condiciones
         }
 
-        view.findViewById<MaterialButton>(R.id.btn_logout).setOnClickListener {
+        binding.btnLogout.setOnClickListener {
             // Lógica para Cerrar Sesión
         }
+    }
 
-        return view
+    private fun onAdminPanelButtonClick(v: View) {
+        NavigationService.navigate("App", R.id.navigation_menu_management)
     }
 }
