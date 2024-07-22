@@ -18,8 +18,8 @@
         android:label="@string/item.favorite"/>
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.espoch.comedor.views.ProfileFragment_"
-        tools:layout="@layout/fragment_profile_"
+        android:name="com.espoch.comedor.views.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
         android:label="@string/item.location"/>
     <fragment
         android:id="@+id/navigation_booking"
