@@ -5,9 +5,9 @@
         android:icon="@drawable/ic_home_24dp"
         android:title="@string/item.home" />
     <item
-        android:id="@+id/navigation_favourites"
-        android:icon="@drawable/ic_heart_24dp"
-        android:title="@string/item.favorite" />
+        android:id="@+id/navigation_mapa"
+        android:icon="@drawable/ic_location_24dp"
+        android:title="@string/item.mapa" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_user_24dp"

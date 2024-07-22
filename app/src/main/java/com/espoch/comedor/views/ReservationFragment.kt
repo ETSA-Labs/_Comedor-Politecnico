@@ -123,7 +123,7 @@ class ReservationFragment : AppCompatActivity() {
 
     private fun setupButtonNavigation() {
         findViewById<ImageButton>(R.id.navigation_home).setOnClickListener { /* Navigate to home */ }
-        findViewById<ImageButton>(R.id.navigation_favourites).setOnClickListener { /* Navigate to favorites */ }
+        findViewById<ImageButton>(R.id.navigation_mapa).setOnClickListener { /* Navigate to favorites */ }
         findViewById<ImageButton>(R.id.navigation_booking).setOnClickListener { /* Navigate to calendar */ }
         findViewById<ImageButton>(R.id.navigation_profile).setOnClickListener { /* Navigate to profile */ }
     }
