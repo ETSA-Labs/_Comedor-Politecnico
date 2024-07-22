@@ -45,6 +45,7 @@
     <string name="domain.espoch">&#64;espoch.edu.ec</string>
     <string name="domain.auth0">dev-64fbqx2xpo43kv1g.us.auth0.com</string>
     <string name="comedor">comedor</string>
+    <string name="image_preview" translatable="false">Image Preview</string>
 
     <string name="onesignal_notification_accent_color" translatable="false">FF00FF00</string>
 

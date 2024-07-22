@@ -9,7 +9,8 @@
     <!--Application colors...-->
     <color name="primary">#ff000000</color>
     <color name="accent">#ffff2c2c</color>
-
+    <color name="colorGreen">#00FF00</color>
+    <color name="colorRed">#FF0000</color>
     <!--Backgrounds...-->
     <color name="back.button">#ffffffff</color>
     <color name="back.card_1">#ffffffff</color>
